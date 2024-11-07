@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply relative z-1 bg-whiten text-base font-normal;
+    }
+    h1 {
+        @apply text-4xl font-bold;
+      }
+      h2 {
+        @apply text-3xl md:text-2xl font-bold;
+      }
+      h3 {
+        @apply text-2xl font-semibold;
+      }
+      h4{
+        @apply text-lg font-semibold ;
+      }
+}
+
