@@ -17,14 +17,6 @@ import Link from "next/link";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
 
 const Page = () => {
-  const company = [
-    {
-      id: 1,
-      name: "PRANATAL",
-      country: "France",
-    },
-  ];
-
   const rows = [
     {
       id: "1",
@@ -37,17 +29,9 @@ const Page = () => {
   return (
     <>
       <DefaultLayout>
-        <h3 className="mb-4 text-center text-2xl font-bold">
-          PRANATAL, France.{" "}
-        </h3>
-        {/* <div className="flex  bg-white shadow-md rounded p-5 mb-5"> */}
-
-        {/* <Link href="/super-admin/daily-receive/add-daily-receive">
-          <Button variant="contained" disableElevation startIcon={<AddIcon />}>
-            Add
-          </Button>
-        </Link> */}
-        {/* </div> */}
+        <h4 className="mb-4 text-center text-2xl ">
+          Daily Receive For <span className="font-bold">PRANATAL, France.</span>
+        </h4>
         <Paper sx={{ width: "100%", overflow: "hidden" }}>
           <TableContainer>
             <Table>
@@ -128,14 +112,6 @@ const Page = () => {
                           <VisibilityIcon fontSize="small" />
                         </button>
                       </Link>
-                      <Link href={`/super-admin/daily-receive/${row.id}`}>
-                        <button className="text-green-600">
-                          <EditIcon fontSize="small" />
-                        </button>
-                      </Link>
-                      <button className="text-red-600">
-                        <DeleteIcon fontSize="small" />
-                      </button>
                     </TableCell>
                   </TableRow>
                 ))}

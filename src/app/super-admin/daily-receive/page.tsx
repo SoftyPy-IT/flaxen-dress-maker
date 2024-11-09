@@ -130,7 +130,7 @@ const Page = () => {
                     align="center"
                     className="whitespace-nowrap text-white"
                   >
-                    Details
+                    Action
                   </TableCell>
                 </TableRow>
               </TableHead>
