@@ -10,19 +10,66 @@ const page = () => {
         <h3 className="mb-5 text-center text-2xl font-bold">Add Challan</h3>
         <form>
           <Grid container spacing={2}>
+
+
             <Grid item xs={12} sm={6}>
               <TextField
-                label="Description"
-                name="description"
+                label="To"
+                name="to"
                 fullWidth
                 size="medium"
+              />
+            </Grid>
+
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="Receiver Name"
+                name="receiver"
+                fullWidth
+                size="medium"
+              />
+            </Grid>
+
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="Buyer Name"
+                name="buyer"
+                fullWidth
+                size="medium"
+              />
+            </Grid>
+
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="Order No"
+                name="order"
+                fullWidth
+                size="medium"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="Color"
+                name="color"
+                fullWidth
+                size="medium"
+              />
+            </Grid>
+
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="Date"
+                name="date"
+                fullWidth
+                size="medium"
+                type="date"
               />
             </Grid>
 
             <Grid item xs={12} sm={6}>
               <TextField
                 label="Quantity"
-                name="quantity"
+                name="qty"
                 fullWidth
                 size="medium"
               />
@@ -30,21 +77,15 @@ const page = () => {
 
             <Grid item xs={12} sm={6}>
               <TextField
-                label="No. of Pack's"
-                name="noOfPacks"
+                label="Challan No"
+                name="challan"
                 fullWidth
                 size="medium"
               />
             </Grid>
 
-            <Grid item xs={12} sm={6}>
-              <TextField
-                label="Remarks"
-                name="remarks"
-                fullWidth
-                size="medium"
-              />
-            </Grid>
+
+
 
             <Grid item xs={12}>
               <div className="flex justify-end">
