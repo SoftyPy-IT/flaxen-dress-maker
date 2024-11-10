@@ -7,11 +7,12 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import flaxen from "../../../../../public/images/logos/flaxen.png";
-import Image from "next/image";
-import DownloadIcon from "@mui/icons-material/Download";
-import PrintIcon from "@mui/icons-material/Print";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
 import { Button } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
+import Link from "next/link";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
 
 const page = () => {
@@ -19,55 +20,53 @@ const page = () => {
     {
       id: "1",
       description: "Description of goods",
-      quantity: "Quantity",
-      noOfPack: "123",
+      line: "10",
+      style: "01",
+      quantity: "Quantity",     
       remarks: "Remarks",
     },
     {
       id: "1",
       description: "Description of goods",
+      line: "10",
+      style: "01",
       quantity: "Quantity",
-      noOfPack: "123",
       remarks: "Remarks",
     },
     {
       id: "1",
       description: "Description of goods",
+      line: "10",
+      style: "01",
       quantity: "Quantity",
-      noOfPack: "123",
       remarks: "Remarks",
     },
     {
       id: "1",
       description: "Description of goods",
+      line: "10",
+      style: "01",
       quantity: "Quantity",
-      noOfPack: "123",
       remarks: "Remarks",
     },
     {
       id: "1",
       description: "Description of goods",
+      line: "10",
+      style: "01",
       quantity: "Quantity",
-      noOfPack: "123",
       remarks: "Remarks",
     },
   ];
   return (
     <DefaultLayout>
-      <div className="mb-5 text-center">
-        <div className="mb-3 flex items-center justify-center gap-2">
-          <Image src={flaxen} alt="img" className="h-10 w-10" />
-          <h1>Flaxen Dress Maker Ltd</h1>
-        </div>
-        <p>
-          Factory: Meghdubi; Ward-40, Gazipur City Corporation, Gazipur-1700,
-          Bangladesh
-        </p>
-        <p>Corporate Office : House# 35, Road# 9, Sector# 15, Uttara, Dhaka</p>
-        <p>
-          Phone : +880-2-8913263, 8916198, Fax : +88-02-8913263 E-mail :
-          flaxen@flaxengroup.com, Web : www.flaxengroup.com
-        </p>
+      <div className="mb-5 flex justify-between rounded bg-white p-5 shadow-md">
+        <h3 className="text-2xl font-bold">Delivery Challan</h3>
+        <Link href="/super-admin/work-challan/add-challan">
+          <Button variant="contained" disableElevation startIcon={<AddIcon />}>
+            Add
+          </Button>
+        </Link>
       </div>
       <Paper sx={{ width: "100%", overflow: "hidden" }}>
         <TableContainer>
@@ -79,21 +78,27 @@ const page = () => {
                 },
               }}
             >
-              <TableRow>
+              <TableRow className="bg-[#5D87FF]">
                 <TableCell align="center" className="whitespace-nowrap">
-                  SL No
+                  SL NO
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  Description of goods
+                  Description
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
+                  Line
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
+                  Style
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
                   Quantity
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  No. of Pack&apos;s
+                  Remarks
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  Remarks
+                  Action
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -109,27 +114,31 @@ const page = () => {
                 >
                   <TableCell align="center">{index + 1}</TableCell>
                   <TableCell align="center">{row.description}</TableCell>
+                  <TableCell align="center">{row.line}</TableCell>
+                  <TableCell align="center">{row.style}</TableCell>
                   <TableCell align="center">{row.quantity}</TableCell>
-                  <TableCell align="center">{row.noOfPack}</TableCell>
                   <TableCell align="center">{row.remarks}</TableCell>
+                  <TableCell align="center" className="space-x-2">
+                    <Link href="/super-admin/work-challan/challan-preview">
+                      <button className="text-blue-600">
+                        <VisibilityIcon fontSize="small" />
+                      </button>
+                    </Link>
+                    <Link href="/super-admin/work-challan/id">
+                      <button className="text-green-600">
+                        <EditIcon fontSize="small" />
+                      </button>
+                    </Link>
+                    <button className="text-red-600">
+                      <DeleteIcon fontSize="small" />
+                    </button>
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
           </Table>
         </TableContainer>
       </Paper>
-      <div className="mt-5 flex justify-end gap-5">
-        <Button variant="contained" disableElevation startIcon={<PrintIcon />}>
-          Print
-        </Button>
-        <Button
-          variant="contained"
-          disableElevation
-          startIcon={<DownloadIcon />}
-        >
-          Download
-        </Button>
-      </div>
     </DefaultLayout>
   );
 };

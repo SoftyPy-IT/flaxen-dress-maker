@@ -79,72 +79,84 @@ const Page = () => {
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
+                    sx={{ color: "white" }}
                   >
                     S. No
                   </TableCell>
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
+                    sx={{ color: "white" }}
                   >
                     Buyer
                   </TableCell>
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
+                    sx={{ color: "white" }}
                   >
                     Order No
                   </TableCell>
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
+                    sx={{ color: "white" }}
                   >
                     Item
                   </TableCell>
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
+                    sx={{ color: "white" }}
                   >
                     Color
                   </TableCell>
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
+                    sx={{ color: "white" }}
                   >
                     Style No
                   </TableCell>
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
+                    sx={{ color: "white" }}
                   >
                     Line
                   </TableCell>
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
+                    sx={{ color: "white" }}
                   >
                     Floor
                   </TableCell>
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
+                    sx={{ color: "white" }}
                   >
                     Date
                   </TableCell>
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
+                    sx={{ color: "white" }}
                   >
                     Time
                   </TableCell>
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
+                    sx={{ color: "white" }}
                   >
                     Remark
                   </TableCell>
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
+                    sx={{ color: "white" }}
                   >
                     Action
                   </TableCell>

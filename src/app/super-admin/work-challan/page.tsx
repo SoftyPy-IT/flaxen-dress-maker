@@ -57,7 +57,7 @@ const page = () => {
     <DefaultLayout>
       <div className="flex justify-between bg-white shadow-md rounded p-5 mb-5">
         <h3 className="text-2xl font-bold">Delivery Challan</h3>
-        <Link href="/super-admin/challan/add-challan">
+        <Link href="/super-admin/work-challan/add-challan">
           <Button variant="contained" disableElevation startIcon={<AddIcon />}>
             Add
           </Button>
@@ -110,12 +110,12 @@ const page = () => {
                   <TableCell align="center">{row.noOfPack}</TableCell>
                   <TableCell align="center">{row.remarks}</TableCell>
                   <TableCell align="center" className="space-x-2">
-                    <Link href="/super-admin/challan/challan-preview">
+                    <Link href="/super-admin/work-challan/challan-preview">
                       <button className="text-blue-600">
                         <VisibilityIcon fontSize="small" />
                       </button>
                     </Link>
-                    <Link href="/super-admin/challan/id">
+                    <Link href="/super-admin/work-challan/id">
                       <button className="text-green-600">
                         <EditIcon fontSize="small" />
                       </button>
