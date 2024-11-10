@@ -5,7 +5,7 @@ import { Button, TextField, Paper, Grid } from "@mui/material";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
 import { useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
-import { Box, IconButton } from "@mui/material";
+import { IconButton } from "@mui/material";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 
 const Page = () => {
