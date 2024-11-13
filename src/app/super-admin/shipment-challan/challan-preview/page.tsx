@@ -2,7 +2,7 @@
 
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
 import React from "react";
-import flaxen from "../../../../../../../../public/images/logos/flaxen.png";
+import flaxen from "../../../../../public/images/logos/flaxen.png";
 import Image from "next/image";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";

@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import { Box, Button, Grid, Paper, TextField } from "@mui/material";
+import { TextField, Button, Paper, Grid } from "@mui/material";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
 import flaxen from "../../../../../public/images/logos/flaxen.png";
 import Image from "next/image";
@@ -24,58 +24,101 @@ const page = () => {
         </p>
       </div>
       <Paper sx={{ padding: 3 }}>
-        <h3 className="mb-4 text-center text-2xl font-bold">Add Sample</h3>
-        <Box component="form" noValidate autoComplete="off">
-          <Grid container spacing={3}>
+        <h3 className="mb-5 text-center text-2xl font-bold">Add Challan</h3>
+        <form>
+          <Grid container spacing={2}>
+
+
             <Grid item xs={12} sm={6}>
               <TextField
+                label="To"
+                name="to"
                 fullWidth
+                size="medium"
+              />
+            </Grid>
+
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="Receiver Name"
+                name="receiver"
+                fullWidth
+                size="medium"
+              />
+            </Grid>
+
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="Buyer Name"
+                name="buyer"
+                fullWidth
+                size="medium"
+              />
+            </Grid>
+
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="Order No"
+                name="order"
+                fullWidth
+                size="medium"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="Color"
+                name="color"
+                fullWidth
+                size="medium"
+              />
+            </Grid>
+
+            <Grid item xs={12} sm={6}>
+              <TextField
                 label="Date"
+                name="date"
+                fullWidth
+                size="medium"
                 type="date"
-                InputLabelProps={{ shrink: true }}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField fullWidth label="Name" name="name" />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField fullWidth label="Style" name="style" type="number" />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField fullWidth label="Order No" name="orderNo" />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField fullWidth label="Sample Type" name="sampleType" />
-            </Grid>
+
             <Grid item xs={12} sm={6}>
               <TextField
+                label="Quantity"
+                name="qty"
                 fullWidth
-                label="Sample QTY"
-                name="sampleQty"
-                type="number"
+                size="medium"
               />
             </Grid>
+
             <Grid item xs={12} sm={6}>
               <TextField
+                label="Challan No"
+                name="challan"
                 fullWidth
-                label="Sewing Start Time"
-                name="sewingStart"
-                type="time"
-                InputLabelProps={{ shrink: true }}
+                size="medium"
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField fullWidth label="Remarks" name="remarks" />
-            </Grid>
-            <Grid item xs={12} textAlign="center">
+
+
+
+
+            <Grid item xs={12}>
               <div className="flex justify-end">
-                <Button variant="contained" color="primary" disableElevation>
-                  Add Sample
+                <Button
+                  type="submit"
+                  variant="contained"
+                  color="primary"
+                  size="medium"
+                  disableElevation
+                >
+                  Add Challan
                 </Button>
               </div>
             </Grid>
           </Grid>
-        </Box>
+        </form>
       </Paper>
     </DefaultLayout>
   );

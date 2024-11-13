@@ -40,47 +40,84 @@ const menuGroups = [
         icon: <DashboardIcon />,
       },
       {
-        label: "Fabric Stock Register",
-        route: "/super-admin/stock",
-        icon: <InventoryIcon />,
+        label: "Register",
+        route: "#",
+        icon: <FormIcon />,
+        children: [
+          { label: "Fabric Stock Register", route: "/super-admin/stock", icon: <InventoryIcon />, },
+          { label: "Fabric Register", route: "/super-admin/fabric-reg", icon: <InventoryIcon />, },
+          { label: "Cutting Register", route: "/super-admin/cutting-reg", icon: <InventoryIcon />, },
+        ],
       },
+      // {
+      //   label: "Fabric Stock Register",
+      //   route: "/super-admin/stock",
+      //   icon: <InventoryIcon />,
+      // },
       // ----------------------------
+      // {
+      //   label: "Fabric Register",
+      //   route: "/super-admin/fabric-reg",
+      //   icon: <LibraryAddIcon />,
+      // },
       {
-        label: "Fabric Register",
-        route: "/super-admin/fabric-reg",
-        icon: <LibraryAddIcon />,
+        label: "Requisition",
+        route: "#",
+        icon: <FormIcon />,
+        children: [
+          { label: "Accessories Requisition", route: "/super-admin/accessories-requisition" },
+          { label: "Fabric Requisition", route: "/super-admin/requisition" },
+        ],
       },
       {
-        label: "Accessories Requisition",
-        route: "/super-admin/accessories-requisition",
-        icon: <ConstructionIcon />,
-      },
-      {
-        label: "Cutting Register",
-        route: "/super-admin/cutting-reg",
-        icon: <ContentCutIcon />,
-      },
-      {
-        label: "Daily Receive",
-        route: "/super-admin/daily-receive",
+        label: "Receive",
+        route: "#",
         icon: <OfflinePinIcon />,
+        children: [
+          { label: "Daily Receive", route: "/super-admin/daily-receive" },
+          { label: "Hourly Receive", route: "/super-admin/hourly-receive" },
+        ],
       },
+      {
+        label: "Challan",
+        route: "#",
+        icon: <LocalOfferIcon />,
+        children: [
+          { label: "Work Challan", route: "/super-admin/work-challan" },
+          { label: "Shipment Challan", route: "/super-admin/shipment-challan" },
+        ],
+      },
+      // {
+      //   label: "Accessories Requisition",
+      //   route: "/super-admin/accessories-requisition",
+      //   icon: <ConstructionIcon />,
+      // },
+      // {
+      //   label: "Cutting Register",
+      //   route: "/super-admin/cutting-reg",
+      //   icon: <ContentCutIcon />,
+      // },
+      // {
+      //   label: "Daily Receive",
+      //   route: "/super-admin/daily-receive",
+      //   icon: <OfflinePinIcon />,
+      // },
       // ------------------------------
       {
         label: "Sample Section",
         route: "/super-admin/sample",
         icon: <CategoryIcon />,
       },
-      {
-        label: "Fabric Requisition",
-        route: "/super-admin/requisition",
-        icon: <FormatListBulletedIcon />,
-      },
-      {
-        label: "Delivery Challan",
-        route: "/super-admin/challan",
-        icon: <LocalOfferIcon />,
-      },
+      // {
+      //   label: "Fabric Requisition",
+      //   route: "/super-admin/requisition",
+      //   icon: <FormatListBulletedIcon />,
+      // },
+      // {
+      //   label: "Delivery Challan",
+      //   route: "/super-admin/challan",
+      //   icon: <LocalOfferIcon />,
+      // },
       {
         label: "Packing List",
         route: "/super-admin/packing",
@@ -96,11 +133,11 @@ const menuGroups = [
       //   route: "/super-admin/accessories-delivery",
       //   icon: <LocalShippingIcon />,
       // },
-      {
-        label: "Hourly Receive",
-        route: "/super-admin/hourly-receive",
-        icon: <AccessTimeFilledIcon />,
-      },
+      // {
+      //   label: "Hourly Receive",
+      //   route: "/super-admin/hourly-receive",
+      //   icon: <AccessTimeFilledIcon />,
+      // },
 
       {
         label: "Forms",

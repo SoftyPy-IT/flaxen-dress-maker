@@ -15,15 +15,12 @@ import { Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import Link from "next/link";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
+import AddOrderModal from "../../_components/AddOrderModal";
 
 const Page = () => {
-  const company = [
-    {
-      id: 1,
-      name: "PRANATAL",
-      country: "France",
-    },
-  ];
+  const [open, setOpen] = React.useState(false)
+    const handleOpen = () => setOpen(true)
+    const handleClose = () => setOpen(false)
 
   const rows = [
     {
@@ -37,17 +34,21 @@ const Page = () => {
   return (
     <>
       <DefaultLayout>
-        <h3 className="mb-4 text-center text-2xl font-bold">
-          PRANATAL, France.{" "}
-        </h3>
-        {/* <div className="flex  bg-white shadow-md rounded p-5 mb-5"> */}
-
-        {/* <Link href="/super-admin/daily-receive/add-daily-receive">
-          <Button variant="contained" disableElevation startIcon={<AddIcon />}>
+        <div className="flex justify-between rounded bg-white p-3 mb-5 ">
+          <h4 className="text-center text-2xl">
+            Daily Receive For{" "}
+            <span className="font-bold">PRANATAL, France.</span>
+          </h4>
+          <Button
+            variant="contained"
+            disableElevation
+            startIcon={<AddIcon />}
+            onClick={handleOpen}
+          >
             Add
           </Button>
-        </Link> */}
-        {/* </div> */}
+        </div>
+
         <Paper sx={{ width: "100%", overflow: "hidden" }}>
           <TableContainer>
             <Table>
@@ -58,29 +59,33 @@ const Page = () => {
                   },
                 }}
               >
-                <TableRow className="bg-[#5D87FF]">
+                <TableRow className="bg-[#5D87FF] text-white" sx={{color:"white"}}>
                   <TableCell
                     align="center"
-                    className="whitespace-nowrap text-white"
+                    className="whitespace-nowrap "
+                    sx={{ color: "white" }}
                   >
                     Order Date
                   </TableCell>
 
                   <TableCell
                     align="center"
-                    className="whitespace-nowrap text-white"
+                    className="whitespace-nowrap "
+                    sx={{ color: "white" }}
                   >
                     Order No
                   </TableCell>
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
+                    sx={{ color: "white" }}
                   >
                     Colour
                   </TableCell>
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
+                    sx={{ color: "white" }}
                   >
                     Style No
                   </TableCell>
@@ -88,6 +93,7 @@ const Page = () => {
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
+                    sx={{ color: "white" }}
                   >
                     Action
                   </TableCell>
@@ -128,14 +134,6 @@ const Page = () => {
                           <VisibilityIcon fontSize="small" />
                         </button>
                       </Link>
-                      <Link href={`/super-admin/daily-receive/${row.id}`}>
-                        <button className="text-green-600">
-                          <EditIcon fontSize="small" />
-                        </button>
-                      </Link>
-                      <button className="text-red-600">
-                        <DeleteIcon fontSize="small" />
-                      </button>
                     </TableCell>
                   </TableRow>
                 ))}
@@ -144,6 +142,7 @@ const Page = () => {
           </TableContainer>
         </Paper>
       </DefaultLayout>
+      {open && <AddOrderModal open={open} setOpen={handleClose} />}
     </>
   );
 };

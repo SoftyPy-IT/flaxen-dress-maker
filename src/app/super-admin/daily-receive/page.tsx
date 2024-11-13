@@ -13,8 +13,14 @@ import { Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import Link from "next/link";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
+import AddBuyerModal from "./_components/AddBuyerModal";
 
 const Page = () => {
+  const [open, setOpen] = React.useState(false)
+    const handleOpen = () => setOpen(true)
+    const handleClose = () => setOpen(false)
+
+
   const rows = [
     {
       id: "1",
@@ -63,19 +69,22 @@ const Page = () => {
     },
   ];
   return (
+    
+
     <>
       <DefaultLayout>
         <div className="mb-5 flex justify-between rounded bg-white p-5 shadow-md">
           <h3 className="text-2xl font-bold">Daily Receive from S/Others</h3>
-          <Link href="/super-admin/daily-receive/add-daily-receive">
+          {/* <Link href="/super-admin/daily-receive/add-daily-receive"> */}
             <Button
               variant="contained"
               disableElevation
               startIcon={<AddIcon />}
+              onClick={handleOpen}
             >
               Add
             </Button>
-          </Link>
+          {/* </Link> */}
         </div>
         <Paper sx={{ width: "100%", overflow: "hidden" }}>
           <TableContainer>
@@ -91,12 +100,14 @@ const Page = () => {
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
+                    sx={{ color: "white" }}
                   >
                     Buyer Name
                   </TableCell>
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
+                    sx={{ color: "white" }}
                   >
                     Country
                   </TableCell>
@@ -104,24 +115,28 @@ const Page = () => {
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
+                    sx={{ color: "white" }}
                   >
                     Colour
                   </TableCell>
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
+                    sx={{ color: "white" }}
                   >
                     Style No
                   </TableCell>
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
+                    sx={{ color: "white" }}
                   >
                     Total Order
                   </TableCell>
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
+                    sx={{ color: "white" }}
                   >
                     Last Order Date
                   </TableCell>
@@ -129,8 +144,9 @@ const Page = () => {
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
+                    sx={{ color: "white" }}
                   >
-                    Details
+                    Action
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -191,6 +207,9 @@ const Page = () => {
           </TableContainer>
         </Paper>
       </DefaultLayout>
+
+      {open && <AddBuyerModal open={open} setOpen={handleClose} />}
+      
     </>
   );
 };

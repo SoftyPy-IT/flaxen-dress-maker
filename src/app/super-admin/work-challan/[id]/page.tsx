@@ -7,7 +7,7 @@ const page = () => {
   return (
     <DefaultLayout>
       <Paper sx={{ padding: 3 }}>
-        <h3 className="mb-5 text-center text-2xl font-bold">Add Challan</h3>
+        <h3 className="mb-5 text-center text-2xl font-bold">Update Challan</h3>
         <form>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
@@ -55,7 +55,7 @@ const page = () => {
                   size="medium"
                   disableElevation
                 >
-                  Add Challan
+                  Update
                 </Button>
               </div>
             </Grid>

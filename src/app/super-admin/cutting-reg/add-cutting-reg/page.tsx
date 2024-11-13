@@ -4,6 +4,8 @@ import { Button, TextField, Paper, Grid, Box, IconButton } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
+import Image from "next/image";
+import flaxen from "../../../../../public/images/logos/flaxen.png";
 
 const Page = () => {
   const [subCategories, setSubCategories] = React.useState<string[]>([""]);
@@ -26,6 +28,21 @@ const Page = () => {
   };
   return (
     <>
+    <div className="mb-5 text-center">
+        <div className="mb-3 flex items-center justify-center gap-2">
+          <Image src={flaxen} alt="img" className="h-10 w-10" />
+          <h1>Flaxen Dress Maker Ltd</h1>
+        </div>
+        <p>
+          Factory: Meghdubi; Ward-40, Gazipur City Corporation, Gazipur-1700,
+          Bangladesh
+        </p>
+        <p>Corporate Office : House# 35, Road# 9, Sector# 15, Uttara, Dhaka</p>
+        <p>
+          Phone : +880-2-8913263, 8916198, Fax : +88-02-8913263 E-mail :
+          flaxen@flaxengroup.com, Web : www.flaxengroup.com
+        </p>
+      </div>
       <Paper sx={{ padding: 3, margin: "auto" }}>
         <h3 className="text-2xl text-center font-bold">Add Cutting Register</h3>
         <hr className="my-3" />
