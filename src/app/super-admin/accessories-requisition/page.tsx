@@ -206,31 +206,27 @@ const Page = () => {
                     <TableCell align="center" className="whitespace-nowrap">
                       {row.remark}
                     </TableCell>
+
+
                     <TableCell
                       align="center"
-                      className=" space-x-2 whitespace-nowrap "
+                      className="space-x-2 whitespace-nowrap"
                     >
-                      <IconButton
-                        className="text-blue-600"
-                        href={`/super-admin/accessories-requisition/preview/${row.id}`}
-                      >
-                        <VisibilityIcon fontSize="small" />
-                      </IconButton>
-                      <IconButton
-                        href={`/super-admin/accessories-requisition/${row.id}`}
-                        className="text-green-600"
-                      >
-                        <button>
+                      <Link href={`/super-admin/accessories-requisition/preview/${row.id}`}>
+                        <button className="text-blue-600">
+                          <VisibilityIcon fontSize="small" />
+                        </button>
+                      </Link>
+                      <Link  href={`/super-admin/accessories-requisition/${row.id}`}>
+                        <button className="text-green-600">
                           <EditIcon fontSize="small" />
                         </button>
-                      </IconButton>
-                      <IconButton
-                        className="text-red-600"
-                        href={`/super-admin/accessories-requisition/${row.id}`}
-                      >
+                      </Link>
+                      <button className="text-red-600">
                         <DeleteIcon fontSize="small" />
-                      </IconButton>
+                      </button>
                     </TableCell>
+                   
                   </TableRow>
                 ))}
               </TableBody>

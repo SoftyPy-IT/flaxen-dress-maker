@@ -243,7 +243,7 @@ const Page = () => {
         </div>
       </div>
 
-      {/* Additional A4-specific styles */}
+      {/* A4 ‍size */}
       <style jsx>{`
         .a4-paper {
           width: 210mm;
@@ -265,6 +265,7 @@ const Page = () => {
           }
         }
       `}</style>
+      
       <div className=" mt-6 flex justify-center gap-3">
         <Button variant="contained" disableElevation startIcon={<EditIcon />}>
           Edit

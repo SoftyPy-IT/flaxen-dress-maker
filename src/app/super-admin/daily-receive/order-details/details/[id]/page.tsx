@@ -19,6 +19,8 @@ import { TextField, Grid } from "@mui/material";
 import { useState } from "react";
 import { Box, IconButton } from "@mui/material";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
+import Image from "next/image";
+import flaxen from "../../../../../../../public/images/logos/flaxen.png";
 
 // Mock Data (you can replace this with actual data fetching logic)
 const data = [
@@ -132,6 +134,23 @@ const Page = () => {
   return (
     <>
       <DefaultLayout>
+      <div className="mb-3 text-center gap-2">
+          <div className="mb-3 flex items-center justify-center gap-2">
+            <Image src={flaxen} alt="img" className="h-10 w-10" />
+            <h1>Flaxen Dress Maker Ltd</h1>
+          </div>
+          <p>
+            Factory: Meghdubi; Ward-40, Gazipur City Corporation, Gazipur-1700,
+            Bangladesh
+          </p>
+          <p>
+            Corporate Office : House# 35, Road# 9, Sector# 15, Uttara, Dhaka
+          </p>
+          <p>
+            Phone : +880-2-8913263, 8916198, Fax : +88-02-8913263 E-mail :
+            flaxen@flaxengroup.com, Web : www.flaxengroup.com
+          </p>
+        </div>
         <div>
           
           <h3 className="text-center font-normal">
