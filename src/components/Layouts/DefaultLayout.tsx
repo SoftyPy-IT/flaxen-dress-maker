@@ -24,7 +24,7 @@ export default function DefaultLayout({
           {/* <!-- ===== Header End ===== --> */}
 
           {/* <!-- ===== Main Content Start ===== --> */}
-          <main>
+          <main>            
             <div className="px-5 py-10">
               {children}
             </div>

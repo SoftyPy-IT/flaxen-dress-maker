@@ -66,7 +66,7 @@ const rows = [
 const FabricReg = () => {
   return (
     <>
-      <DefaultLayout>
+      {/* <DefaultLayout> */}
         <div className="mb-3 flex justify-between rounded bg-white p-2 shadow-md">
           <h3 className="text-2xl font-bold">Fabric Register</h3>
           <Link href="/super-admin/fabric-reg/add-fabric-reg">
@@ -171,7 +171,7 @@ const FabricReg = () => {
             </Table>
           </TableContainer>
         </Paper>
-      </DefaultLayout>
+      {/* </DefaultLayout> */}
     </>
   );
 };

@@ -81,7 +81,7 @@ const Page = () => {
   ];
 
   return (
-    <DefaultLayout>
+    <>
       <div className="a4-paper mx-auto bg-white p-5">
         <div className="flex items-center justify-between border-b pb-3">
           <div className="flex items-center gap-4">
@@ -280,7 +280,7 @@ const Page = () => {
           Download
         </Button>
       </div>
-    </DefaultLayout>
+    </>
   );
 };
 export default Page;

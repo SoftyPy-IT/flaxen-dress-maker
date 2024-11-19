@@ -33,7 +33,7 @@ const Page = () => {
   ];
   return (
     <>
-      <DefaultLayout>
+      <>
         <div className="flex justify-between rounded bg-white p-3 mb-5 ">
           <h4 className="text-center text-2xl">
             Daily Receive For{" "}
@@ -141,7 +141,7 @@ const Page = () => {
             </Table>
           </TableContainer>
         </Paper>
-      </DefaultLayout>
+      </>
       {open && <AddOrderModal open={open} setOpen={handleClose} />}
     </>
   );

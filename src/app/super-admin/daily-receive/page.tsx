@@ -72,7 +72,7 @@ const Page = () => {
     
 
     <>
-      <DefaultLayout>
+      <>
         <div className="mb-5 flex justify-between rounded bg-white p-5 shadow-md">
           <h3 className="text-2xl font-bold">Daily Receive from S/Others</h3>
           {/* <Link href="/super-admin/daily-receive/add-daily-receive"> */}
@@ -206,7 +206,7 @@ const Page = () => {
             </Table>
           </TableContainer>
         </Paper>
-      </DefaultLayout>
+      </>
 
       {open && <AddBuyerModal open={open} setOpen={handleClose} />}
       

@@ -59,7 +59,7 @@ const Page = () => {
     },
   ];
   return (
-    <DefaultLayout>
+    <>
       <div className="flex justify-between bg-white shadow-md rounded p-5 mb-5">
         <h3 className="text-2xl font-bold">Hourly Receive from S/Others</h3>
         <Link href="/super-admin/hourly-receive/add-hourly-receive">
@@ -135,7 +135,7 @@ const Page = () => {
           </Table>
         </TableContainer>
       </Paper>
-    </DefaultLayout>
+    </>
   );
 };
 

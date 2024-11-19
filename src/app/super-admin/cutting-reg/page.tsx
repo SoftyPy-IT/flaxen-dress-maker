@@ -63,7 +63,7 @@ const rows = [
 const Page = () => {
   return (
     <>
-      <DefaultLayout>
+      <>
         <div className=" mb-3 flex justify-between rounded bg-white p-2 shadow-md">
           <h3 className="text-2xl font-bold">Cutting Register</h3>
           <Link href="/super-admin/cutting-reg/add-cutting-reg">
@@ -149,7 +149,7 @@ const Page = () => {
             </Table>
           </TableContainer>
         </Paper>
-      </DefaultLayout>
+      </>
     </>
   );
 };

@@ -5,7 +5,7 @@ import DefaultLayout from "@/components/Layouts/DefaultLayout";
 
 const page = () => {
   return (
-    <DefaultLayout>
+    <>
       <Paper sx={{ padding: 3 }}>
         <h3 className="mb-5 text-center text-2xl font-bold">
           Update Fabric Requisition
@@ -78,7 +78,7 @@ const page = () => {
           </Grid>
         </form>
       </Paper>
-    </DefaultLayout>
+    </>
   );
 };
 
