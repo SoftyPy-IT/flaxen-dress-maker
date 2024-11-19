@@ -133,8 +133,6 @@
 
 // export default page;
 
-
-
 "use client";
 
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
@@ -202,12 +200,12 @@ const Page = () => {
   ];
 
   return (
-    <DefaultLayout>
+    <>
       <div className="a4-paper mx-auto bg-white p-5">
-      <div className="flex items-center justify-between border-b pb-3">
+        <div className="flex items-center justify-between border-b pb-3">
           <div className="flex items-center gap-4">
             <Image src={flaxen} alt="Company Logo" width={40} height={40} />
-            <div >
+            <div>
               <h1 className="text-lg font-bold">Flaxen Dress Maker Ltd</h1>
               <p className="text-sm">
                 Factory: Meghdubi, Gazipur-1700, Bangladesh
@@ -232,32 +230,17 @@ const Page = () => {
             </p>
           </div>
         </div>
-        <div className="text-center bg-gray-400 p-2  w-[150px] mx-auto mt-2 text-sm text-white">
-        <h5 className="">DELIVERY CHALLAN</h5>
+
+        <div className="mx-auto my-2 w-[150px]  bg-gray-400 p-2 text-center text-sm text-white uppercase">
+          <h5 className="">Hourly Received</h5>
         </div>
-        <div className="flex justify-between">
-          <div className="p-2 space-y-2">
-            <p> Buyer&apos;s Name & Address:</p>
-            <p className="text-sm">
-              <span className="font-bold">John Doe</span>
-            </p>
-            <p className="text-sm">Dhaka, Bangladesh</p>
-          </div>
-          <div className="p-2 space-y-3">
-            <p> No:</p>
-            <p className="text-sm">
-              <span className="font-bold">Date:......................</span>
-            </p>
-            <p className="text-sm">Buyer:......................</p>
-            <p className="text-sm">Ref.:......................</p>
-          </div>
-        </div>
+       
 
         <Paper elevation={0}>
           <TableContainer>
             <Table>
               <TableHead>
-              <TableRow
+                <TableRow
                   className="bg-[#f3f3f3]"
                   sx={{
                     "& th": {
@@ -265,37 +248,36 @@ const Page = () => {
                     },
                   }}
                 >
-                <TableCell align="center">Time</TableCell>
-                <TableCell align="center">SW/REC</TableCell>
-                <TableCell align="center">S/Sign</TableCell>
-                <TableCell align="center">F/Send</TableCell>
-                <TableCell align="center">F/Sign</TableCell>
-              </TableRow>
+                  <TableCell align="center">Time</TableCell>
+                  <TableCell align="center">SW/REC</TableCell>
+                  <TableCell align="center">S/Sign</TableCell>
+                  <TableCell align="center">F/Send</TableCell>
+                  <TableCell align="center">F/Sign</TableCell>
+                </TableRow>
               </TableHead>
               <TableBody>
                 {rows.map((row) => (
                   <TableRow
-                  key={row.id}
-                  sx={{
-                    "& td": {
-                      border: "1px solid rgba(224, 224, 224, 1)",
-                    },
-                  }}
-                >
-                  <TableCell align="center">{row.time}</TableCell>
-                  <TableCell align="center">{row.sw_rec}</TableCell>
-                  <TableCell align="center">{row.s_sing}</TableCell>
-                  <TableCell align="center">{row.f_send}</TableCell>
-                  <TableCell align="center">{row.f_sign}</TableCell>
-                </TableRow>
+                    key={row.id}
+                    sx={{
+                      "& td": {
+                        border: "1px solid rgba(224, 224, 224, 1)",
+                      },
+                    }}
+                  >
+                    <TableCell align="center">{row.time}</TableCell>
+                    <TableCell align="center">{row.sw_rec}</TableCell>
+                    <TableCell align="center">{row.s_sing}</TableCell>
+                    <TableCell align="center">{row.f_send}</TableCell>
+                    <TableCell align="center">{row.f_sign}</TableCell>
+                  </TableRow>
                 ))}
               </TableBody>
             </Table>
           </TableContainer>
         </Paper>
-       
       </div>
-      <style jsx>{`
+      {/* <style jsx>{`
         .a4-paper {
           width: 210mm;
           height: 297mm;
@@ -315,8 +297,8 @@ const Page = () => {
             display: none;
           }
         }
-      `}</style>
-      
+      `}</style> */}
+
       <div className=" mt-6 flex justify-center gap-3">
         <Button variant="contained" disableElevation startIcon={<EditIcon />}>
           Edit
@@ -332,7 +314,7 @@ const Page = () => {
           Download
         </Button>
       </div>
-    </DefaultLayout>
+    </>
   );
 };
 

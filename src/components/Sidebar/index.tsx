@@ -25,6 +25,7 @@ import LibraryAddIcon from "@mui/icons-material/LibraryAdd";
 import ConstructionIcon from '@mui/icons-material/Construction';
 import ContentCutIcon from '@mui/icons-material/ContentCut';
 import OfflinePinIcon from '@mui/icons-material/OfflinePin';
+import CancelIcon from '@mui/icons-material/Cancel';
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -103,6 +104,11 @@ const menuGroups = [
       //   icon: <OfflinePinIcon />,
       // },
       // ------------------------------
+      {
+        label: "Reject",
+        route: "/super-admin/reject",
+        icon: <CancelIcon />,
+      },
       {
         label: "Sample Section",
         route: "/super-admin/sample",

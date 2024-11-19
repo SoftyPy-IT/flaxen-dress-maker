@@ -5,7 +5,7 @@ import DefaultLayout from "@/components/Layouts/DefaultLayout";
 
 const page = () => {
   return (
-    <DefaultLayout>
+    <>
       <Paper sx={{ padding: 3 }}>
         <h3 className="text-2xl text-center font-bold mb-5">Update Packing</h3>
         <form>
@@ -97,7 +97,7 @@ const page = () => {
           </Grid>
         </form>
       </Paper>
-    </DefaultLayout>
+    </>
   );
 };
 

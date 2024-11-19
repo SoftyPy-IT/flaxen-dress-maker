@@ -6,7 +6,7 @@ import flaxen from "../../../../../public/images/logos/flaxen.png";
 import Image from "next/image";
 const page = () => {
   return (
-    <DefaultLayout>
+    <>
       <div className="mb-5 text-center">
         <div className="mb-3 flex items-center justify-center gap-2">
           <Image src={flaxen} alt="img" className="h-10 w-10" />
@@ -121,7 +121,7 @@ const page = () => {
           </Grid>
         </form>
       </Paper>
-    </DefaultLayout>
+    </>
   );
 };
 

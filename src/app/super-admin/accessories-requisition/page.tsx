@@ -62,7 +62,7 @@ const Page = () => {
   ];
   return (
     <>
-      <DefaultLayout>
+      <>
         <div className="mb-5 flex justify-between rounded bg-white p-5 shadow-md">
           <h3 className="text-2xl font-bold">Accessories Requisition</h3>
           <Link href="/super-admin/accessories-requisition/add-accessories-requisition">
@@ -233,7 +233,7 @@ const Page = () => {
             </Table>
           </TableContainer>
         </Paper>
-      </DefaultLayout>
+      </>
     </>
   );
 };

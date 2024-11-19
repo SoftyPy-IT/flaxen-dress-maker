@@ -110,7 +110,7 @@ const rows = [
 
 const page = () => {
   return (
-    <DefaultLayout>
+    <>
       <div className="mb-5 flex justify-between rounded bg-white p-5 shadow-md">
         <h3 className="text-2xl font-bold">Fabric Requisition</h3>
         <Link href="/super-admin/requisition/add-requisition">
@@ -298,7 +298,7 @@ const page = () => {
           </Table>
         </TableContainer>
       </Paper>
-    </DefaultLayout>
+    </>
   );
 };
 

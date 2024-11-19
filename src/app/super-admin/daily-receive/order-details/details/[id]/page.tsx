@@ -8,21 +8,19 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import EditIcon from "@mui/icons-material/Edit";
-import DeleteIcon from "@mui/icons-material/Delete";
-import Link from "next/link";
-import DefaultLayout from "@/components/Layouts/DefaultLayout";
 import { Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import { TextField, Grid } from "@mui/material";
 import { useState } from "react";
-import { Box, IconButton } from "@mui/material";
+import { IconButton } from "@mui/material";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import Image from "next/image";
 import flaxen from "../../../../../../../public/images/logos/flaxen.png";
+import PhoneIcon from "@mui/icons-material/Phone";
+import FaxIcon from "@mui/icons-material/Fax";
+import EmailIcon from "@mui/icons-material/Email";
+import LanguageIcon from "@mui/icons-material/Language";
 
-// Mock Data (you can replace this with actual data fetching logic)
 const data = [
   {
     id: 1,
@@ -34,7 +32,6 @@ const data = [
       { challanNo: 3, qty: 16 },
       { challanNo: 4, qty: 40 },
       { challanNo: 5, qty: 40 },
-     
     ],
   },
   {
@@ -51,7 +48,7 @@ const data = [
     lineNo: 108,
     product: 548,
     challans: [
-      { challanNo:2, qty: 90 },
+      { challanNo: 2, qty: 90 },
       { challanNo: 5, qty: 100 },
     ],
   },
@@ -133,55 +130,56 @@ const Page = () => {
 
   return (
     <>
-      <DefaultLayout>
-      <div className="mb-3 text-center gap-2">
-          <div className="mb-3 flex items-center justify-center gap-2">
-            <Image src={flaxen} alt="img" className="h-10 w-10" />
-            <h1>Flaxen Dress Maker Ltd</h1>
+      <>
+        <div className="flex items-center justify-between border-b pb-3">
+          <div className="flex items-center gap-4">
+            <Image src={flaxen} alt="Company Logo" width={40} height={40} />
+            <div>
+              <h1 className="text-lg font-bold">Flaxen Dress Maker Ltd</h1>
+              <p className="text-sm">
+                Factory: Meghdubi, Gazipur-1700, Bangladesh
+              </p>
+              <p className="text-sm">
+                Corporate Office: House# 35, Road# 9, Sector# 15, Uttara, Dhaka
+              </p>
+            </div>
           </div>
-          <p>
-            Factory: Meghdubi; Ward-40, Gazipur City Corporation, Gazipur-1700,
-            Bangladesh
-          </p>
-          <p>
-            Corporate Office : House# 35, Road# 9, Sector# 15, Uttara, Dhaka
-          </p>
-          <p>
-            Phone : +880-2-8913263, 8916198, Fax : +88-02-8913263 E-mail :
-            flaxen@flaxengroup.com, Web : www.flaxengroup.com
-          </p>
-        </div>
+          <div className="text-right">
+            <p className="text-left text-sm">
+              <PhoneIcon fontSize="small" /> +880-2-8913263, 8916198
+            </p>
+            <p className="text-left text-sm">
+              <FaxIcon fontSize="small" /> +88-02-8913263
+            </p>
+            <p className="text-left text-sm">
+              <EmailIcon fontSize="small" /> flaxen@flaxengroup.com
+            </p>
+            <p className="text-left text-sm">
+              <LanguageIcon fontSize="small" /> www.flaxengroup.com
+            </p>
+          </div>
+        </div>        
+
         <div>
+          <h4 className="text-center font-normal">
+            Daily Receive For{" "}
+            <span className="font-bold">PRANATAL, France.</span>
+          </h4>
           
-          <h3 className="text-center font-normal">
-          Daily Receive For <span className="font-bold">PRANATAL, France.</span></h3>
-          {/* <h4 className="text-center font-bold">
-            Order No:{" "}
-            <span className="text-center font-normal"> E508TS004</span>
-          </h4> */}
-          <h4 className="text-center font-bold">
+          <h5 className="text-center font-bold">
             Color: <span className="text-center font-normal"> Almond </span>
-          </h4>
-          <h4 className="text-center font-bold">
+          </h5>
+          <h5 className="text-center font-bold">
             Style No: <span className="text-center font-normal"> 01</span>
-          </h4>
+          </h5>
 
           <div className="m-3 flex justify-between">
-          <h4 className="text-center font-bold">
-            Order No:{" "}
-            <span className="text-center font-normal"> E508TS004</span>
-          </h4>
+            <h5 className="text-center font-bold">
+              Order No:{" "}
+              <span className="text-center font-normal"> E508TS004</span>
+            </h5>
             <h5>Date: 05-12-2024</h5>
-            {/* <Link href="/super-admin/daily-receive/add-daily-receive"> */}
-            {/* <Button
-              variant="contained"
-              disableElevation
-              startIcon={<AddIcon />}
-              href="/super-admin/daily-receive/order-details/details/add-daily-receive"
-            >
-              Add
-            </Button> */}
-            {/* </Link> */}
+           
           </div>
 
           <Paper sx={{ width: "100%", overflow: "hidden" }}>
@@ -195,49 +193,40 @@ const Page = () => {
                   }}
                 >
                   <TableRow className="bg-[#5D87FF]">
-                    <TableCell sx={{ color: "white" }}>
-                      Challan No
-                    </TableCell>
-                    {/* Render Line Nos as headers */}
+                    <TableCell sx={{ color: "white" }}>Challan No</TableCell>
+                  
                     {data.map((row, index) => (
                       <TableCell
                         key={index}
-                        // className="whitespace-nowrap text-white"
+                        
                         sx={{ color: "white" }}
                         align="center"
                       >
                         Line No {row.lineNo}
                       </TableCell>
                     ))}
-                    {/* <TableCell
-                    align="center"
-                    className="whitespace-nowrap text-white"
-                  >
-                    Action
-                  </TableCell> */}
+                    
                   </TableRow>
                 </TableHead>
 
                 <TableBody>
-                  <TableCell className="bg-[#dde5f8]">
-                    Total Product
-                  </TableCell>
+                  <TableCell className="bg-[#dde5f8]">Total Product</TableCell>
                   {data.map((row, index) => (
                     <TableCell
                       key={index}
                       align="center"
-                      className="bg-[#dde5f8] whitespace-nowrap"
+                      className="whitespace-nowrap bg-[#dde5f8]"
                     >
                       {row.product}
                     </TableCell>
                   ))}
-                  {/* Rows for each Challan Number */}
+                 
                   {challanNos.map((challanNo) => (
                     <TableRow key={challanNo}>
-                      {/* Show Challan No in the first column */}
+                      
                       <TableCell>{`Cha. No ${challanNo}`}</TableCell>
 
-                      {/* Show quantities for each line under respective columns */}
+                      
                       {data.map((row, index) => {
                         const challan = row.challans.find(
                           (challan) => challan.challanNo === challanNo,
@@ -281,13 +270,13 @@ const Page = () => {
         <div className="mt-4">
           <Paper sx={{ padding: 2 }}>
             <h3 className="mb-3 text-center text-2xl font-bold">
-            Daily Receive
+              Daily Receive
             </h3>
 
             {dailyReceive.map((mother, motherIndex) => (
               <div key={motherIndex} className="mb-4">
                 <div className="mb-4 gap-4">
-                  {/* 1st part: Mother component */}
+                  
                   <div className="flex flex-1 gap-2 rounded border p-2">
                     <div className="flex w-full gap-2">
                       <TextField
@@ -354,7 +343,7 @@ const Page = () => {
                     </div>
                   </div>
 
-                  {/* 2nd part: Add/Remove Mother Component */}
+                  
                   <div className="mt-2 flex items-center justify-start gap-2">
                     <Button
                       onClick={handleAddDailyReceive}
@@ -371,24 +360,7 @@ const Page = () => {
                     >
                       Remove
                     </Button>
-                    {/* <IconButton
-                      onClick={handleAddDailyReceive}
-                      sx={{
-                        backgroundColor: "#e1e4f9",
-                        "&:hover": { backgroundColor: "#d0d3f0" },
-                      }}
-                    >
-                      <AddIcon />
-                    </IconButton>
-                    <IconButton
-                      onClick={() => handleDeleteDailyReceive(motherIndex)}
-                      sx={{
-                        backgroundColor: "#e1e4f9",
-                        "&:hover": { backgroundColor: "#d0d3f0" },
-                      }}
-                    >
-                      <RemoveCircleOutlineIcon className="text-red-600" />
-                    </IconButton> */}
+                    
                   </div>
                 </div>
               </div>
@@ -408,7 +380,7 @@ const Page = () => {
             </Grid>
           </Paper>
         </div>
-      </DefaultLayout>
+      </>
     </>
   );
 };

@@ -79,7 +79,7 @@ const page = () => {
     },
   ];
   return (
-    <DefaultLayout>
+    <>
       <div className="flex justify-between bg-white shadow-md rounded p-5 mb-5">
         <h3 className="text-2xl font-bold">Sample Section</h3>
         <Link href="/super-admin/sample/add-sample">
@@ -168,7 +168,7 @@ const page = () => {
           </Table>
         </TableContainer>
       </Paper>
-    </DefaultLayout>
+    </>
   );
 };
 

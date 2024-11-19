@@ -41,7 +41,7 @@ const Page = () => {
   };
 
   return (
-    <DefaultLayout>
+    <>
       <Paper sx={{ padding: 3 }}>
         <h3 className="mb-5 text-center text-2xl font-bold">Add Daily Receive</h3>
 
@@ -121,7 +121,7 @@ const Page = () => {
           </div>
         </Grid>
       </Paper>
-    </DefaultLayout>
+    </>
   );
 };
 
