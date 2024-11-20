@@ -9,7 +9,6 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import FormIcon from "@mui/icons-material/Description";
 import SignInIcon from "@mui/icons-material/Login";
 import SignUpIcon from "@mui/icons-material/AppRegistration";
-import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import CloseIcon from "@mui/icons-material/Close";
 import AccessTimeFilledIcon from "@mui/icons-material/AccessTimeFilled";
 import InventoryIcon from "@mui/icons-material/Inventory";
@@ -19,13 +18,12 @@ import CategoryIcon from "@mui/icons-material/Category";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import ListAltIcon from "@mui/icons-material/ListAlt";
 import AssignmentIcon from "@mui/icons-material/Assignment";
-import LoginIcon from "@mui/icons-material/Login";
-import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
 import LibraryAddIcon from "@mui/icons-material/LibraryAdd";
-import ConstructionIcon from '@mui/icons-material/Construction';
-import ContentCutIcon from '@mui/icons-material/ContentCut';
-import OfflinePinIcon from '@mui/icons-material/OfflinePin';
-import CancelIcon from '@mui/icons-material/Cancel';
+import ConstructionIcon from "@mui/icons-material/Construction";
+import ContentCutIcon from "@mui/icons-material/ContentCut";
+import OfflinePinIcon from "@mui/icons-material/OfflinePin";
+import CancelIcon from "@mui/icons-material/Cancel";
+import AddBoxIcon from '@mui/icons-material/AddBox';
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -40,110 +38,194 @@ const menuGroups = [
         route: "/",
         icon: <DashboardIcon />,
       },
+      
       {
-        label: "Register",
+        label: "Fabric Stock Register",
         route: "#",
-        icon: <FormIcon />,
+        icon: <InventoryIcon />,
         children: [
-          { label: "Fabric Stock Register", route: "/super-admin/stock", icon: <InventoryIcon />, },
-          { label: "Fabric Register", route: "/super-admin/fabric-reg", icon: <InventoryIcon />, },
-          { label: "Cutting Register", route: "/super-admin/cutting-reg", icon: <InventoryIcon />, },
+          {
+            label: "+ Add Stock Register",
+            route: "/super-admin/stock/add-stock",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Stock Register Index", route: "/super-admin/stock" },
         ],
       },
-      // {
-      //   label: "Fabric Stock Register",
-      //   route: "/super-admin/stock",
-      //   icon: <InventoryIcon />,
-      // },
       // ----------------------------
-      // {
-      //   label: "Fabric Register",
-      //   route: "/super-admin/fabric-reg",
-      //   icon: <LibraryAddIcon />,
-      // },
       {
-        label: "Requisition",
+        label: "Fabric Register",
         route: "#",
-        icon: <FormIcon />,
+        icon: <LibraryAddIcon />,
         children: [
-          { label: "Accessories Requisition", route: "/super-admin/accessories-requisition" },
-          { label: "Fabric Requisition", route: "/super-admin/requisition" },
+          {
+            label: "+ Add Fabric Register",
+            route: "/super-admin/fabric-reg/add-fabric-reg",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Fabric Register Index", route: "/super-admin/fabric-reg" },
+        ],
+      },
+      
+      {
+        label: "Accessories Requisition",
+        route: "#",
+        icon: <ConstructionIcon />,
+        children: [
+          {
+            label: "+ Add Accessories Requisition",
+            route: "/super-admin/accessories-requisition/add-accessories-requisition",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Accessories Requisition Index", route: "/super-admin/accessories-requisition" },
         ],
       },
       {
-        label: "Receive",
+        label: "Cutting Register",
         route: "#",
+        icon: <ContentCutIcon />,
+        children: [
+          {
+            label: "+ Add Cutting Register",
+            route: "/super-admin/cutting-reg/add-fabric-reg",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Cutting Register Index", route: "/super-admin/cutting-reg" },
+        ],
+      },
+      {
+        label: "Daily Receive",
+        route: "/super-admin/daily-receive",
         icon: <OfflinePinIcon />,
-        children: [
-          { label: "Daily Receive", route: "/super-admin/daily-receive" },
-          { label: "Hourly Receive", route: "/super-admin/hourly-receive" },
-        ],
+        // children: [
+        //   {
+        //     label: "+ Add Fabric Register",
+        //     route: "/super-admin/fabric-reg/add-fabric-reg",
+        //     // icon: <AddBoxIcon />,
+        //   },
+        //   { label: "Fabric Register Index", route: "/super-admin/fabric-reg" },
+        // ],
       },
-      {
-        label: "Challan",
-        route: "#",
-        icon: <LocalOfferIcon />,
-        children: [
-          { label: "Work Challan", route: "/super-admin/work-challan" },
-          { label: "Shipment Challan", route: "/super-admin/shipment-challan" },
-        ],
-      },
-      // {
-      //   label: "Accessories Requisition",
-      //   route: "/super-admin/accessories-requisition",
-      //   icon: <ConstructionIcon />,
-      // },
-      // {
-      //   label: "Cutting Register",
-      //   route: "/super-admin/cutting-reg",
-      //   icon: <ContentCutIcon />,
-      // },
-      // {
-      //   label: "Daily Receive",
-      //   route: "/super-admin/daily-receive",
-      //   icon: <OfflinePinIcon />,
-      // },
       // ------------------------------
       {
         label: "Reject",
-        route: "/super-admin/reject",
+        route: "#",
         icon: <CancelIcon />,
+        children: [
+          {
+            label: "+ Add Reject",
+            route: "/super-admin/reject/add-reject",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Reject Index", route: "/super-admin/reject" },
+        ],
       },
       {
         label: "Sample Section",
-        route: "/super-admin/sample",
+        route: "#",
         icon: <CategoryIcon />,
+        children: [
+          {
+            label: "+ Add Sample Section",
+            route: "/super-admin/sample/add-sample",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Sample Section Index", route: "/super-admin/sample" },
+        ],
       },
-      // {
-      //   label: "Fabric Requisition",
-      //   route: "/super-admin/requisition",
-      //   icon: <FormatListBulletedIcon />,
-      // },
-      // {
-      //   label: "Delivery Challan",
-      //   route: "/super-admin/challan",
-      //   icon: <LocalOfferIcon />,
-      // },
+      {
+        label: "Fabric Requisition",
+        route: "#",
+        icon: <FormatListBulletedIcon />,
+        children: [
+          {
+            label: "+ Add Fabric Requisition",
+            route: "/super-admin/requisition/add-requisition",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Fabric Requisition Index", route: "/super-admin/requisition" },
+        ],
+      },
+      {
+        label: "Shipment Challan",
+        route: "#",
+        icon: <LocalOfferIcon />,
+        children: [
+          {
+            label: "+ Add Shipment Challan",
+            route: "/super-admin/shipment-challan/add-challan",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Shipment Challan Index", route: "/super-admin/shipment-challan" },
+        ],
+      },
+      {
+        label: "Work Challan",
+        route: "#",
+        icon: <LocalOfferIcon />,
+        children: [
+          {
+            label: "+ Add Work Challan",
+            route: "/super-admin/work-challan/add-challan",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Work Challan Index", route: "/super-admin/work-challan" },
+        ],
+      },
+
       {
         label: "Packing List",
-        route: "/super-admin/packing",
+        route: "#",
         icon: <ListAltIcon />,
+        children: [
+          {
+            label: "+ Add Packing List",
+            route: "/super-admin/packing/add-packing",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Packing List Index", route: "/super-admin/packing" },
+        ],
       },
-      // {
-      //   label: "Work Order",
-      //   route: "/super-admin/order",
-      //   icon: <AssignmentIcon />,
-      // },
-      // {
-      //   label: "Accessories Delivery",
-      //   route: "/super-admin/accessories-delivery",
-      //   icon: <LocalShippingIcon />,
-      // },
-      // {
-      //   label: "Hourly Receive",
-      //   route: "/super-admin/hourly-receive",
-      //   icon: <AccessTimeFilledIcon />,
-      // },
+      {
+        label: "Work Order",
+        route: "#",
+        icon: <AssignmentIcon />,
+        children: [
+          {
+            label: "+ Add Work Order",
+            route: "/super-admin/order/add-order",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Work Order Index", route: "/super-admin/order" },
+        ],
+      },
+
+      {
+        label: "Accessories Delivery",
+        route: "#",
+        icon: <LocalShippingIcon />,
+        children: [
+          {
+            label: "+ Add Accessories Delivery",
+            route: "/super-admin/accessories-delivery/add-accessories",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Accessories Delivery Index", route: "/super-admin/accessories-delivery" },
+        ],
+      },
+      {
+        label: "Hourly Receive",
+        route: "#",
+        icon: <AccessTimeFilledIcon />,
+        children: [
+          {
+            label: "+ Add Hourly Receive",
+            route: "/super-admin/hourly-receive/add-hourly-receive",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Hourly Receive Index", route: "/super-admin/hourly-receive" },
+        ],
+      },
 
       {
         label: "Forms",
@@ -160,6 +242,21 @@ const menuGroups = [
         icon: <SettingsIcon />,
       },
       {
+        label: "All Challan Design",
+        route: "#",
+        icon: <SettingsIcon />,
+        children: [
+          {
+            label: "Printing Unit Challan",
+            route: "/super-admin/allchallandesign/printing",
+          },
+          {
+            label: "Delivery Challan",
+            route: "/super-admin/allchallandesign/delivery",
+          },
+        ],
+      },
+      {
         label: "Authentication",
         route: "#",
         icon: <SignInIcon />,
@@ -168,6 +265,58 @@ const menuGroups = [
           { label: "Sign Up", route: "/auth/signup", icon: <SignUpIcon /> },
         ],
       },
+      // {
+      //   label: "Requisition",
+      //   route: "#",
+      //   icon: <FormIcon />,
+      //   children: [
+      //     {
+      //       label: "Accessories Requisition",
+      //       route: "/super-admin/accessories-requisition",
+      //     },
+      //     { label: "Fabric Requisition", route: "/super-admin/requisition" },
+      //   ],
+      // },
+      // {
+      //   label: "Receive",
+      //   route: "#",
+      //   icon: <OfflinePinIcon />,
+      //   children: [
+      //     { label: "Daily Receive", route: "/super-admin/daily-receive" },
+      //     { label: "Hourly Receive", route: "/super-admin/hourly-receive" },
+      //   ],
+      // },
+      // {
+      //   label: "Challan",
+      //   route: "#",
+      //   icon: <LocalOfferIcon />,
+      //   children: [
+      //     { label: "Work Challan", route: "/super-admin/work-challan" },
+      //     { label: "Shipment Challan", route: "/super-admin/shipment-challan" },
+      //   ],
+      // },
+      // {
+      //   label: "Register",
+      //   route: "#",
+      //   icon: <FormIcon />,
+      //   children: [
+      //     {
+      //       label: "Fabric Stock Register",
+      //       route: "/super-admin/stock",
+      //       icon: <InventoryIcon />,
+      //     },
+      //     {
+      //       label: "Fabric Register",
+      //       route: "/super-admin/fabric-reg",
+      //       icon: <InventoryIcon />,
+      //     },
+      //     {
+      //       label: "Cutting Register",
+      //       route: "/super-admin/cutting-reg",
+      //       icon: <InventoryIcon />,
+      //     },
+      //   ],
+      // },
     ],
   },
 ];
@@ -179,7 +328,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   return (
     <ClickOutside onClick={() => setSidebarOpen(false)}>
       <aside
-        className={`fixed left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden border-r bg-white duration-300 ease-linear lg:translate-x-0 ${
+        className={`fixed left-0 top-0 z-9999 flex h-screen w-[280px] flex-col overflow-y-hidden border-r bg-white duration-300 ease-linear lg:translate-x-0 ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -197,11 +346,10 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             {sidebarOpen && <CloseIcon />}
           </button>
         </div>
-        {/* <!-- SIDEBAR HEADER --> */}
 
         <div className="no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear">
           {/* <!-- Sidebar Menu --> */}
-          <nav className="mt-5 px-4 py-4 lg:mt-9 lg:px-6">
+          <nav className="mt-5 px-4 py-4 lg:mt-9 lg:px-4">
             {menuGroups.map((group, groupIndex) => (
               <div key={groupIndex}>
                 <ul className="mb-6 flex flex-col gap-1.5">
@@ -217,7 +365,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               </div>
             ))}
           </nav>
-          {/* <!-- Sidebar Menu --> */}
         </div>
       </aside>
     </ClickOutside>

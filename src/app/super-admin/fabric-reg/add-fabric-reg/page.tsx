@@ -1,33 +1,20 @@
 "use client";
 import * as React from "react";
-import { Button, TextField, Paper, Grid, Typography } from "@mui/material";
+import { Button, TextField, Paper, Grid } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-import flaxen from "../../../../../public/images/logos/flaxen.png";
-import Image from "next/image";
+import TopSection from "@/components/shared/TopSection/TopSection";
 
 const Page = () => {
   return (
     <>
-    <div className="mb-5 text-center">
-        <div className="mb-3 flex items-center justify-center gap-2">
-          <Image src={flaxen} alt="img" className="h-10 w-10" />
-          <h1>Flaxen Dress Maker Ltd</h1>
-        </div>
-        <p>
-          Factory: Meghdubi; Ward-40, Gazipur City Corporation, Gazipur-1700,
-          Bangladesh
-        </p>
-        <p>Corporate Office : House# 35, Road# 9, Sector# 15, Uttara, Dhaka</p>
-        <p>
-          Phone : +880-2-8913263, 8916198, Fax : +88-02-8913263 E-mail :
-          flaxen@flaxengroup.com, Web : www.flaxengroup.com
-        </p>
-      </div>
-      <Paper sx={{ padding: 3, margin: "auto" }}>
-        <h3 className="text-2xl text-center font-bold">
+      <TopSection />
+      <div className="flex justify-center">
+        <h3 className="my-3 inline-block  bg-gray-400 p-2 uppercase text-white">
           Add Fabric Register
         </h3>
-        <hr className="my-3"/>
+      </div>
+      <Paper sx={{ padding: 3, margin: "auto" }}>
+        <hr className="my-3" />
         <div className="">
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
@@ -43,7 +30,7 @@ const Page = () => {
             <Grid item xs={12} sm={6}>
               <TextField label="Color" name="color" fullWidth size="medium" />
             </Grid>
-         			
+
             <Grid item xs={12} sm={6}>
               <TextField label="Lot/B No" name="lot" fullWidth size="medium" />
             </Grid>
@@ -60,12 +47,7 @@ const Page = () => {
               <TextField label="CH/No" name="cn" fullWidth size="medium" />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <TextField
-                label="DIA"
-                name="dia"
-                fullWidth
-                size="medium"
-              />
+              <TextField label="DIA" name="dia" fullWidth size="medium" />
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -77,26 +59,61 @@ const Page = () => {
               />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <TextField label="FAB REQ" name="fabreq" fullWidth size="medium" />
+              <TextField
+                label="FAB REQ"
+                name="fabreq"
+                fullWidth
+                size="medium"
+              />
             </Grid>
-            				
+
             <Grid item xs={12} sm={6}>
-              <TextField label="Fabric Gross Weight" name="gross" fullWidth size="medium" />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField label="Fabric Finish Weight" name="finish" fullWidth size="medium" />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField label="RIB/COLL/REQ" name="rib" fullWidth size="medium" />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField label="RIB/COLLER Gross Weight" name="ribgrossweight" fullWidth size="medium" />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField label="RIB/COLLER Finish Weight" name="ribfinishweight" fullWidth size="medium" />
+              <TextField
+                label="Fabric Gross Weight"
+                name="gross"
+                fullWidth
+                size="medium"
+              />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <TextField label="BIN/RACK No" name="binno" fullWidth size="medium" />
+              <TextField
+                label="Fabric Finish Weight"
+                name="finish"
+                fullWidth
+                size="medium"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="RIB/COLL/REQ"
+                name="rib"
+                fullWidth
+                size="medium"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="RIB/COLLER Gross Weight"
+                name="ribgrossweight"
+                fullWidth
+                size="medium"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="RIB/COLLER Finish Weight"
+                name="ribfinishweight"
+                fullWidth
+                size="medium"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="BIN/RACK No"
+                name="binno"
+                fullWidth
+                size="medium"
+              />
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -110,7 +127,12 @@ const Page = () => {
               <TextField label="Name" name="name" fullWidth size="medium" />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <TextField label="Balance" name="balance" fullWidth size="medium" />
+              <TextField
+                label="Balance"
+                name="balance"
+                fullWidth
+                size="medium"
+              />
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField label="Remark" name="remark" fullWidth size="medium" />
