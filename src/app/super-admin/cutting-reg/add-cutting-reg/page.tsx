@@ -6,6 +6,12 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import Image from "next/image";
 import flaxen from "../../../../../public/images/logos/flaxen.png";
+import PrintIcon from "@mui/icons-material/Print";
+import PhoneIcon from "@mui/icons-material/Phone";
+import FaxIcon from "@mui/icons-material/Fax";
+import EmailIcon from "@mui/icons-material/Email";
+import LanguageIcon from "@mui/icons-material/Language";
+import TopSection from "@/components/shared/TopSection/TopSection";
 
 const Page = () => {
   const [subCategories, setSubCategories] = React.useState<string[]>([""]);
@@ -28,23 +34,13 @@ const Page = () => {
   };
   return (
     <>
-    <div className="mb-5 text-center">
-        <div className="mb-3 flex items-center justify-center gap-2">
-          <Image src={flaxen} alt="img" className="h-10 w-10" />
-          <h1>Flaxen Dress Maker Ltd</h1>
-        </div>
-        <p>
-          Factory: Meghdubi; Ward-40, Gazipur City Corporation, Gazipur-1700,
-          Bangladesh
-        </p>
-        <p>Corporate Office : House# 35, Road# 9, Sector# 15, Uttara, Dhaka</p>
-        <p>
-          Phone : +880-2-8913263, 8916198, Fax : +88-02-8913263 E-mail :
-          flaxen@flaxengroup.com, Web : www.flaxengroup.com
-        </p>
+      <TopSection />
+      <div className="flex justify-center">
+        <h3 className="my-3 inline-block  bg-gray-400 p-2 uppercase text-white">
+          Add Cutting Register
+        </h3>
       </div>
       <Paper sx={{ padding: 3, margin: "auto" }}>
-        <h3 className="text-2xl text-center font-bold">Add Cutting Register</h3>
         <hr className="my-3" />
         <div className="">
           <Grid container spacing={2}>
@@ -128,14 +124,13 @@ const Page = () => {
             {/* <Grid item xs={12} sm={6}>
               <TextField label="Size" name="delivery" fullWidth size="medium" />
             </Grid> */}
-            <Grid item xs={12} sm={6}> 
-              <div className="w-full justify-center bg-white rounded ">
-                <div className="w-full mt-1">
-                  
+            <Grid item xs={12} sm={6}>
+              <div className="w-full justify-center rounded bg-white ">
+                <div className="mt-1 w-full">
                   {subCategories.map((subCategory, index) => (
                     <div
                       key={index}
-                      className="w-full flex gap-2 items-center content-center "
+                      className="flex w-full content-center items-center gap-2 "
                     >
                       <div className="flex w-[800px] gap-2">
                         <div className="w-full">
@@ -158,7 +153,7 @@ const Page = () => {
                           </Box>
                         </div>
                       </div>
-                      <div className="w-[100px] flex -mt-2 gap-1">
+                      <div className="-mt-2 flex w-[100px] gap-1">
                         <IconButton
                           onClick={handleAddSubCategory}
                           sx={{

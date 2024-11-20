@@ -10,10 +10,12 @@ import TableRow from "@mui/material/TableRow";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { Button } from "@mui/material";
+
 import AddIcon from "@mui/icons-material/Add";
 import Link from "next/link";
-import DefaultLayout from "@/components/Layouts/DefaultLayout";
+import { Button, TextField } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
+import { DatePicker } from "@mui/x-date-pickers";
 
 const rows = [
   {
@@ -116,14 +118,37 @@ const rows = [
 const page = () => {
   return (
     <>
-      <div className="mb-5 flex justify-between rounded bg-white p-5 shadow-md">
+      <div className="mb-5 flex flex-wrap items-center justify-between gap-5 rounded bg-white p-5 shadow-md">
         <h3 className="text-2xl font-bold">Stock Register</h3>
+        <div className=" w-[500px] flex items-center gap-3">
+          {/* Date Search Field */}
+          <TextField
+            name="date"
+            type="date"
+            InputLabelProps={{ shrink: true }}
+            fullWidth
+            size="small"
+          />
+
+          {/* Search Box */}
+          <TextField
+            size="small"
+            variant="outlined"
+            placeholder="Search by Order"
+            InputProps={{
+              endAdornment: <SearchIcon />,
+            }}
+            fullWidth
+          />
+          {/* Add Stock Button */}
         <Link href="/super-admin/stock/add-stock">
           <Button variant="contained" disableElevation startIcon={<AddIcon />}>
             Add
           </Button>
         </Link>
+        </div>        
       </div>
+
       <Paper sx={{ width: "100%", overflow: "hidden" }}>
         <TableContainer>
           <Table>
@@ -131,6 +156,7 @@ const page = () => {
               sx={{
                 "& th": {
                   border: "1px solid rgba(224, 224, 224, 1)",
+                  color: "white",
                 },
               }}
             >

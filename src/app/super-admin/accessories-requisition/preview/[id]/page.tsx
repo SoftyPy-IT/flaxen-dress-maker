@@ -80,39 +80,37 @@ const signatureRoles = [
 const Preview = () => {
   return (
     <>
-    <div className="flex items-center justify-between border-b pb-3">
-          <div className="flex items-center gap-4">
-            <Image src={flaxen} alt="Company Logo" width={40} height={40} />
-            <div>
-              <h1 className="text-lg font-bold">Flaxen Dress Maker Ltd</h1>
-              <p className="text-sm">
-                Factory: Meghdubi, Gazipur-1700, Bangladesh
-              </p>
-              <p className="text-sm">
-                Corporate Office: House# 35, Road# 9, Sector# 15, Uttara, Dhaka
-              </p>
-            </div>
-          </div>
-          <div className="text-right">
-            <p className="text-left text-sm">
-              <PhoneIcon fontSize="small" /> +880-2-8913263, 8916198
+      <div className="flex items-center justify-between border-b pb-3">
+        <div className="flex items-center gap-4">
+          <Image src={flaxen} alt="Company Logo" width={40} height={40} />
+          <div>
+            <h1 className="text-lg font-bold">Flaxen Dress Maker Ltd</h1>
+            <p className="text-sm">
+              Factory: Meghdubi, Gazipur-1700, Bangladesh
             </p>
-            <p className="text-left text-sm">
-              <FaxIcon fontSize="small" /> +88-02-8913263
-            </p>
-            <p className="text-left text-sm">
-              <EmailIcon fontSize="small" /> flaxen@flaxengroup.com
-            </p>
-            <p className="text-left text-sm">
-              <LanguageIcon fontSize="small" /> www.flaxengroup.com
+            <p className="text-sm">
+              Corporate Office: House# 35, Road# 9, Sector# 15, Uttara, Dhaka
             </p>
           </div>
         </div>
-        <div className="mx-auto my-2 w-[200px]  bg-gray-400 p-2 text-center text-sm text-white uppercase">
-          Accessories Requisition
+        <div className="text-right">
+          <p className="text-left text-sm">
+            <PhoneIcon fontSize="small" /> +880-2-8913263, 8916198
+          </p>
+          <p className="text-left text-sm">
+            <FaxIcon fontSize="small" /> +88-02-8913263
+          </p>
+          <p className="text-left text-sm">
+            <EmailIcon fontSize="small" /> flaxen@flaxengroup.com
+          </p>
+          <p className="text-left text-sm">
+            <LanguageIcon fontSize="small" /> www.flaxengroup.com
+          </p>
         </div>
-        
-
+      </div>
+      <div className="mx-auto my-2 w-[200px]  bg-gray-400 p-2 text-center text-sm uppercase text-white">
+        Accessories Requisition
+      </div>
 
       <Paper sx={{ width: "100%", overflow: "hidden" }}>
         <TableContainer>
@@ -198,15 +196,15 @@ const Preview = () => {
         }}
       >
         {signatureRoles.map((role, index) => (
-          <div key={index} className="text-center mt-14">
-            <div className="border-b border-black mb-2" />
+          <div key={index} className="mt-14 text-center">
+            <div className="mb-2 border-b border-black" />
             <span>{role}</span>
             <div>Signature</div>
           </div>
         ))}
       </div>
 
-      <div className="flex justify-end gap-5 mt-5">
+      <div className="mt-5 flex justify-end gap-5">
         <Button variant="contained" disableElevation startIcon={<PrintIcon />}>
           Print
         </Button>

@@ -12,6 +12,7 @@ import Image from "next/image";
 import { Button } from "@mui/material";
 import DownloadIcon from "@mui/icons-material/Download";
 import PrintIcon from "@mui/icons-material/Print";
+import TopSection from "@/components/shared/TopSection/TopSection";
 
 const rows = [
   {
@@ -114,158 +115,183 @@ const rows = [
 const page = () => {
   return (
     <>
-      <div className="text-center mb-5">
-        <div className="flex gap-2 items-center justify-center mb-3">
-          <Image src={flaxen} alt="img" className="h-10 w-10" />
-          <h1>Flaxen Dress Maker Ltd</h1>
-        </div>
-        <p>
-          Factory: Meghdubi; Ward-40, Gazipur City Corporation, Gazipur-1700,
-          Bangladesh
-        </p>
-        <p>Corporate Office : House# 35, Road# 9, Sector# 15, Uttara, Dhaka</p>
-        <p>
-          Phone : +880-2-8913263, 8916198, Fax : +88-02-8913263 E-mail :
-          flaxen@flaxengroup.com, Web : www.flaxengroup.com
-        </p>
-      </div>
+      {/* 210mm x 297mm */}
+      <style jsx>{`
+        .a4-paper {
+          width: 297mm;
+          height: 210mm;
+          box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+        @media print {
+          .a4-paper {
+            width: auto;
+            height: auto;
+            box-shadow: none;
+            margin: 0;
+            padding: 20mm;
+            page-break-before: always;
+            font-size: 12px;
+          }
+          .print-hidden {
+            display: none;
+          }
+        }
+      `}</style>
+      <div className="a4-paper mx-auto mb-20">
+        <div className="a4-paper mx-auto bg-white p-5">
+          <TopSection />
+          <div className="flex justify-center">
+            <h3 className="my-2 inline-block  bg-gray-400 px-1 uppercase text-white">
+              Stock
+            </h3>
+          </div>
 
-      <Paper sx={{ width: "100%", overflow: "hidden" }}>
-        <TableContainer>
-          <Table>
-            <TableHead>
-              <TableRow
-                sx={{
-                  "& th": {
-                    border: "1px solid rgba(224, 224, 224, 1)",
-                  },
-                }}
-              >
-                <TableCell align="center" className="whitespace-nowrap">
-                  Date
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  Buyer
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  Order No
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  Color
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  Cost
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  Factory
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  Challan No
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  Dio
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  Roll
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  Fab
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  G.S.M
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  G.W.E
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  F.W.E
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  Received
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  Remark
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  Bin
-                </TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows.map((row) => (
-                <TableRow
-                  key={row.id}
-                  sx={{
-                    "& td": {
-                      border: "1px solid rgba(224, 224, 224, 1)",
-                    },
-                  }}
-                >
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.date}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.buyer}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.OrderNo}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.color}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.cost} Tk
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.factory}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.challanNo}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.dio}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.roll}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.fab}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.gsm}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.gwe}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.fwe}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.received}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.remark}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.bin}
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      </Paper>
-      <div className="flex justify-end gap-5 mt-5">
-        <Button variant="contained" disableElevation startIcon={<PrintIcon />}>
-          Print
-        </Button>
-        <Button
-          variant="contained"
-          disableElevation
-          startIcon={<DownloadIcon />}
-        >
-          Download
-        </Button>
+          <Paper sx={{ width: "100%", overflow: "hidden" }}>
+            <TableContainer>
+              <Table>
+                <TableHead>
+                  <TableRow
+                    sx={{
+                      "& th": {
+                        border: "1px solid rgba(224, 224, 224, 1)",
+                        padding:"8px",
+                        background:"#5D87FF",   
+                        color: "white",  
+                      },
+                    }}
+                  >
+                    <TableCell align="center" className="whitespace-nowrap">
+                      Date
+                    </TableCell>
+                    <TableCell align="center" className="whitespace-nowrap">
+                      Buyer
+                    </TableCell>
+                    <TableCell align="center" className="whitespace-nowrap">
+                      Order No
+                    </TableCell>
+                    <TableCell align="center" className="whitespace-nowrap">
+                      Color
+                    </TableCell>
+                    <TableCell align="center" className="whitespace-nowrap">
+                      Cost
+                    </TableCell>
+                    <TableCell align="center" className="whitespace-nowrap">
+                      Factory
+                    </TableCell>
+                    <TableCell align="center" className="whitespace-nowrap">
+                      Challan No
+                    </TableCell>
+                    <TableCell align="center" className="whitespace-nowrap">
+                      Dio
+                    </TableCell>
+                    <TableCell align="center" className="whitespace-nowrap">
+                      Roll
+                    </TableCell>
+                    <TableCell align="center" className="whitespace-nowrap">
+                      Fab
+                    </TableCell>
+                    <TableCell align="center" className="whitespace-nowrap">
+                      G.S.M
+                    </TableCell>
+                    <TableCell align="center" className="whitespace-nowrap">
+                      G.W.E
+                    </TableCell>
+                    <TableCell align="center" className="whitespace-nowrap">
+                      F.W.E
+                    </TableCell>
+                    <TableCell align="center" className="whitespace-nowrap">
+                      Received
+                    </TableCell>
+                    <TableCell align="center" className="whitespace-nowrap">
+                      Remark
+                    </TableCell>
+                    <TableCell align="center" className="whitespace-nowrap">
+                      Bin
+                    </TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {rows.map((row) => (
+                    <TableRow
+                      key={row.id}
+                      sx={{
+                        "& td": {
+                          border: "1px solid rgba(224, 224, 224, 1)",
+                          padding:"8px",
+                        },
+                      }}
+                    >
+                      <TableCell align="center" className="whitespace-nowrap">
+                        {row.date}
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        {row.buyer}
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        {row.OrderNo}
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        {row.color}
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        {row.cost} Tk
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        {row.factory}
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        {row.challanNo}
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        {row.dio}
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        {row.roll}
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        {row.fab}
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        {row.gsm}
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        {row.gwe}
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        {row.fwe}
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        {row.received}
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        {row.remark}
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        {row.bin}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Paper>
+        </div>
+        <div className="mt-5 flex justify-end gap-5">
+          <Button
+            variant="contained"
+            disableElevation
+            startIcon={<PrintIcon />}
+          >
+            Print
+          </Button>
+          <Button
+            variant="contained"
+            disableElevation
+            startIcon={<DownloadIcon />}
+          >
+            Download
+          </Button>
+        </div>
       </div>
     </>
   );
