@@ -10,7 +10,7 @@ const page = () => {
         <h3 className="mb-5 text-center text-2xl font-bold">Update Challan</h3>
         <form>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField
                 label="Description"
                 name="description"
@@ -19,7 +19,7 @@ const page = () => {
               />
             </Grid>
 
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField
                 label="Quantity"
                 name="quantity"
@@ -28,7 +28,7 @@ const page = () => {
               />
             </Grid>
 
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField
                 label="No. of Pack's"
                 name="noOfPacks"
@@ -37,7 +37,7 @@ const page = () => {
               />
             </Grid>
 
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField
                 label="Remarks"
                 name="remarks"

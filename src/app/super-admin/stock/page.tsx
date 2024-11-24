@@ -120,8 +120,7 @@ const page = () => {
     <>
       <div className="mb-5 flex flex-wrap items-center justify-between gap-5 rounded bg-white p-5 shadow-md">
         <h3 className="text-2xl font-bold">Stock Register</h3>
-        <div className=" w-[500px] flex items-center gap-3">
-          {/* Date Search Field */}
+        <div className=" flex w-[500px] items-center gap-3">
           <TextField
             name="date"
             type="date"
@@ -130,7 +129,6 @@ const page = () => {
             size="small"
           />
 
-          {/* Search Box */}
           <TextField
             size="small"
             variant="outlined"
@@ -140,13 +138,17 @@ const page = () => {
             }}
             fullWidth
           />
-          {/* Add Stock Button */}
-        <Link href="/super-admin/stock/add-stock">
-          <Button variant="contained" disableElevation startIcon={<AddIcon />}>
-            Add
-          </Button>
-        </Link>
-        </div>        
+
+          <Link href="/super-admin/stock/add-stock">
+            <Button
+              variant="contained"
+              disableElevation
+              startIcon={<AddIcon />}
+            >
+              Add
+            </Button>
+          </Link>
+        </div>
       </div>
 
       <Paper sx={{ width: "100%", overflow: "hidden" }}>

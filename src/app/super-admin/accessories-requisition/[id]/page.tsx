@@ -11,31 +11,31 @@ const Page = () => {
       </h3>
       <form>
         <Grid container spacing={2}>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={3}>
             <TextField label="S. No" name="no" fullWidth size="medium" />
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={3}>
             <TextField label="Buyer" name="buyer" fullWidth size="medium" />
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={3}>
             <TextField label="Order No" name="order" fullWidth size="medium" />
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={3}>
             <TextField label="Items" name="item" fullWidth size="medium" />
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={3}>
             <TextField label="Color" name="color" fullWidth size="medium" />
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={3}>
             <TextField label="Style No" name="style" fullWidth size="medium" />
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={3}>
             <TextField label="Line" name="line" fullWidth size="medium" />
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={3}>
             <TextField label="Floor" name="floor" fullWidth size="medium" />
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={3}>
             <TextField
               label="Date"
               name="date"
@@ -45,10 +45,10 @@ const Page = () => {
               size="medium"
             />
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={3}>
             <TextField label="Time" name="time" fullWidth size="medium" />
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={3}>
             <TextField label="Remark" name="remark" fullWidth size="medium" />
           </Grid>
           <Grid item xs={12}>

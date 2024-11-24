@@ -10,7 +10,7 @@ const page = () => {
         <h3 className="mb-5 text-center text-2xl font-bold">Update Order</h3>
         <form>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField
                 label="Date"
                 name="date"
@@ -20,10 +20,10 @@ const page = () => {
                 size="medium"
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField label="Buyer" name="buyer" fullWidth size="medium" />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField
                 label="Order No"
                 name="orderNo"
@@ -31,13 +31,13 @@ const page = () => {
                 size="medium"
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField label="Size" name="size" fullWidth size="medium" />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField label="Color" name="color" fullWidth size="medium" />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField
                 label="Order Quantity"
                 name="orderQuantity"
@@ -45,7 +45,7 @@ const page = () => {
                 size="medium"
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField
                 label="Unit Price"
                 name="unitPrice"
@@ -53,13 +53,13 @@ const page = () => {
                 size="medium"
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField label="Total" name="total" fullWidth size="medium" />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField label="Swatch" name="swatch" fullWidth size="medium" />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField
                 label="Item Description"
                 name="itemDescription"

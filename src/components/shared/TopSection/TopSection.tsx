@@ -16,10 +16,10 @@ const TopSection = () => {
           <div>
             <h1 className="">Flaxen Dress Maker Ltd</h1>
             <p className="text-sm">
-              Factory: Meghdubi, Gazipur-1700, Bangladesh
+             <span className="font-bold"> Factory:</span> Meghdubi, Gazipur-1700, Bangladesh
             </p>
             <p className="text-sm">
-              Corporate Office: House# 35, Road# 9, Sector# 15, Uttara, Dhaka
+            <span className="font-bold">Corporate Office:</span> House# 35, Road# 9, Sector# 15, Uttara, Dhaka
             </p>
           </div>
         </div>

@@ -10,7 +10,7 @@ const page = () => {
         <h3 className="mb-4 text-center text-2xl font-bold">Update Sample</h3>
         <Box component="form" noValidate autoComplete="off">
           <Grid container spacing={3}>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField
                 fullWidth
                 label="Date"
@@ -18,19 +18,19 @@ const page = () => {
                 InputLabelProps={{ shrink: true }}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField fullWidth label="Name" name="name" />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField fullWidth label="Style" name="style" type="number" />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField fullWidth label="Order No" name="orderNo" />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField fullWidth label="Sample Type" name="sampleType" />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField
                 fullWidth
                 label="Sample QTY"
@@ -38,7 +38,7 @@ const page = () => {
                 type="number"
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField
                 fullWidth
                 label="Sewing Start Time"
@@ -47,7 +47,7 @@ const page = () => {
                 InputLabelProps={{ shrink: true }}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField fullWidth label="Remarks" name="remarks" />
             </Grid>
             <Grid item xs={12} textAlign="center">
