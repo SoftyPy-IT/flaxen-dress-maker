@@ -103,23 +103,30 @@ const Page = () => {
           }
         }
       `}</style>
+
       <div className="a4-paper mx-auto bg-white p-5">
         <div className="flex items-center justify-between border-b pb-3">
+
           <div className="flex items-center gap-4">
             <Image src={flaxen} alt="Company Logo" width={40} height={40} />
+
             <div>
               <h1 className="text-lg font-bold">Flaxen Dress Maker Ltd</h1>
+
               <p className="text-sm">
-                Factory: Meghdubi, Gazipur-1700, Bangladesh
+                Factory: Meghdubi, Gazipur-1700, Bangladesh.
               </p>
+
               <p className="text-sm">
-                Corporate Office: House# 35, Road# 9, Sector# 15, Uttara, Dhaka
+                Corporate Office: House# 35, Road# 9, Sector# 15, Uttara, Dhaka.
               </p>
+
             </div>
           </div>
+
           <div className="text-right">
             <p className="text-left text-sm">
-              <PhoneIcon fontSize="small" /> +880-2-8913263, 8916198
+              <PhoneIcon fontSize="small" /> +880-2-8913263, 8916198.
             </p>
             <p className="text-left text-sm">
               <FaxIcon fontSize="small" /> +88-02-8913263
@@ -152,13 +159,7 @@ const Page = () => {
             <p className="text-sm">Ref.:......................</p>
           </div>
         </div>
-        {/* <hr /> */}
-        {/* <div className="m-2 flex justify-between text-sm">
-          <p className="text-sm">Shi. Date: 01/01/2023</p>
-          <p className="text-sm">Order No: 12345</p>
-          <p className="text-sm">QTY: 123</p>
-          <p className="text-sm">Style No: 12</p>
-        </div> */}
+        
         <Paper elevation={0}>
           <TableContainer>
             <Table>

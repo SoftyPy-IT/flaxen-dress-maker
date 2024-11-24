@@ -13,7 +13,8 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import Link from "next/link";
-import DefaultLayout from "@/components/Layouts/DefaultLayout";
+import { TextField } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
 
 const Page = () => {
   const rows = [
@@ -60,14 +61,39 @@ const Page = () => {
   ];
   return (
     <>
-      <div className="flex justify-between bg-white shadow-md rounded p-5 mb-5">
+    <div className="mb-5 flex flex-wrap items-center justify-between gap-5 rounded bg-white p-5 shadow-md">
         <h3 className="text-2xl font-bold">Hourly Receive from S/Others</h3>
-        <Link href="/super-admin/hourly-receive/add-hourly-receive">
-          <Button variant="contained" disableElevation>
-            <AddIcon /> Add
-          </Button>
-        </Link>
+        <div className=" flex w-[500px] items-center gap-3">
+          <TextField
+            name="date"
+            type="date"
+            InputLabelProps={{ shrink: true }}
+            fullWidth
+            size="small"
+          />
+
+          <TextField
+            size="small"
+            variant="outlined"
+            placeholder="Search by Order"
+            InputProps={{
+              endAdornment: <SearchIcon />,
+            }}
+            fullWidth
+          />
+
+          <Link href="/super-admin/hourly-receive/add-hourly-receive">
+            <Button
+              variant="contained"
+              disableElevation
+              startIcon={<AddIcon />}
+            >
+              Add
+            </Button>
+          </Link>
+        </div>
       </div>
+     
       <Paper sx={{ width: "100%", overflow: "hidden" }}>
         <TableContainer>
           <Table>
@@ -75,6 +101,7 @@ const Page = () => {
               sx={{
                 "& th": {
                   border: "1px solid rgba(224, 224, 224, 1)",
+                  color:"white"
                 },
               }}
             >

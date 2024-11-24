@@ -12,14 +12,14 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import { Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import Link from "next/link";
-import DefaultLayout from "@/components/Layouts/DefaultLayout";
+import { TextField } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
 import AddBuyerModal from "./_components/AddBuyerModal";
 
 const Page = () => {
-  const [open, setOpen] = React.useState(false)
-    const handleOpen = () => setOpen(true)
-    const handleClose = () => setOpen(false)
-
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   const rows = [
     {
@@ -69,13 +69,29 @@ const Page = () => {
     },
   ];
   return (
-    
-
     <>
       <>
-        <div className="mb-5 flex justify-between rounded bg-white p-5 shadow-md">
+        <div className="mb-5 flex flex-wrap items-center justify-between gap-5 rounded bg-white p-5 shadow-md">
           <h3 className="text-2xl font-bold">Daily Receive from S/Others</h3>
-          {/* <Link href="/super-admin/daily-receive/add-daily-receive"> */}
+          <div className=" flex w-[500px] items-center gap-3">
+            <TextField
+              name="date"
+              type="date"
+              InputLabelProps={{ shrink: true }}
+              fullWidth
+              size="small"
+            />
+
+            <TextField
+              size="small"
+              variant="outlined"
+              placeholder="Search by Order"
+              InputProps={{
+                endAdornment: <SearchIcon />,
+              }}
+              fullWidth
+            />
+
             <Button
               variant="contained"
               disableElevation
@@ -84,8 +100,9 @@ const Page = () => {
             >
               Add
             </Button>
-          {/* </Link> */}
+          </div>
         </div>
+       
         <Paper sx={{ width: "100%", overflow: "hidden" }}>
           <TableContainer>
             <Table>
@@ -93,6 +110,7 @@ const Page = () => {
                 sx={{
                   "& th": {
                     border: "1px solid rgba(224, 224, 224, 1)",
+                    color:"white"
                   },
                 }}
               >
@@ -100,14 +118,14 @@ const Page = () => {
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
-                    sx={{ color: "white" }}
+    
                   >
                     Buyer Name
                   </TableCell>
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
-                    sx={{ color: "white" }}
+             
                   >
                     Country
                   </TableCell>
@@ -115,28 +133,28 @@ const Page = () => {
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
-                    sx={{ color: "white" }}
+                 
                   >
                     Colour
                   </TableCell>
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
-                    sx={{ color: "white" }}
+                
                   >
                     Style No
                   </TableCell>
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
-                    sx={{ color: "white" }}
+                
                   >
                     Total Order
                   </TableCell>
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
-                    sx={{ color: "white" }}
+        
                   >
                     Last Order Date
                   </TableCell>
@@ -144,7 +162,7 @@ const Page = () => {
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
-                    sx={{ color: "white" }}
+          
                   >
                     Action
                   </TableCell>
@@ -191,14 +209,6 @@ const Page = () => {
                           <VisibilityIcon fontSize="small" />
                         </button>
                       </Link>
-                      {/* <Link href={`/super-admin/daily-receive/${row.id}`}>
-                      <button className="text-green-600">
-                        <EditIcon fontSize="small" />
-                      </button>
-                    </Link>
-                    <button className="text-red-600">
-                      <DeleteIcon fontSize="small" />
-                    </button> */}
                     </TableCell>
                   </TableRow>
                 ))}
@@ -209,7 +219,6 @@ const Page = () => {
       </>
 
       {open && <AddBuyerModal open={open} setOpen={handleClose} />}
-      
     </>
   );
 };

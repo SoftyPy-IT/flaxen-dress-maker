@@ -87,7 +87,7 @@ const menuGroups = [
         children: [
           {
             label: "+ Add Cutting Register",
-            route: "/super-admin/cutting-reg/add-fabric-reg",
+            route: "/super-admin/cutting-reg/add-cutting-reg",
             // icon: <AddBoxIcon />,
           },
           { label: "Cutting Register Index", route: "/super-admin/cutting-reg" },

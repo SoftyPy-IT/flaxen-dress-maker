@@ -26,12 +26,12 @@ const Page = () => {
   };
   return (
     <>
-      <Paper sx={{ padding: 3, margin: "auto" }}>
+      <Paper sx={{ padding: 2, margin: "auto" }}>
         <h3 className="text-2xl text-center font-bold">Edit Cutting Register</h3>
         <hr className="my-3" />
         <div className="">
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField
                 label="Date"
                 name="date"
@@ -41,7 +41,7 @@ const Page = () => {
                 size="medium"
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField
                 label="Buyer Name"
                 name="color"
@@ -50,10 +50,10 @@ const Page = () => {
               />
             </Grid>
 
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField label="Order No" name="lot" fullWidth size="medium" />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField
                 label="Order Qty."
                 name="factory"
@@ -62,10 +62,10 @@ const Page = () => {
                 size="medium"
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField label="Color" name="cn" fullWidth size="medium" />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField
                 label="Consumption"
                 name="dia"
@@ -73,7 +73,7 @@ const Page = () => {
                 size="medium"
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField
                 label="Total"
                 name="roll"
@@ -83,7 +83,7 @@ const Page = () => {
               />
             </Grid>
 
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField
                 label="FAB REQ"
                 name="fabreq"
@@ -92,7 +92,7 @@ const Page = () => {
               />
             </Grid>
 
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField
                 label="Fabric Rcv."
                 name="gross"
@@ -100,7 +100,7 @@ const Page = () => {
                 size="medium"
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField
                 label="Fabric/Item GSM"
                 name="finish"
@@ -108,10 +108,10 @@ const Page = () => {
                 size="medium"
               />
             </Grid>
-            {/* <Grid item xs={12} sm={6}>
+            {/* <Grid item xs={12} sm={3}>
               <TextField label="Size" name="delivery" fullWidth size="medium" />
             </Grid> */}
-            <Grid item xs={12} sm={6}> 
+            <Grid item xs={12} sm={3}> 
               <div className="w-full justify-center bg-white rounded ">
                 <div className="w-full mt-1">
                   

@@ -17,7 +17,7 @@ const page = () => {
         <Paper sx={{ padding: 3 }}>
           <form>
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} sm={3}>
                 <TextField
                   label="Date"
                   name="date"
@@ -27,7 +27,7 @@ const page = () => {
                   size="medium"
                 />
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} sm={3}>
                 <TextField
                   label="Style No"
                   name="styleNo"
@@ -35,7 +35,7 @@ const page = () => {
                   size="medium"
                 />
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} sm={3}>
                 <TextField
                   label="Order No"
                   name="orderNo"
@@ -43,7 +43,7 @@ const page = () => {
                   fullWidth
                 />
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} sm={3}>
                 <TextField
                   label="Description"
                   name="description"
@@ -51,10 +51,10 @@ const page = () => {
                   fullWidth
                 />
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} sm={3}>
                 <TextField label="QTY" name="qty" size="medium" fullWidth />
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} sm={3}>
                 <TextField
                   label="CTN QTY"
                   name="ctnQty"
@@ -62,7 +62,7 @@ const page = () => {
                   fullWidth
                 />
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} sm={3}>
                 <TextField
                   label="Net Weight"
                   name="ratioSet"
@@ -70,7 +70,7 @@ const page = () => {
                   fullWidth
                 />
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} sm={3}>
                 <TextField
                   label="Gross Weight"
                   name="grossWeight"
@@ -78,7 +78,7 @@ const page = () => {
                   fullWidth
                 />
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} sm={3}>
                 <TextField
                   label="Carton Measurement"
                   name="cartonMeasurement"
@@ -86,7 +86,7 @@ const page = () => {
                   fullWidth
                 />
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} sm={3}>
                 <TextField label="CBM" name="cbm" fullWidth size="medium" />
               </Grid>
               <Grid item xs={12}>

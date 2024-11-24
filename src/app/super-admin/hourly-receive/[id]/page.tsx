@@ -12,7 +12,7 @@ const page = () => {
         </h3>
         <form>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField
                 label="Time"
                 name="time"
@@ -23,7 +23,7 @@ const page = () => {
               />
             </Grid>
 
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField
                 label="SWE/REC"
                 name="sweRec"
@@ -32,7 +32,7 @@ const page = () => {
               />
             </Grid>
 
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField
                 label="S/Sign"
                 name="noOfPacks"
@@ -40,7 +40,7 @@ const page = () => {
                 size="medium"
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField
                 label="F/Send"
                 name="noOfPacks"
@@ -48,7 +48,7 @@ const page = () => {
                 size="medium"
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={3}>
               <TextField
                 label="F/Sign"
                 name="noOfPacks"

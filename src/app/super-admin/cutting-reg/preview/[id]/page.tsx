@@ -1,3 +1,5 @@
+"use client"
+
 import * as React from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -11,6 +13,8 @@ import Image from "next/image";
 import { Button } from "@mui/material";
 import DownloadIcon from "@mui/icons-material/Download";
 import PrintIcon from "@mui/icons-material/Print";
+import TopSection from "@/components/shared/TopSection/TopSection";
+import EditIcon from "@mui/icons-material/Edit";
 
 function createData(
   id: number,
@@ -144,39 +148,53 @@ const signatureRoles = [
 const Preview = () => {
   return (
     <>
-      <div className="text-center mb-4">
-        <div className="flex gap-2 items-center justify-center">
-          <Image src={flaxen} alt="img" className="h-10 w-10" />
-          <h1>Flaxen Dress Maker Ltd</h1>
-        </div>
-        <p>
-          Factory: Meghdubi; Ward-40, Gazipur City Corporation, Gazipur-1700,
-          Bangladesh
-        </p>
-        <p>Corporate Office: House# 35, Road# 9, Sector# 15, Uttara, Dhaka</p>
-        <p>
-          Phone: +880-2-8913263, 8916198, Fax: +88-02-8913263 E-mail:
-          flaxen@flaxengroup.com, Web: www.flaxengroup.com
-        </p>
-      </div>
-      <div className="flex items-center justify-between mb-2">
-        <h5>Sl. No. </h5>
+      {/* 210mm x 297mm */}
+      <style jsx>{`
+        .a4-paper {
+          width: 297mm;
+          height: 210mm;
+          box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+        @media print {
+          .a4-paper {
+            width: auto;
+            height: auto;
+            box-shadow: none;
+            margin: 0;
+            padding: 20mm;
+            page-break-before: always;
+            font-size: 12px;
+          }
+          .print-hidden {
+            display: none;
+          }
+        }
+      `}</style>
+      <div className="a4-paper mx-auto mb-20">
+        <div className="a4-paper mx-auto bg-white p-5">
+          <TopSection />
+          <div className="flex justify-center">
+            <h3 className="my-2 inline-block  bg-gray-400 px-1 uppercase text-white">
+              Stock
+            </h3>
+          </div>
 
-        <h2 className="text-center">Cutting Register</h2>
-        <h2 className="text-center"></h2>
-      </div>
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="customized table">
-          <TableHead>
-            <TableRow
-              sx={{
-                "& th": {
-                  border: "1px solid rgba(224, 224, 224, 1)",
-                },
-              }}
-            >
-              {[
-                "Date",
+          <Paper sx={{ width: "100%", overflow: "hidden" }}>
+            <TableContainer>
+              <Table>
+                <TableHead>
+                  <TableRow
+                    sx={{
+                      "& th": {
+                        border: "1px solid rgba(224, 224, 224, 1)",
+                        padding: "8px",
+                        background: "#5D87FF",
+                        color: "white",
+                      },
+                    }}
+                  >
+                    {[
+                      "Date",
                 "Buyer Name",
                 "Order No",
                 "Order Qty.",
@@ -187,28 +205,29 @@ const Preview = () => {
                 "Fabric Rcv.",
                 "Fabric/Item GSM",
                 "Consumption",
-              ].map((header) => (
-                <TableCell
-                  align="center"
-                  key={header}
-                  className="whitespace-nowrap"
-                >
-                  {header}
-                </TableCell>
-              ))}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((row) => (
-              <TableRow
-                key={row.id}
-                sx={{
-                  "& td": {
-                    border: "1px solid rgba(224, 224, 224, 1)",
-                  },
-                }}
-              >
-                <TableCell sx={{ border: "1px solid black" }}>
+                    ].map((header) => (
+                      <TableCell
+                        align="center"
+                        key={header}
+                        className="whitespace-nowrap"
+                      >
+                        {header}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {rows.map((row) => (
+                    <TableRow
+                      key={row.id}
+                      sx={{
+                        "& td": {
+                          border: "1px solid rgba(224, 224, 224, 1)",
+                          padding: "8px",
+                        },
+                      }}
+                    >
+                      <TableCell sx={{ border: "1px solid black" }}>
                   {row.id}
                 </TableCell>
                 <TableCell sx={{ border: "1px solid black" }} align="center">
@@ -241,40 +260,51 @@ const Preview = () => {
                 <TableCell sx={{ border: "1px solid black" }} align="center">
                   {row.remark}
                 </TableCell>
-              </TableRow>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Paper>
+          <div
+            style={{
+              marginTop: "20px",
+              display: "flex",
+              justifyContent: "space-around",
+            }}
+          >
+            {signatureRoles.map((role, index) => (
+              <div key={index}>
+                <div className="mb-[10px] mt-10 border-b border-black text-center" />
+                <span>{role}</span> <br />
+                <div />
+                <h5 className="text-center">Signature</h5>
+              </div>
             ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-      <div
-        style={{
-          marginTop: "20px",
-          display: "flex",
-          justifyContent: "space-around",
-        }}
-      >
-        {signatureRoles.map((role, index) => (
-          <div key={index}>
-            <div className="text-center mb-[10px] border-b border-black mt-10" />
-            <span>{role} </span>
-            <span>Signature</span>
-            <div />
           </div>
-        ))}
-      </div>
-      <div className="flex justify-end gap-5 mt-5">
-        <Button variant="contained" disableElevation startIcon={<PrintIcon />}>
-          Print
-        </Button>
-        <Button
-          variant="contained"
-          disableElevation
-          startIcon={<DownloadIcon />}
-        >
-          Download
-        </Button>
+        </div>
+        <div className="mt-5 flex justify-end gap-5">
+          <Button variant="contained" disableElevation startIcon={<EditIcon />}>
+            Edit
+          </Button>
+          <Button
+            variant="contained"
+            disableElevation
+            startIcon={<PrintIcon />}
+          >
+            Print
+          </Button>
+          <Button
+            variant="contained"
+            disableElevation
+            startIcon={<DownloadIcon />}
+          >
+            Download
+          </Button>
+        </div>
       </div>
     </>
+   
   );
 };
 
