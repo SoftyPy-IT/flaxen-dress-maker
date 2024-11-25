@@ -105,7 +105,7 @@ const Preview = () => {
           <TopSection />
           <div className="flex justify-center">
             <h3 className="my-2 inline-block  bg-gray-400 px-1 uppercase text-white">
-              Stock
+              Accessories Requisition
             </h3>
           </div>
 
