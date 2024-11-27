@@ -2,16 +2,17 @@
 import * as React from "react";
 import { Button, TextField, Paper, Grid } from "@mui/material";
 import TopSection from "@/components/shared/TopSection/TopSection";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import EditIcon from "@mui/icons-material/Edit";
-import DeleteIcon from "@mui/icons-material/Delete";
-import Link from "next/link";
+// import Table from "@mui/material/Table";
+// import TableBody from "@mui/material/TableBody";
+// import TableCell from "@mui/material/TableCell";
+// import TableContainer from "@mui/material/TableContainer";
+// import TableHead from "@mui/material/TableHead";
+// import TableRow from "@mui/material/TableRow";
+// import VisibilityIcon from "@mui/icons-material/Visibility";
+// import EditIcon from "@mui/icons-material/Edit";
+// import DeleteIcon from "@mui/icons-material/Delete";
+// import Link from "next/link";
+import Reject from "../_components/Reject";
 
 const page = () => {
   const rows = [
@@ -70,7 +71,7 @@ const page = () => {
         </h4>
       </div>
 
-      <Paper sx={{ padding: 2 }}>
+      <Paper sx={{ padding: 2, marginBottom: "20px" }}>
         <div>
           <Grid container spacing={2}>
             {/* <Grid item xs={12} sm={3}>
@@ -163,7 +164,7 @@ const page = () => {
         </div>
       </Paper>
 
-      <Paper sx={{ width: "100%", overflow: "hidden", marginTop: "20px" }}>
+      {/* <Paper sx={{ width: "100%", overflow: "hidden", marginTop: "20px" }}>
         <TableContainer>
           <Table>
             <TableHead
@@ -277,10 +278,7 @@ const page = () => {
                 >
                   <TableCell align="center" className="whitespace-nowrap">
                     {row.no}
-                  </TableCell>
-                  {/* <TableCell align="center" className="whitespace-nowrap">
-                      {row.name}
-                    </TableCell> */}
+                  </TableCell>                  
                   <TableCell align="center" className="whitespace-nowrap">
                     {row.order}
                   </TableCell>
@@ -335,7 +333,8 @@ const page = () => {
             </TableBody>
           </Table>
         </TableContainer>
-      </Paper>
+      </Paper> */}
+      <Reject/>
     </>
   );
 };
