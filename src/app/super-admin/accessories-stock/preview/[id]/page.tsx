@@ -19,51 +19,37 @@ import EditIcon from "@mui/icons-material/Edit";
 const rows = [
   {
     id: "1",
-    date: "30-10-2024",
-    buyer: "John Doe",
-    orderNo: "ORD001",
-    color: "Pink",
-    styleNo: "STY001",
-    line: "Line 1",
-    floor: "1",
-    time: "10:00 AM",
-    remark: "No issues",
+    no: "1",
+    date: "27-10-2024",
+    challan: "AB-0124",
+    product: "Butam",
+    qty: "10",
+    unit: "pcs",
+    price: "100tk",
+    supplier: "AB Treaders",
+    
   },
   {
     id: "2",
-    date: "30-10-2024",
-    buyer: "Jane Smith",
-    orderNo: "ORD002",
-    color: "Pink",
-    styleNo: "STY002",
-    line: "Line 2",
-    floor: "2",
-    time: "11:00 AM",
-    remark: "Pending",
+    no: "2",
+    date: "27-10-2024",
+    challan: "AB-0124",
+    product: "Niddle",
+    qty: "10",
+    unit: "pcs",
+    price: "100tk",
+    supplier: "AB Treaders",
   },
   {
     id: "3",
-    date: "30-10-2024",
-    buyer: "Jane Smith",
-    orderNo: "ORD002",
-    color: "Pink",
-    styleNo: "STY002",
-    line: "Line 2",
-    floor: "2",
-    time: "11:00 AM",
-    remark: "Pending",
-  },
-  {
-    id: "4",
-    date: "30-10-2024",
-    buyer: "Jane Smith",
-    orderNo: "ORD002",
-    color: "Pink",
-    styleNo: "STY002",
-    line: "Line 2",
-    floor: "2",
-    time: "11:00 AM",
-    remark: "Pending",
+    no: "3",
+    date: "27-10-2024",
+    challan: "AB-0124",
+    product: "Pink Color",
+    qty: "10",
+    unit: "KG",
+    price: "100tk",
+    supplier: "AB Treaders",
   },
 ];
 
@@ -105,7 +91,7 @@ const Preview = () => {
           <TopSection />
           <div className="flex justify-center">
             <h3 className="my-2 inline-block  bg-gray-400 px-1 uppercase text-white">
-              Accessories Requisition
+              Accessories Stock
             </h3>
           </div>
 
@@ -123,25 +109,63 @@ const Preview = () => {
                       },
                     }}
                   >
-                    {[
-                      "Date",
-                      "Buyer",
-                      "Order No",
-                      "Color",
-                      "Style No",
-                      "Line",
-                      "Floor",
-                      "Time",
-                      "Remark",
-                    ].map((header) => (
-                      <TableCell
-                        align="center"
-                        key={header}
-                        className="whitespace-nowrap"
-                      >
-                        {header}
-                      </TableCell>
-                    ))}
+                   <TableCell
+                  align="center"
+                  className="whitespace-nowrap text-white"
+                  sx={{ color: "white" }}
+                >
+                  S. No
+                </TableCell>
+                <TableCell
+                  align="center"
+                  className="whitespace-nowrap text-white"
+                  sx={{ color: "white" }}
+                >
+                  Date
+                </TableCell>
+                <TableCell
+                  align="center"
+                  className="whitespace-nowrap text-white"
+                  sx={{ color: "white" }}
+                >
+                  Challan No.
+                </TableCell>
+                <TableCell
+                  align="center"
+                  className="whitespace-nowrap text-white"
+                  sx={{ color: "white" }}
+                >
+                  Product Name
+                </TableCell>
+                <TableCell
+                  align="center"
+                  className="whitespace-nowrap text-white"
+                  sx={{ color: "white" }}
+                >
+                  Quantity
+                </TableCell>
+                <TableCell
+                  align="center"
+                  className="whitespace-nowrap text-white"
+                  sx={{ color: "white" }}
+                >
+                  Unit
+                </TableCell>
+                <TableCell
+                  align="center"
+                  className="whitespace-nowrap text-white"
+                  sx={{ color: "white" }}
+                >
+                  Price
+                </TableCell>
+                
+                <TableCell
+                  align="center"
+                  className="whitespace-nowrap text-white"
+                  sx={{ color: "white" }}
+                >
+                  Supplier
+                </TableCell>     
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -156,32 +180,30 @@ const Preview = () => {
                       }}
                     >
                       <TableCell align="center" className="whitespace-nowrap">
-                        {row.date}
-                      </TableCell>
-                      <TableCell align="center" className="whitespace-nowrap">
-                        {row.buyer}
-                      </TableCell>
-                      <TableCell align="center" className="whitespace-nowrap">
-                        {row.orderNo}
-                      </TableCell>
-                      <TableCell align="center" className="whitespace-nowrap">
-                        {row.color}
-                      </TableCell>
-                      <TableCell align="center" className="whitespace-nowrap">
-                        {row.styleNo}
-                      </TableCell>
-                      <TableCell align="center" className="whitespace-nowrap">
-                        {row.line}
-                      </TableCell>
-                      <TableCell align="center" className="whitespace-nowrap">
-                        {row.floor}
-                      </TableCell>
-                      <TableCell align="center" className="whitespace-nowrap">
-                        {row.time}
-                      </TableCell>
-                      <TableCell align="center" className="whitespace-nowrap">
-                        {row.remark}
-                      </TableCell>
+                    {row.no}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.date}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.challan}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.product}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.qty}
+                  </TableCell>
+                  
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.unit}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.price}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.supplier}
+                  </TableCell>
                     </TableRow>
                   ))}
                 </TableBody>

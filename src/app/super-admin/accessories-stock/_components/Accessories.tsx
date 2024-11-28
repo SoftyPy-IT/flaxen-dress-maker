@@ -173,14 +173,14 @@ const Accessories = () => {
                     className="space-x-2 whitespace-nowrap"
                   >
                     <Link
-                      href={`/super-admin/accessories-requisition/preview/${row.id}`}
+                      href={`/super-admin/accessories-stock/preview/${row.id}`}
                     >
                       <button className="text-blue-600">
                         <VisibilityIcon fontSize="small" />
                       </button>
                     </Link>
                     <Link
-                      href={`/super-admin/accessories-requisition/${row.id}`}
+                      href={`/super-admin/accessories-stock/${row.id}`}
                     >
                       <button className="text-green-600">
                         <EditIcon fontSize="small" />

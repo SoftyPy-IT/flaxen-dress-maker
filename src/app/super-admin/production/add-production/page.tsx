@@ -2,6 +2,7 @@
 import React from "react";
 import { TextField, Button, Paper, Grid } from "@mui/material";
 import TopSection from "@/components/shared/TopSection/TopSection";
+import Production from "../_components/Production";
 
 const page = () => {
   return (
@@ -9,7 +10,7 @@ const page = () => {
       <TopSection />
       <div className="flex justify-center">
         <h4 className="my-2 inline-block  bg-gray-400 p-1 uppercase text-white">
-          Edit Daily Production
+          Add Daily Production
         </h4>
       </div>
       <Paper sx={{ padding: 2, marginBottom:"20px" }}>
@@ -142,7 +143,7 @@ const page = () => {
         </div>
       </Paper>
      		
-   
+      <Production/>
     </>
   );
 };

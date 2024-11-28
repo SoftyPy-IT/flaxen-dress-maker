@@ -26,6 +26,7 @@ import CancelIcon from "@mui/icons-material/Cancel";
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import BuildIcon from '@mui/icons-material/Build';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
+import StraightenIcon from '@mui/icons-material/Straighten';
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -87,6 +88,7 @@ const menuGroups = [
         route: "#",
         icon: <BuildIcon />,
         children: [
+          { label: "Unit", route: "/super-admin/unit", icon: <StraightenIcon />, },
           {
             label: "+ Add Accessories",
             route: "/super-admin/accessories-stock/add-accessories",
@@ -116,8 +118,16 @@ const menuGroups = [
       },
       {
         label: "Production",
-        route: "/super-admin/production",
+        route: "#",
         icon: <LocalMallIcon />,
+        children: [
+          {
+            label: "+ Add Production",
+            route: "/super-admin/production/add-production",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Production Index", route: "/super-admin/production" },
+        ],
        
       },
       // ------------------------------
@@ -186,7 +196,7 @@ const menuGroups = [
           { label: "Work Challan Index", route: "/super-admin/work-challan" },
         ],
       },
-
+      
       {
         label: "Packing List",
         route: "#",
@@ -240,20 +250,23 @@ const menuGroups = [
           { label: "Hourly Receive Index", route: "/super-admin/hourly-receive" },
         ],
       },
-      {
-        label: "Unit",
-        route: "#",
-        icon: <AccessTimeFilledIcon />,
-        children: [
-          {
-            label: "+ Add Unit",
-            route: "/super-admin/",
-            // icon: <AddBoxIcon />,
-          },
-          { label: "Unit", route: "/super-admin/" },
-        ],
-      },
 
+
+      // {
+      //   label: "Unit",
+      //   route: "/super-admin/unit",
+      //   icon: <StraightenIcon />,
+      //   children: [
+      //     {
+      //       label: "+ Add Unit",
+      //       route: "/super-admin/",
+      //       icon: <AddBoxIcon />,
+      //     },
+      //     { label: "Unit", route: "/super-admin/unit" },
+      //   ],
+      // },
+
+      
       {
         label: "Forms",
         route: "#",

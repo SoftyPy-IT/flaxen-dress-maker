@@ -133,7 +133,7 @@ const page = () => {
             fullWidth
           />
 
-          <Link href="/super-admin/requisition/add-requisition">
+          <Link href="/super-admin/fabric-requisition/add-requisition">
             <Button
               variant="contained"
               disableElevation
@@ -306,12 +306,12 @@ const page = () => {
                     align="center"
                     className="space-x-2 whitespace-nowrap"
                   >
-                    <Link href="/super-admin/requisition/requisition-preview">
+                    <Link href={`/super-admin/fabric-requisition/requisition-preview/${row.id}`}>
                       <button className="text-blue-600">
                         <VisibilityIcon fontSize="small" />
                       </button>
                     </Link>
-                    <Link href="/super-admin/requisition/id">
+                    <Link href={`/super-admin/fabric-requisition/${row.id}`}>
                       <button className="text-green-600">
                         <EditIcon fontSize="small" />
                       </button>

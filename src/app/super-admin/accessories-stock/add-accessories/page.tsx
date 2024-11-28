@@ -27,7 +27,7 @@ const Page = () => {
       </div>
 
       <Paper sx={{ padding: 2, margin: "auto", marginBottom: "20px" }}>
-        <form>
+        <div>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={3}>
               <TextField label="S. No" name="no" fullWidth size="medium" />
@@ -69,22 +69,19 @@ const Page = () => {
               />
             </Grid>
 
-            
             <Grid item xs={12} sm={3}>
               <FormControl fullWidth>
-              <Select
-          value={age}
-          onChange={handleChange}
-          displayEmpty
-          inputProps={{ 'aria-label': 'Without label' }}
-        >
-          <MenuItem value="">
-            Unit
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
+                <Select
+                  value={age}
+                  onChange={handleChange}
+                  displayEmpty
+                  inputProps={{ "aria-label": "Without label" }}
+                >
+                  <MenuItem value="">Unit</MenuItem>
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem>
+                </Select>
               </FormControl>
             </Grid>
 
@@ -114,7 +111,7 @@ const Page = () => {
               </div>
             </Grid>
           </Grid>
-        </form>
+        </div>
       </Paper>
 
       <Accessories />
