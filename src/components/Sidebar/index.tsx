@@ -24,6 +24,9 @@ import ContentCutIcon from "@mui/icons-material/ContentCut";
 import OfflinePinIcon from "@mui/icons-material/OfflinePin";
 import CancelIcon from "@mui/icons-material/Cancel";
 import AddBoxIcon from '@mui/icons-material/AddBox';
+import BuildIcon from '@mui/icons-material/Build';
+import LocalMallIcon from '@mui/icons-material/LocalMall';
+import StraightenIcon from '@mui/icons-material/Straighten';
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -81,6 +84,20 @@ const menuGroups = [
         ],
       },
       {
+        label: "Accessories Stock",
+        route: "#",
+        icon: <BuildIcon />,
+        children: [
+          { label: "Unit", route: "/super-admin/unit", icon: <StraightenIcon />, },
+          {
+            label: "+ Add Accessories",
+            route: "/super-admin/accessories-stock/add-accessories",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Accessories", route: "/super-admin/accessories-stock" },
+        ],
+      },
+      {
         label: "Cutting Register",
         route: "#",
         icon: <ContentCutIcon />,
@@ -97,14 +114,21 @@ const menuGroups = [
         label: "Daily Receive",
         route: "/super-admin/daily-receive",
         icon: <OfflinePinIcon />,
-        // children: [
-        //   {
-        //     label: "+ Add Fabric Register",
-        //     route: "/super-admin/fabric-reg/add-fabric-reg",
-        //     // icon: <AddBoxIcon />,
-        //   },
-        //   { label: "Fabric Register Index", route: "/super-admin/fabric-reg" },
-        // ],
+        
+      },
+      {
+        label: "Production",
+        route: "#",
+        icon: <LocalMallIcon />,
+        children: [
+          {
+            label: "+ Add Production",
+            route: "/super-admin/production/add-production",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Production Index", route: "/super-admin/production" },
+        ],
+       
       },
       // ------------------------------
       {
@@ -172,7 +196,7 @@ const menuGroups = [
           { label: "Work Challan Index", route: "/super-admin/work-challan" },
         ],
       },
-
+      
       {
         label: "Packing List",
         route: "#",
@@ -227,6 +251,22 @@ const menuGroups = [
         ],
       },
 
+
+      // {
+      //   label: "Unit",
+      //   route: "/super-admin/unit",
+      //   icon: <StraightenIcon />,
+      //   children: [
+      //     {
+      //       label: "+ Add Unit",
+      //       route: "/super-admin/",
+      //       icon: <AddBoxIcon />,
+      //     },
+      //     { label: "Unit", route: "/super-admin/unit" },
+      //   ],
+      // },
+
+      
       {
         label: "Forms",
         route: "#",
@@ -265,36 +305,9 @@ const menuGroups = [
           { label: "Sign Up", route: "/auth/signup", icon: <SignUpIcon /> },
         ],
       },
-      // {
-      //   label: "Requisition",
-      //   route: "#",
-      //   icon: <FormIcon />,
-      //   children: [
-      //     {
-      //       label: "Accessories Requisition",
-      //       route: "/super-admin/accessories-requisition",
-      //     },
-      //     { label: "Fabric Requisition", route: "/super-admin/requisition" },
-      //   ],
-      // },
-      // {
-      //   label: "Receive",
-      //   route: "#",
-      //   icon: <OfflinePinIcon />,
-      //   children: [
-      //     { label: "Daily Receive", route: "/super-admin/daily-receive" },
-      //     { label: "Hourly Receive", route: "/super-admin/hourly-receive" },
-      //   ],
-      // },
-      // {
-      //   label: "Challan",
-      //   route: "#",
-      //   icon: <LocalOfferIcon />,
-      //   children: [
-      //     { label: "Work Challan", route: "/super-admin/work-challan" },
-      //     { label: "Shipment Challan", route: "/super-admin/shipment-challan" },
-      //   ],
-      // },
+      
+    
+     
       // {
       //   label: "Register",
       //   route: "#",

@@ -1,4 +1,3 @@
-
 "use client";
 import * as React from "react";
 import Paper from "@mui/material/Paper";
@@ -8,7 +7,7 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import flaxen from "../../../../assets/images/logo/flaxen.png";
+import flaxen from "../../../../../assets/images/logo/flaxen.png";
 import Image from "next/image";
 import { Button } from "@mui/material";
 import DownloadIcon from "@mui/icons-material/Download";
@@ -119,7 +118,7 @@ const signatureRoles = [
 const Page = () => {
   return (
     <>
-    <>
+      <>
         {/* a4 Portrait - 297mm x 210mm */}
         {/* a4 landscape - 210mm x 297mm */}
         <style jsx>{`
@@ -148,175 +147,176 @@ const Page = () => {
             <TopSection />
             <div className="flex justify-center">
               <h3 className="my-2 inline-block  bg-gray-400 px-1 uppercase text-white">
-                Requisition
+                Production
               </h3>
             </div>
 
             <Paper sx={{ width: "100%", overflow: "hidden" }}>
-            <TableContainer>
-          <Table>
-            <TableHead
-              sx={{
-                "& th": {
-                  border: "1px solid rgba(224, 224, 224, 1)",
-                  padding: "8px",
-                  background: "#5D87FF",
-                  color: "white",
-                },
-              }}
-            >
-              <TableRow>
-                <TableCell
-                  align="center"
-                  className="whitespace-nowrap"
-                  colSpan={6}
-                ></TableCell>
-                <TableCell
-                  align="center"
-                  colSpan={2}
-                  className="whitespace-nowrap"
-                >
-                  BODY FABRIC
-                </TableCell>
+              <TableContainer>
+                <Table>
+                  {/* <TableHead
+                    sx={{
+                      "& th": {
+                        border: "1px solid rgba(224, 224, 224, 1)",
+                        padding: "8px",
+                        background: "#5D87FF",
+                        color: "white",
+                      },
+                    }}
+                  >
+                    <TableRow>
+                      <TableCell
+                        align="center"
+                        className="whitespace-nowrap"
+                        colSpan={6}
+                      ></TableCell>
+                      <TableCell
+                        align="center"
+                        colSpan={2}
+                        className="whitespace-nowrap"
+                      >
+                        BODY FABRIC
+                      </TableCell>
 
-                <TableCell
-                  align="center"
-                  className="whitespace-nowrap"
-                ></TableCell>
-                <TableCell
-                  align="center"
-                  colSpan={2}
-                  className="whitespace-nowrap"
-                >
-                  RIB & COLOR
-                </TableCell>
-                <TableCell
-                  align="center"
-                  colSpan={5}
-                  className="whitespace-nowrap"
-                ></TableCell>
-              </TableRow>
-            </TableHead>
-            <TableHead
-              sx={{
-                "& th": {
-                  border: "1px solid rgba(224, 224, 224, 1)",
-                  padding: "8px",
-                  background: "#5D87FF",
-                  color: "white",
-                },
-              }}
-            >
-              <TableRow>
-                <TableCell align="center" className="whitespace-nowrap">
-                  DATE
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  BUYER
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  OR/NO
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  COLOR
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  F/ITEM
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  GSM
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  REQ/KG
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  F/RCV/KG
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  BLANCE
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  REQ/KG
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  F/RCV/KG
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  BLANCE
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  P/L
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  TOTAL/KG
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  REMARKS
-                </TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows.map((row) => (
-                <TableRow
-                  key={row.id}
-                  sx={{
-                    "& td": {
-                      border: "1px solid rgba(224, 224, 224, 1)",
+                      <TableCell
+                        align="center"
+                        className="whitespace-nowrap"
+                      ></TableCell>
+                      <TableCell
+                        align="center"
+                        colSpan={2}
+                        className="whitespace-nowrap"
+                      >
+                        RIB & COLOR
+                      </TableCell>
+                      <TableCell
+                        align="center"
+                        colSpan={5}
+                        className="whitespace-nowrap"
+                      ></TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableHead
+                    sx={{
+                      "& th": {
+                        border: "1px solid rgba(224, 224, 224, 1)",
+                        padding: "8px",
+                        background: "#5D87FF",
+                        color: "white",
+                      },
+                    }}
+                  >
+                    <TableRow>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        DATE
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        BUYER
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        OR/NO
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        COLOR
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        F/ITEM
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        GSM
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        REQ/KG
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        F/RCV/KG
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        BLANCE
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        REQ/KG
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        F/RCV/KG
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        BLANCE
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        P/L
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        TOTAL/KG
+                      </TableCell>
+                      <TableCell align="center" className="whitespace-nowrap">
+                        REMARKS
+                      </TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {rows.map((row) => (
+                      <TableRow
+                        key={row.id}
+                        sx={{
+                          "& td": {
+                            border: "1px solid rgba(224, 224, 224, 1)",
                             padding: "8px",
-                    },
-                  }}
-                >
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.date}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.buyer}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.OrderNo}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.color}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.item}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.gsm}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.kg}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.rcv}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.blance}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.kg2}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.rcv2}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.blance}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.pl}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.total}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.remark}
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+                          },
+                        }}
+                      >
+                        <TableCell align="center" className="whitespace-nowrap">
+                          {row.date}
+                        </TableCell>
+                        <TableCell align="center" className="whitespace-nowrap">
+                          {row.buyer}
+                        </TableCell>
+                        <TableCell align="center" className="whitespace-nowrap">
+                          {row.OrderNo}
+                        </TableCell>
+                        <TableCell align="center" className="whitespace-nowrap">
+                          {row.color}
+                        </TableCell>
+                        <TableCell align="center" className="whitespace-nowrap">
+                          {row.item}
+                        </TableCell>
+                        <TableCell align="center" className="whitespace-nowrap">
+                          {row.gsm}
+                        </TableCell>
+                        <TableCell align="center" className="whitespace-nowrap">
+                          {row.kg}
+                        </TableCell>
+                        <TableCell align="center" className="whitespace-nowrap">
+                          {row.rcv}
+                        </TableCell>
+                        <TableCell align="center" className="whitespace-nowrap">
+                          {row.blance}
+                        </TableCell>
+                        <TableCell align="center" className="whitespace-nowrap">
+                          {row.kg2}
+                        </TableCell>
+                        <TableCell align="center" className="whitespace-nowrap">
+                          {row.rcv2}
+                        </TableCell>
+                        <TableCell align="center" className="whitespace-nowrap">
+                          {row.blance}
+                        </TableCell>
+                        <TableCell align="center" className="whitespace-nowrap">
+                          {row.pl}
+                        </TableCell>
+                        <TableCell align="center" className="whitespace-nowrap">
+                          {row.total}
+                        </TableCell>
+                        <TableCell align="center" className="whitespace-nowrap">
+                          {row.remark}
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody> */}
+                </Table>
+              </TableContainer>
             </Paper>
+            
             <div
               style={{
                 marginTop: "20px",
@@ -360,9 +360,8 @@ const Page = () => {
         </div>
       </>
 
-
-      <div className="text-center mb-5">
-        <div className="flex gap-2 items-center justify-center mb-3">
+      <div className="mb-5 text-center">
+        <div className="mb-3 flex items-center justify-center gap-2">
           <Image src={flaxen} alt="img" className="h-10 w-10" />
           <h1>Flaxen Dress Maker Ltd</h1>
         </div>
@@ -534,7 +533,7 @@ const Page = () => {
           </Table>
         </TableContainer>
       </Paper>
-      <div className="flex justify-end gap-5 mt-5">
+      <div className="mt-5 flex justify-end gap-5">
         <Button variant="contained" disableElevation startIcon={<PrintIcon />}>
           Print
         </Button>
