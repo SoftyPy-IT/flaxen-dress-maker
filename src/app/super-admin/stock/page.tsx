@@ -13,9 +13,11 @@ import DeleteIcon from "@mui/icons-material/Delete";
 
 import AddIcon from "@mui/icons-material/Add";
 import Link from "next/link";
-import { Button, TextField } from "@mui/material";
+import { Button, TextField, Tooltip } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { DatePicker } from "@mui/x-date-pickers";
+import SendIcon from "@mui/icons-material/Send";
+import StockSendModal from "./_components/StockSendModal";
 
 const rows = [
   {
@@ -115,7 +117,11 @@ const rows = [
   },
 ];
 
-const page = () => {
+const Page = () => {
+
+  const [open, setOpen] = React.useState(false)
+  const handleOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
   return (
     <>
       <div className="mb-5 flex flex-wrap items-center justify-between gap-5 rounded bg-white p-5 shadow-md">
@@ -278,6 +284,12 @@ const page = () => {
                     align="center"
                     className="space-x-2 whitespace-nowrap"
                   >
+                    <Tooltip title="Send">
+                      <button className="text-blue-600"  onClick={handleOpen}>
+                        <SendIcon fontSize="small" />
+                      </button>
+                    </Tooltip>
+
                     <Link href="/super-admin/stock/stock-preview">
                       <button className="text-blue-600">
                         <VisibilityIcon fontSize="small" />
@@ -298,8 +310,9 @@ const page = () => {
           </Table>
         </TableContainer>
       </Paper>
+      {open && <StockSendModal open={open} setOpen={handleClose} />}
     </>
   );
 };
 
-export default page;
+export default Page;
