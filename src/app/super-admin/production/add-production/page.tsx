@@ -2,7 +2,6 @@
 import React from "react";
 import { TextField, Button, Paper, Grid } from "@mui/material";
 import TopSection from "@/components/shared/TopSection/TopSection";
-import Production from "../_components/Production";
 
 const page = () => {
   return (
@@ -13,123 +12,185 @@ const page = () => {
           Add Daily Production
         </h4>
       </div>
-      <Paper sx={{ padding: 2, marginBottom: "20px" }}>
-        <h3 className=" text-2xl font-bold">Order</h3>
-        <div>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={3}>
-              <TextField label="Buyer" name="buyer" fullWidth />
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <TextField label="Order No" name="orderNo" fullWidth />
-            </Grid>
-          </Grid>
-        </div>
-        <h3 className="mt-5  text-2xl font-bold">Cutting</h3>
-        <div>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={3}>
-              <TextField label="Receive" name="receive" fullWidth />
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <TextField label="Cutting" name="cutting" fullWidth />
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <TextField label="Reject" name="reject" fullWidth />
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <TextField label="Sent" name="sent" fullWidth />
-            </Grid>
-          </Grid>
-        </div>
-        <h3 className="mt-5  text-2xl font-bold">Print</h3>
-        <div>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={3}>
-              <TextField label="Receive" name="receive" fullWidth />
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <TextField label="Print" name="print" fullWidth />
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <TextField label="Reject" name="reject" fullWidth />
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <TextField label="Sent" name="sent" fullWidth />
-            </Grid>
-          </Grid>
-        </div>
-        <h3 className="mt-5 text-2xl font-bold">Embroidery</h3>
-        <div>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={3}>
-              <TextField label="Receive" name="receive" fullWidth />
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <TextField label="Embroidery" name="embroidery" fullWidth />
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <TextField label="Reject" name="reject" fullWidth />
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <TextField label="Sent" name="sent" fullWidth />
-            </Grid>
-          </Grid>
-        </div>
-        <h3 className="mt-5 text-2xl font-bold">Sewing</h3>
-        <div>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={3}>
-              <TextField label="Receive" name="receive" fullWidth />
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <TextField label="Sewing" name="sewing" fullWidth />
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <TextField label="Reject" name="reject" fullWidth />
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <TextField label="Sent" name="sent" fullWidth />
-            </Grid>
-          </Grid>
-        </div>
-        <h3 className="mt-5 text-2xl font-bold">Finishing</h3>
-        <div>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={3}>
-              <TextField label="Receive" name="receive" fullWidth />
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <TextField label="Finishing" name="finishing" fullWidth />
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <TextField label="Reject" name="reject" fullWidth />
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <TextField label="Sent" name="sent" fullWidth />
-            </Grid>
-          </Grid>
-        </div>
-        <h3 className="mt-5 text-2xl font-bold">Poly</h3>
-        <div>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={3}>
-              <TextField label="Receive" name="receive" fullWidth />
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <TextField label="Poly" name="poly" fullWidth />
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <TextField label="Reject" name="reject" fullWidth />
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <TextField label="Sent" name="sent" fullWidth />
-            </Grid>
-          </Grid>
-        </div>
-      </Paper>
+      <div className="mt-2 space-y-5 p-2">
+        <div className="rounded bg-white p-2">
+          <h3 className=" text-2xl font-bold">Order</h3>
+          <div>
+            <Grid container spacing={2}>
 
-      <Production />
+              <Grid item xs={12} sm={2}>
+                <TextField label="Buyer Name" name="buyer" fullWidth />
+              </Grid>
+
+              <Grid item xs={12} sm={2}>
+                <TextField label="Order No" name="order" fullWidth />
+              </Grid>
+
+              
+
+              <Grid item xs={12} sm={2}>
+                <TextField
+                  name="Date"
+                  type="date"
+                  label="Date"
+                  InputLabelProps={{ shrink: true }}
+                  fullWidth
+                />
+              </Grid>
+            </Grid>
+          </div>
+        </div>
+        <div className="rounded bg-white p-2">
+          <h3 className="text-2xl font-bold">Cutting</h3>
+          <div>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Receive" name="receive" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Print" name="print" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Previous Reject" name="prereject" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Today Reject" name="tdyreject" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Marge Reject" name="mrgreject" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Sent" name="sent" fullWidth />
+              </Grid>
+            </Grid>
+          </div>
+        </div>
+        <div className="rounded bg-white p-2">
+          <h3 className="  text-2xl font-bold">Print</h3>
+          <div>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Receive" name="receive" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Print" name="print" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Previous Reject" name="prereject" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Today Reject" name="tdyreject" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Marge Reject" name="mrgreject" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Sent" name="sent" fullWidth />
+              </Grid>
+            </Grid>
+          </div>
+        </div>
+        <div className="rounded bg-white p-2">
+          <h3 className="text-2xl font-bold">Embroidery</h3>
+          <div>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Receive" name="receive" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Print" name="print" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Previous Reject" name="prereject" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Today Reject" name="tdyreject" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Marge Reject" name="mrgreject" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Sent" name="sent" fullWidth />
+              </Grid>
+            </Grid>
+          </div>
+        </div>
+        <div className="rounded bg-white p-2">
+          <h3 className="text-2xl font-bold">Sewing</h3>
+          <div>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Receive" name="receive" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Print" name="print" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Previous Reject" name="prereject" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Today Reject" name="tdyreject" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Marge Reject" name="mrgreject" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Sent" name="sent" fullWidth />
+              </Grid>
+            </Grid>
+          </div>
+        </div>
+        <div className="rounded bg-white p-2">
+          <h3 className="text-2xl font-bold">Finishing</h3>
+          <div>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Receive" name="receive" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Print" name="print" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Previous Reject" name="prereject" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Today Reject" name="tdyreject" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Marge Reject" name="mrgreject" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Sent" name="sent" fullWidth />
+              </Grid>
+            </Grid>
+          </div>
+        </div>
+        <div className="rounded bg-white p-2">
+          <h3 className="text-2xl font-bold">Poly</h3>
+          <div>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Receive" name="receive" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Print" name="print" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Previous Reject" name="prereject" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Today Reject" name="tdyreject" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Marge Reject" name="mrgreject" fullWidth />
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <TextField label="Sent" name="sent" fullWidth />
+              </Grid>
+            </Grid>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

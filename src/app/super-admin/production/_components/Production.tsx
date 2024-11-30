@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -9,115 +9,112 @@ import TableRow from "@mui/material/TableRow";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { Button } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
 import Link from "next/link";
-import { TextField } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
 
 const Production = () => {
-    const rows = [
-        {
-          id: "1",
-          sl: "1",
-          buyer: "John Doe",
-          OrderNo: "123",
-          color: "Red",
-          item: "Item",
-          gsm: "250",
-          kg: "250",
-          rcv: "250",
-          blance: "1.2",
-          kg2: "250",
-          rcv2: "250",
-          blance2: "1.2",
-          pl: "250",
-          total: "234",
-          remark: "25",
-        },
-        {
-          id: "2",
-          sl: "2",
-          buyer: "John Doe",
-          OrderNo: "123",
-          color: "Red",
-          item: "Item",
-          gsm: "250",
-          kg: "250",
-          rcv: "250",
-          blance: "1.2",
-          kg2: "250",
-          rcv2: "250",
-          blance2: "1.2",
-          pl: "250",
-          total: "234",
-          remark: "25",
-        },
-        {
-          id: "3",
-          sl: "3",
-          buyer: "John Doe",
-          OrderNo: "123",
-          color: "Red",
-          item: "Item",
-          gsm: "250",
-          kg: "250",
-          rcv: "250",
-          blance: "1.2",
-          kg2: "250",
-          rcv2: "250",
-          blance2: "1.2",
-          pl: "250",
-          total: "234",
-          remark: "25",
-        },
-        {
-          id: "4",
-          sl: "4",
-          buyer: "John Doe",
-          OrderNo: "123",
-          color: "Red",
-          item: "Item",
-          gsm: "250",
-          kg: "250",
-          rcv: "250",
-          blance: "1.2",
-          kg2: "250",
-          rcv2: "250",
-          blance2: "1.2",
-          pl: "250",
-          total: "234",
-          remark: "25",
-        },
-        {
-          id: "5",
-          sl: "5",
-          buyer: "John Doe",
-          OrderNo: "123",
-          color: "Red",
-          item: "Item",
-          gsm: "250",
-          kg: "250",
-          rcv: "250",
-          blance: "1.2",
-          kg2: "250",
-          rcv2: "250",
-          blance2: "1.2",
-          pl: "250",
-          total: "234",
-          remark: "25",
-        },
-      ];
-    return (
-        <>
-            <Paper sx={{ width: "100%", overflow: "hidden" }}>
+  const rows = [
+    {
+      id: "1",
+      sl: "1",
+      buyer: "John Doe",
+      OrderNo: "123",
+      color: "Red",
+      item: "Item",
+      gsm: "250",
+      kg: "250",
+      rcv: "250",
+      blance: "10",
+      kg2: "250",
+      rcv2: "250",
+      blance2: "10",
+      pl: "250",
+      total: "234",
+      remark: "25",
+    },
+    {
+      id: "2",
+      sl: "2",
+      buyer: "John Doe",
+      OrderNo: "123",
+      color: "Red",
+      item: "Item",
+      gsm: "250",
+      kg: "250",
+      rcv: "250",
+      blance: "10",
+      kg2: "250",
+      rcv2: "250",
+      blance2: "10",
+      pl: "250",
+      total: "234",
+      remark: "25",
+    },
+    {
+      id: "3",
+      sl: "3",
+      buyer: "John Doe",
+      OrderNo: "123",
+      color: "Red",
+      item: "Item",
+      gsm: "250",
+      kg: "250",
+      rcv: "250",
+      blance: "10",
+      kg2: "250",
+      rcv2: "250",
+      blance2: "10",
+      pl: "250",
+      total: "234",
+      remark: "25",
+    },
+    {
+      id: "4",
+      sl: "4",
+      buyer: "John Doe",
+      OrderNo: "123",
+      color: "Red",
+      item: "Item",
+      gsm: "250",
+      kg: "250",
+      rcv: "250",
+      blance: "10",
+      kg2: "250",
+      rcv2: "250",
+      blance2: "10",
+      pl: "250",
+      total: "234",
+      remark: "25",
+    },
+    {
+      id: "5",
+      sl: "5",
+      buyer: "John Doe",
+      OrderNo: "123",
+      color: "Red",
+      item: "Item",
+      gsm: "250",
+      kg: "250",
+      rcv: "250",
+      blance: "10",
+      kg2: "250",
+      rcv2: "250",
+      blance2: "10",
+      pl: "250",
+      total: "234",
+      remark: "25",
+    },
+  ];
+
+  return (
+    <>
+      <Paper sx={{ width: "100%", overflow: "hidden" }}>
         <TableContainer>
           <Table>
             <TableHead
               sx={{
                 "& th": {
                   border: "1px solid rgba(224, 224, 224, 1)",
-                  color:"white",
+                  color: "white",
                   padding: "8px",
                 },
               }}
@@ -127,10 +124,12 @@ const Production = () => {
                   align="center"
                   className="whitespace-nowrap"
                   colSpan={7}
-                >Order Details</TableCell> 
+                >
+                  Order Details
+                </TableCell>
                 <TableCell
                   align="center"
-                  colSpan={4}
+                  colSpan={6}
                   className="whitespace-nowrap"
                 >
                   Cutting
@@ -138,31 +137,39 @@ const Production = () => {
 
                 <TableCell
                   align="center"
-                  colSpan={4}
-                  className="whitespace-nowrap"
-                >Print</TableCell>
-                <TableCell
-                  align="center"
-                  colSpan={4}
+                  colSpan={6}
                   className="whitespace-nowrap"
                 >
-                 Embroidery
+                  Print
                 </TableCell>
                 <TableCell
                   align="center"
-                  colSpan={4}
+                  colSpan={6}
                   className="whitespace-nowrap"
-                >Sewing</TableCell>
+                >
+                  Embroidery
+                </TableCell>
                 <TableCell
                   align="center"
-                  colSpan={4}
+                  colSpan={6}
                   className="whitespace-nowrap"
-                >Finishing</TableCell>
+                >
+                  Sewing
+                </TableCell>
                 <TableCell
                   align="center"
-                  colSpan={4}
+                  colSpan={6}
                   className="whitespace-nowrap"
-                >Poly</TableCell>
+                >
+                  Finishing
+                </TableCell>
+                <TableCell
+                  align="center"
+                  colSpan={6}
+                  className="whitespace-nowrap"
+                >
+                  Poly
+                </TableCell>
                 <TableCell
                   align="center"
                   colSpan={2}
@@ -170,44 +177,40 @@ const Production = () => {
                 ></TableCell>
               </TableRow>
             </TableHead>
-            <TableHead 
+            <TableHead
               sx={{
                 "& th": {
                   border: "1px solid rgba(224, 224, 224, 1)",
-                  color:"white",
+                  color: "white",
                   padding: "8px",
                 },
               }}
             >
-
               <TableRow className="bg-[#5D87FF]">
                 <TableCell align="center" className="whitespace-nowrap">
-                SL.
+                  SL.
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                Order No.
+                  Order No.
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                Buyer
+                  Buyer
                 </TableCell>
                 {/* <TableCell align="center" className="whitespace-nowrap">
                 Type
                 </TableCell> */}
                 <TableCell align="center" className="whitespace-nowrap">
-                Styles
+                  Styles
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                Items
+                  Items
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                Colors
+                  Colors
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                Order Qty	
+                  Order Qty
                 </TableCell>
-                							
-
-
 
                 <TableCell align="center" className="whitespace-nowrap">
                   Receive
@@ -215,8 +218,34 @@ const Production = () => {
                 <TableCell align="center" className="whitespace-nowrap">
                   Cutting
                 </TableCell>
+
                 <TableCell align="center" className="whitespace-nowrap">
-                  Reject
+                  Pre. Re.
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
+                  Tdy. Re.
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
+                  Marge Re.
+                </TableCell>
+
+                <TableCell align="center" className="whitespace-nowrap">
+                  Sent
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
+                  Receive
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
+                  Cutting
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
+                  Pre. Re.
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
+                  Tdy. Re.
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
+                  Marge Re.
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
                   Sent
@@ -228,7 +257,13 @@ const Production = () => {
                   Cutting
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  Reject
+                  Pre. Re.
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
+                  Tdy. Re.
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
+                  Marge Re.
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
                   Sent
@@ -240,7 +275,13 @@ const Production = () => {
                   Cutting
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  Reject
+                  Pre. Re.
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
+                  Tdy. Re.
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
+                  Marge Re.
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
                   Sent
@@ -252,7 +293,13 @@ const Production = () => {
                   Cutting
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  Reject
+                  Pre. Re.
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
+                  Tdy. Re.
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
+                  Marge Re.
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
                   Sent
@@ -264,27 +311,17 @@ const Production = () => {
                   Cutting
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  Reject
+                  Pre. Re.
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
+                  Tdy. Re.
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
+                  Marge Re.
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
                   Sent
                 </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  Receive
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  Cutting
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  Reject
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  Sent
-                </TableCell>
-
-
-
-
 
                 <TableCell align="center" className="whitespace-nowrap">
                   REMARKS
@@ -294,9 +331,6 @@ const Production = () => {
                 </TableCell>
               </TableRow>
             </TableHead>
-
-
-
 
             <TableBody>
               {rows.map((row) => (
@@ -318,7 +352,7 @@ const Production = () => {
                   <TableCell align="center" className="whitespace-nowrap">
                     {row.buyer}
                   </TableCell>
-                 
+
                   <TableCell align="center" className="whitespace-nowrap">
                     {row.color}
                   </TableCell>
@@ -404,6 +438,43 @@ const Production = () => {
                     {row.total}
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
+                    {row.blance}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.pl}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.total}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.blance}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.pl}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.total}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.blance}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.pl}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.total}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.blance}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.pl}
+                  </TableCell>
+
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.total}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
                     {row.total}
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
@@ -433,8 +504,8 @@ const Production = () => {
           </Table>
         </TableContainer>
       </Paper>
-        </>
-    );
+    </>
+  );
 };
 
 export default Production;

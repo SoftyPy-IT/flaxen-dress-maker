@@ -32,7 +32,7 @@ const SidebarItem = ({ item, pageName, setPageName }: any) => {
             isItemActive
               ? "bg-[#5D87FF] !text-white"
               : "text-gray-500"
-          } group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium duration-300 ease-in-out hover:bg-[#5D87FF] hover:text-white`}
+          } group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-semibold duration-300 ease-in-out hover:bg-[#5D87FF] hover:text-white`}
         >
           {item.icon}
           {item.label}
