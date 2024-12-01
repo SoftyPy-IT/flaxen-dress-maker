@@ -15,7 +15,7 @@ interface ITextField {
   onChange?: (value: any) => void;
 }
 
-const INTSelect = ({
+const FlaxenSelect = ({
   items,
   name,
   label,
@@ -51,12 +51,22 @@ const INTSelect = ({
               onChange(e.target.value);
             }
           }}
-          helperText={isError ? (formState.errors[name]?.message as string) : ""}
+          helperText={
+            isError ? (formState.errors[name]?.message as string) : ""
+          }
         >
           {items.map((item) => (
             <MenuItem key={item} value={item}>
               {item}
             </MenuItem>
+
+            // example -
+            // <FlaxenSelect
+            // items={["Bangla", "Math", "English"]}
+            // fullWidth
+            // name="subject"
+            // label="Select Section"
+            // />
           ))}
         </TextField>
       )}
@@ -64,4 +74,4 @@ const INTSelect = ({
   );
 };
 
-export default INTSelect;
+export default FlaxenSelect;

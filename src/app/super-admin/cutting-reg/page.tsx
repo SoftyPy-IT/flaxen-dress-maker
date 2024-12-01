@@ -1,20 +1,11 @@
 "use client";
 import Link from "next/link";
 import * as React from "react";
-import Paper from "@mui/material/Paper";
-import Table from "@mui/material/Table";
 import AddIcon from "@mui/icons-material/Add";
-import TableRow from "@mui/material/TableRow";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableHead from "@mui/material/TableHead";
-import EditIcon from "@mui/icons-material/Edit";
-import { Button, IconButton } from "@mui/material";
-import DeleteIcon from "@mui/icons-material/Delete";
-import TableContainer from "@mui/material/TableContainer";
-import VisibilityIcon from "@mui/icons-material/Visibility";
+import { Button } from "@mui/material";
 import { TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import CuttingReg from "./_components/CuttingReg";
 
 const rows = [
   {
@@ -98,83 +89,7 @@ const Page = () => {
         </div>
       </div>
        
-        <Paper sx={{ overflow: "hidden", padding: "0px" }}>
-          <TableContainer>
-            <Table sx={{ padding: "0px" }}>
-              <TableHead>
-                <TableRow className="bg-[#5D87FF]">
-                  <TableCell align="center" className="text-white">
-                    Date
-                  </TableCell>
-                  <TableCell align="center" className="text-white">
-                    Buyer Name
-                  </TableCell>
-                  <TableCell align="center" className="text-white">
-                    Order No
-                  </TableCell>
-                  <TableCell align="center" className="text-white">
-                    Order Qty.
-                  </TableCell>
-                  <TableCell align="center" className="text-white">
-                    Color
-                  </TableCell>
-                  <TableCell align="center" className="text-white">
-                    Size
-                  </TableCell>
-                  <TableCell align="center" className="text-white">
-                    Total
-                  </TableCell>
-                  <TableCell align="center" className="text-white">
-                    Fabric Req.
-                  </TableCell>
-                  <TableCell align="center" className="text-white">
-                    Fabric Rcv.
-                  </TableCell>
-                  <TableCell align="center" className="text-white">
-                    Fabric/Item GSM
-                  </TableCell>
-                  <TableCell align="center" className="text-white">
-                    Consumption
-                  </TableCell>
-                  <TableCell align="center" className="text-white">
-                    Action
-                  </TableCell>
-                </TableRow>
-              </TableHead>
-
-              <TableBody>
-                {rows.map((row) => (
-                  <TableRow key={row.id}>
-                    <TableCell align="center">{row.date}</TableCell>
-                    <TableCell align="center">{row.name}</TableCell>
-                    <TableCell align="center">{row.order}</TableCell>
-                    <TableCell align="center">{row.orderqty}</TableCell>
-                    <TableCell align="center">{row.color}</TableCell>
-                    <TableCell align="center">{row.size}</TableCell>
-                    <TableCell align="center">{row.total}</TableCell>
-                    <TableCell align="center">{row.fabreq}</TableCell>
-                    <TableCell align="center">{row.fabrcv}</TableCell>
-                    <TableCell align="center">{row.gsm}</TableCell>
-                    <TableCell align="center">{row.consumption}</TableCell>
-                    <TableCell align="center">
-                      <IconButton
-                        href={`/super-admin/cutting-reg/preview/${row.id}`}
-                      >
-                        <VisibilityIcon fontSize="small" color="primary" />
-                      </IconButton>
-                      <IconButton href={`/super-admin/cutting-reg/${row.id}`}>
-                        <EditIcon fontSize="small" color="secondary" />
-                      </IconButton>
-                      <IconButton aria-label="delete" color="error">
-                        <DeleteIcon fontSize="small" color="error" />
-                      </IconButton>
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-        </Paper>
+        <CuttingReg/>
       </>
     </>
   );

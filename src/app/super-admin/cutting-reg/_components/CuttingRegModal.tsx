@@ -12,7 +12,7 @@ export type TProps = {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const StockSendModal = ({ open, setOpen }: TProps) => {
+const CuttingRegModal = ({ open, setOpen }: TProps) => {
   const handleSubmit = () => {
     console.log();
   };
@@ -48,4 +48,4 @@ const StockSendModal = ({ open, setOpen }: TProps) => {
   );
 };
 
-export default StockSendModal;
+export default CuttingRegModal;
