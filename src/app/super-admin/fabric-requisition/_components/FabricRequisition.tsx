@@ -10,187 +10,209 @@ import TableRow from "@mui/material/TableRow";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { Button } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
 import Link from "next/link";
-import { Tooltip } from "@mui/material";
-import SendIcon from "@mui/icons-material/Send";
-import StockSendModal from "./StockSendModal";
+import { TextField } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
 
 const rows = [
   {
     id: "1",
     date: "27-10-2024",
     buyer: "John Doe",
-    OrderNo: 123,
-    color: "Black",
-    cost: "288332",
-    factory: "Adury",
-    challanNo: 123,
-    dio: 12323,
-    roll: 25,
-    fab: "4/j",
-    gsm: 160,
-    gwe: 616,
-    fwe: 620,
-    received: "...",
-    remark: "...",
-    bin: "Cutting",
-    sstatus: "Send to Cutting",
+    OrderNo: "123",
+    color: "Red",
+    item: "Item",
+    gsm: "250",
+    kg: "250",
+    rcv: "250",
+    blance: "1.2",
+    kg2: "250",
+    rcv2: "250",
+    blance2: "1.2",
+    pl: "250",
+    total: "234",
+    remark: "25",
   },
   {
-    id: "2",
+    id: "1",
     date: "27-10-2024",
     buyer: "John Doe",
-    OrderNo: 123,
-    color: "Black",
-    cost: "288332",
-    factory: "Adury",
-    challanNo: 123,
-    dio: 12323,
-    roll: 25,
-    fab: "4/j",
-    gsm: 160,
-    gwe: 616,
-    fwe: 620,
-    received: "...",
-    remark: "...",
-    bin: "Cutting",
-    sstatus: "Not Send Yet",
+    OrderNo: "123",
+    color: "Red",
+    item: "Item",
+    gsm: "250",
+    kg: "250",
+    rcv: "250",
+    blance: "1.2",
+    kg2: "250",
+    rcv2: "250",
+    blance2: "1.2",
+    pl: "250",
+    total: "234",
+    remark: "25",
   },
   {
-    id: "3",
+    id: "1",
     date: "27-10-2024",
     buyer: "John Doe",
-    OrderNo: 123,
-    color: "Black",
-    cost: "288332",
-    factory: "Adury",
-    challanNo: 123,
-    dio: 12323,
-    roll: 25,
-    fab: "4/j",
-    gsm: 160,
-    gwe: 616,
-    fwe: 620,
-    received: "...",
-    remark: "...",
-    bin: "Cutting",
-    sstatus: "Send to Cutting",
+    OrderNo: "123",
+    color: "Red",
+    item: "Item",
+    gsm: "250",
+    kg: "250",
+    rcv: "250",
+    blance: "1.2",
+    kg2: "250",
+    rcv2: "250",
+    blance2: "1.2",
+    pl: "250",
+    total: "234",
+    remark: "25",
   },
   {
-    id: "4",
+    id: "1",
     date: "27-10-2024",
     buyer: "John Doe",
-    OrderNo: 123,
-    color: "Black",
-    cost: "288332",
-    factory: "Adury",
-    challanNo: 123,
-    dio: 12323,
-    roll: 25,
-    fab: "4/j",
-    gsm: 160,
-    gwe: 616,
-    fwe: 620,
-    received: "...",
-    remark: "...",
-    bin: "Cutting",
-    sstatus: "Send to Cutting",
+    OrderNo: "123",
+    color: "Red",
+    item: "Item",
+    gsm: "250",
+    kg: "250",
+    rcv: "250",
+    blance: "1.2",
+    kg2: "250",
+    rcv2: "250",
+    blance2: "1.2",
+    pl: "250",
+    total: "234",
+    remark: "25",
   },
   {
-    id: "5",
+    id: "1",
     date: "27-10-2024",
     buyer: "John Doe",
-    OrderNo: 123,
-    color: "Black",
-    cost: "288332",
-    factory: "Adury",
-    challanNo: 123,
-    dio: 12323,
-    roll: 25,
-    fab: "4/j",
-    gsm: 160,
-    gwe: 616,
-    fwe: 620,
-    received: "...",
-    remark: "...",
-    bin: "Cutting",
-    sstatus: "Decline From Cutting",
+    OrderNo: "123",
+    color: "Red",
+    item: "Item",
+    gsm: "250",
+    kg: "250",
+    rcv: "250",
+    blance: "1.2",
+    kg2: "250",
+    rcv2: "250",
+    blance2: "1.2",
+    pl: "250",
+    total: "234",
+    remark: "25",
   },
 ];
 
-const Stock = () => {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+const FabricRequisition = () => {
   return (
     <>
+    
+      
       <Paper sx={{ width: "100%", overflow: "hidden" }}>
         <TableContainer>
           <Table>
             <TableHead
-            sx={{
+              sx={{
                 "& th": {
                   border: "1px solid rgba(224, 224, 224, 1)",
-                  color: "white",
-                  fontFamily: "'Quicksand-VariableFont_wght'",
-                  fontWeight: "bold", 
+                  color:"white"
+                },
+              }}
+            >
+              <TableRow className="bg-[#5D87FF]">
+                <TableCell
+                  align="center"
+                  className="whitespace-nowrap"
+                  colSpan={6}
+                ></TableCell>
+                <TableCell
+                  align="center"
+                  colSpan={2}
+                  className="whitespace-nowrap"
+                >
+                  BODY FABRIC
+                </TableCell>
+
+                <TableCell
+                  align="center"
+                  className="whitespace-nowrap"
+                ></TableCell>
+                <TableCell
+                  align="center"
+                  colSpan={2}
+                  className="whitespace-nowrap"
+                >
+                  RIB & COLOR
+                </TableCell>
+                <TableCell
+                  align="center"
+                  colSpan={5}
+                  className="whitespace-nowrap"
+                ></TableCell>
+              </TableRow>
+            </TableHead>
+            <TableHead
+              sx={{
+                "& th": {
+                  border: "1px solid rgba(224, 224, 224, 1)",
+                  color:"white"
                 },
               }}
             >
               <TableRow className="bg-[#5D87FF]">
                 <TableCell align="center" className="whitespace-nowrap">
-                  Date
+                  DATE
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  Buyer
+                  BUYER
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  Order No
+                  OR/NO
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  Color
+                  COLOR
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  Cost
+                  F/ITEM
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  Factory
+                  GSM
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  Challan No
+                  REQ/KG
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  Dio
+                  F/RCV/KG
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  Roll
+                  BLANCE
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  Fab
+                  REQ/KG
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  G.S.M
+                  F/RCV/KG
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  G.W.E
+                  BLANCE
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  F.W.E
+                  P/L
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  Received
+                  TOTAL/KG
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  Remark
+                  REMARKS
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  Bin
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  Send
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  Action
+                  ACTION
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -217,60 +239,48 @@ const Stock = () => {
                     {row.color}
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
-                    {row.cost} Tk
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.factory}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.challanNo}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.dio}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.roll}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.fab}
+                    {row.item}
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
                     {row.gsm}
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
-                    {row.gwe}
+                    {row.kg}
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
-                    {row.fwe}
+                    {row.rcv}
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
-                    {row.received}
+                    {row.blance}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.kg2}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.rcv2}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.blance}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.pl}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.total}
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
                     {row.remark}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.bin}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.sstatus}
                   </TableCell>
                   <TableCell
                     align="center"
                     className="space-x-2 whitespace-nowrap"
                   >
-                    <Tooltip title="Send">
-                      <button className="text-blue-600" onClick={handleOpen}>
-                        <SendIcon fontSize="small" />
-                      </button>
-                    </Tooltip>
-
-                    <Link href="/super-admin/stock/stock-preview">
+                    <Link href={`/super-admin/fabric-requisition/requisition-preview/${row.id}`}>
                       <button className="text-blue-600">
                         <VisibilityIcon fontSize="small" />
                       </button>
                     </Link>
-                    <Link href="/super-admin/stock/id">
+                    <Link href={`/super-admin/fabric-requisition/${row.id}`}>
                       <button className="text-green-600">
                         <EditIcon fontSize="small" />
                       </button>
@@ -285,9 +295,10 @@ const Stock = () => {
           </Table>
         </TableContainer>
       </Paper>
-      {open && <StockSendModal open={open} setOpen={handleClose} />}
     </>
   );
 };
 
-export default Stock;
+
+
+export default FabricRequisition;
