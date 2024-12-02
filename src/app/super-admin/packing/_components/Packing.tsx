@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import * as React from "react";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -11,121 +12,140 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Link from "next/link";
 
-const Accessories = () => {
-    const rows = [
-        {
-          id: "1",
-          no: "1",
-          date: "27-10-2024",
-          challan: "AB-0124",
-          product: "Butam",
-          qty: "10",
-          unit: "pcs",
-          price: "100tk",
-          supplier: "AB Treaders",
-          
-        },
-        {
-          id: "2",
-          no: "2",
-          date: "27-10-2024",
-          challan: "AB-0124",
-          product: "Niddle",
-          qty: "10",
-          unit: "pcs",
-          price: "100tk",
-          supplier: "AB Treaders",
-        },
-        {
-          id: "3",
-          no: "3",
-          date: "27-10-2024",
-          challan: "AB-0124",
-          product: "Pink Color",
-          qty: "10",
-          unit: "KG",
-          price: "100tk",
-          supplier: "AB Treaders",
-        },
-      ];
+const Packing = () => {
+  const rows = [
+    {
+      id: "1",
+      styleNo: "123",
+      orderNo: "123",
+      description: "Description",
+      qty: "Quantity",
+      ctnQty: "Ctn Qty",
+      netWeight: "Net Weight",
+      grossWeight: "Gross Weight",
+      cartonMeasurement: "Carton Measurement",
+      cbm: "Cbm",
+    },
+    {
+      id: "2",
+      styleNo: "123",
+      orderNo: "123",
+      description: "Description",
+      qty: "Quantity",
+      ctnQty: "Ctn Qty",
+      netWeight: "Net Weight",
+      grossWeight: "Gross Weight",
+      cartonMeasurement: "Carton Measurement",
+      cbm: "Cbm",
+    },
+    {
+      id: "3",
+      styleNo: "123",
+      orderNo: "123",
+      description: "Description",
+      qty: "Quantity",
+      ctnQty: "Ctn Qty",
+      netWeight: "Net Weight",
+      grossWeight: "Gross Weight",
+      cartonMeasurement: "Carton Measurement",
+      cbm: "Cbm",
+    },
+    {
+      id: "4",
+      styleNo: "123",
+      orderNo: "123",
+      description: "Description",
+      qty: "Quantity",
+      ctnQty: "Ctn Qty",
+      netWeight: "Net Weight",
+      grossWeight: "Gross Weight",
+      cartonMeasurement: "Carton Measurement",
+      cbm: "Cbm",
+    },
+    {
+      id: "5",
+      styleNo: "123",
+      orderNo: "123",
+      description: "Description",
+      qty: "Quantity",
+      ctnQty: "Ctn Qty",
+      netWeight: "Net Weight",
+      grossWeight: "Gross Weight",
+      cartonMeasurement: "Carton Measurement",
+      cbm: "Cbm",
+    },
+  ];
   return (
-    <>
+    <>     
       <Paper sx={{ width: "100%", overflow: "hidden" }}>
         <TableContainer>
           <Table>
             <TableHead
-            sx={{
+              sx={{
                 "& th": {
                   border: "1px solid rgba(224, 224, 224, 1)",
-                  color: "white",
-                  fontFamily: "'Quicksand-VariableFont_wght'",
-                  fontWeight: "bold", 
+                  color:"white"
                 },
               }}
             >
               <TableRow className="bg-[#5D87FF]">
                 <TableCell
                   align="center"
-                  className="whitespace-nowrap text-white"
-                  sx={{ color: "white" }}
+                  className="whitespace-nowrap"
                 >
-                  S. No
+                  STYLE NO
                 </TableCell>
                 <TableCell
                   align="center"
-                  className="whitespace-nowrap text-white"
-                  sx={{ color: "white" }}
+                  className="whitespace-nowrap"
                 >
-                  Date
+                  ORDER NO
                 </TableCell>
                 <TableCell
                   align="center"
-                  className="whitespace-nowrap text-white"
-                  sx={{ color: "white" }}
+                  className="whitespace-nowrap"
                 >
-                  Challan No.
+                  DESCRIPTION OF GOODS
                 </TableCell>
                 <TableCell
                   align="center"
-                  className="whitespace-nowrap text-white"
-                  sx={{ color: "white" }}
+                  className="whitespace-nowrap"
                 >
-                  Product Name
+                  QTY
                 </TableCell>
                 <TableCell
                   align="center"
-                  className="whitespace-nowrap text-white"
-                  sx={{ color: "white" }}
+                  className="whitespace-nowrap"
                 >
-                  Quantity
+                  CTN QTY
                 </TableCell>
                 <TableCell
                   align="center"
-                  className="whitespace-nowrap text-white"
-                  sx={{ color: "white" }}
+                  className="whitespace-nowrap"
                 >
-                  Unit
+                  NET WEIGHT
                 </TableCell>
                 <TableCell
                   align="center"
-                  className="whitespace-nowrap text-white"
-                  sx={{ color: "white" }}
+                  className="whitespace-nowrap"
                 >
-                  Price
+                  GROSS WEIGHT
                 </TableCell>
-                
                 <TableCell
                   align="center"
-                  className="whitespace-nowrap text-white"
-                  sx={{ color: "white" }}
+                  className="whitespace-nowrap"
                 >
-                  Supplier
-                </TableCell>               
-                
+                  CARTON MEASUREMENT
+                </TableCell>
                 <TableCell
                   align="center"
-                  className="whitespace-nowrap text-white"
-                  sx={{ color: "white" }}
+                  className="whitespace-nowrap"
+                >
+                  CBM
+                </TableCell>
+                <TableCell
+                  align="center"
+                  className="whitespace-nowrap"
                 >
                   Action
                 </TableCell>
@@ -136,54 +156,48 @@ const Accessories = () => {
                 <TableRow
                   key={row.id}
                   sx={{
-                    "&:last-child td, &:last-child th": { border: 0 },
                     "& td": {
-                      borderBottom: "1px solid rgba(224, 224, 224, 1)",
+                      border: "1px solid rgba(224, 224, 224, 1)",
                     },
                   }}
                 >
                   <TableCell align="center" className="whitespace-nowrap">
-                    {row.no}
+                    {row.styleNo}
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
-                    {row.date}
+                    {row.orderNo}
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
-                    {row.challan}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.product}
+                    {row.description}
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
                     {row.qty}
                   </TableCell>
-                  
                   <TableCell align="center" className="whitespace-nowrap">
-                    {row.unit}
+                    {row.ctnQty}
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
-                    {row.price}
+                    {row.netWeight}
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
-                    {row.supplier}
+                    {row.grossWeight}
                   </TableCell>
-                  
-                 
-
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.cartonMeasurement}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.cbm}
+                  </TableCell>
                   <TableCell
                     align="center"
                     className="space-x-2 whitespace-nowrap"
                   >
-                    <Link
-                      href={`/super-admin/accessories-stock/preview/${row.id}`}
-                    >
+                    <Link href="/super-admin/packing/packing-preview">
                       <button className="text-blue-600">
                         <VisibilityIcon fontSize="small" />
                       </button>
                     </Link>
-                    <Link
-                      href={`/super-admin/accessories-stock/${row.id}`}
-                    >
+                    <Link href="/super-admin/packing/id">
                       <button className="text-green-600">
                         <EditIcon fontSize="small" />
                       </button>
@@ -202,4 +216,4 @@ const Accessories = () => {
   );
 };
 
-export default Accessories;
+export default Packing;

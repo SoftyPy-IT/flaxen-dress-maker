@@ -83,10 +83,12 @@ const AccessoriesDelivery = () => {
         <TableContainer>
           <Table>
             <TableHead
-              sx={{
+            sx={{
                 "& th": {
                   border: "1px solid rgba(224, 224, 224, 1)",
                   color: "white",
+                  fontFamily: "'Quicksand-VariableFont_wght'",
+                  fontWeight: "bold", 
                 },
               }}
             >

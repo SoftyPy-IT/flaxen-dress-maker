@@ -111,10 +111,12 @@ const Production = () => {
         <TableContainer>
           <Table>
             <TableHead
-              sx={{
+            sx={{
                 "& th": {
                   border: "1px solid rgba(224, 224, 224, 1)",
                   color: "white",
+                  fontFamily: "'Quicksand-VariableFont_wght'",
+                  fontWeight: "bold", 
                   padding: "8px",
                 },
               }}
@@ -178,10 +180,12 @@ const Production = () => {
               </TableRow>
             </TableHead>
             <TableHead
-              sx={{
+            sx={{
                 "& th": {
                   border: "1px solid rgba(224, 224, 224, 1)",
                   color: "white",
+                  fontFamily: "'Quicksand-VariableFont_wght'",
+                  fontWeight: "bold", 
                   padding: "8px",
                 },
               }}

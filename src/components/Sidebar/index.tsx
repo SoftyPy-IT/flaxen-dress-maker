@@ -164,10 +164,10 @@ const menuGroups = [
         children: [
           {
             label: "+ Add Fabric Requisition",
-            route: "/super-admin/requisition/add-requisition",
+            route: "/super-admin/fabric-requisition/add-requisition",
             // icon: <AddBoxIcon />,
           },
-          { label: "Fabric Requisition Index", route: "/super-admin/requisition" },
+          { label: "Fabric Requisition Index", route: "/super-admin/fabric-requisition" },
         ],
       },
       {
