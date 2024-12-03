@@ -1,14 +1,14 @@
-import React from 'react';
-import FabricReg from './_components/FabricReg';
-import { Button, TextField } from '@mui/material';
-import Link from 'next/link';
+import React from "react";
+import FabricReg from "./_components/FabricReg";
+import { Button, TextField } from "@mui/material";
+import Link from "next/link";
 import AddIcon from "@mui/icons-material/Add";
 import SearchIcon from "@mui/icons-material/Search";
 
 const Page = () => {
   return (
     <>
-     <div className="mb-5 flex flex-wrap items-center justify-between gap-5 rounded bg-white p-5 shadow-md">
+      <div className="mb-5 flex flex-wrap items-center justify-between gap-5 rounded bg-white p-5 shadow-md">
         <h3 className="text-2xl font-bold">Fabric Register</h3>
         <div className=" flex w-[500px] items-center gap-3">
           <TextField
@@ -40,7 +40,7 @@ const Page = () => {
           </Link>
         </div>
       </div>
-     <FabricReg/> 
+      <FabricReg />
     </>
   );
 };

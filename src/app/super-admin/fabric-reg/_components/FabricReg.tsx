@@ -3,7 +3,7 @@ import Link from "next/link";
 import * as React from "react";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
-import { TextField } from "@mui/material";
+import { Tooltip } from "@mui/material";
 import TableRow from "@mui/material/TableRow";
 import EditIcon from "@mui/icons-material/Edit";
 import TableBody from "@mui/material/TableBody";
@@ -13,6 +13,8 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { Button, IconButton } from "@mui/material";
 import TableContainer from "@mui/material/TableContainer";
 import VisibilityIcon from "@mui/icons-material/Visibility";
+import FabricSendModal from "./FabricSendModal";
+import SendIcon from "@mui/icons-material/Send";
 
 const rows = [
   {
@@ -27,8 +29,9 @@ const rows = [
     fabreq: "4797",
     gross: "1242",
     finish: "1162",
-    delivery: "626",
     name: "abed",
+    delivery: "626",
+    send: "Send to Cutting",
   },
   {
     id: "2",
@@ -42,8 +45,9 @@ const rows = [
     fabreq: "4797",
     gross: "1242",
     finish: "1162",
-    delivery: "626",
     name: "abed",
+    delivery: "626",
+    send: "Not Send Yet",
   },
   {
     id: "3",
@@ -57,15 +61,18 @@ const rows = [
     fabreq: "4797",
     gross: "1242",
     finish: "1162",
-    delivery: "626",
     name: "abed",
+    delivery: "626",
+    send: "Decline From Cutting",
   },
 ];
 
 const FabricReg = () => {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   return (
     <>
-     
       <Paper sx={{ overflow: "hidden", padding: "0px" }}>
         <TableContainer>
           <Table>
@@ -102,11 +109,14 @@ const FabricReg = () => {
                   Fabric Finish Weight
                 </TableCell>
                 <TableCell align="center" className="text-white">
-                  Delivery
-                </TableCell>
-                <TableCell align="center" className="text-white">
                   Name
                 </TableCell>
+                <TableCell align="center" className="text-white">
+                  Delivery (PCS)
+                </TableCell>               
+                <TableCell align="center" className="text-white">
+                  Send
+                </TableCell>               
                 <TableCell align="center" className="text-white">
                   Action
                 </TableCell>
@@ -134,9 +144,16 @@ const FabricReg = () => {
                   <TableCell align="center">{row.fabreq}</TableCell>
                   <TableCell align="center">{row.gross}</TableCell>
                   <TableCell align="center">{row.finish}</TableCell>
-                  <TableCell align="center">{row.delivery}</TableCell>
                   <TableCell align="center">{row.name}</TableCell>
+                  <TableCell align="center">{row.delivery}</TableCell>
+                  <TableCell align="center">{row.send}</TableCell>
                   <TableCell align="center" className="">
+                  <Tooltip title="Send">
+                      <button className="text-blue-600" onClick={handleOpen}>
+                        <SendIcon fontSize="small" />
+                      </button>
+                    </Tooltip>
+
                     <IconButton
                       href={`/super-admin/fabric-reg/preview/${row.id}`}
                     >
@@ -156,6 +173,7 @@ const FabricReg = () => {
         </TableContainer>
       </Paper>
 
+      {open && <FabricSendModal open={open} setOpen={handleClose} />}
     </>
   );
 };
