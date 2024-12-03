@@ -62,7 +62,7 @@ const WorkChallan = () => {
                   border: "1px solid rgba(224, 224, 224, 1)",
                   color: "white",
                   fontFamily: "'Quicksand-VariableFont_wght'",
-                  fontWeight: "bold", 
+                  fontWeight: "bold",
                               
                 },
               }}

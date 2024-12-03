@@ -107,16 +107,29 @@ const Production = () => {
 
   return (
     <>
-      <Paper sx={{ width: "100%", overflow: "hidden" }}>
+      <Paper
+        sx={{
+          width: "100%",
+          overflowX: "auto",
+          maxWidth: {   xs: "1600px", 
+
+            sm: "200px",  
+            md: "1050px", 
+            lg: "1050px",
+            xl: "1600px" 
+            },
+          margin: "auto",
+        }}
+      >
         <TableContainer>
           <Table>
             <TableHead
-            sx={{
+              sx={{
                 "& th": {
                   border: "1px solid rgba(224, 224, 224, 1)",
                   color: "white",
                   fontFamily: "'Quicksand-VariableFont_wght'",
-                  fontWeight: "bold", 
+                  fontWeight: "bold",
                   padding: "8px",
                 },
               }}
@@ -180,12 +193,12 @@ const Production = () => {
               </TableRow>
             </TableHead>
             <TableHead
-            sx={{
+              sx={{
                 "& th": {
                   border: "1px solid rgba(224, 224, 224, 1)",
                   color: "white",
                   fontFamily: "'Quicksand-VariableFont_wght'",
-                  fontWeight: "bold", 
+                  fontWeight: "bold",
                   padding: "8px",
                 },
               }}

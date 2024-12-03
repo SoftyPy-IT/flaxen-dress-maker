@@ -67,6 +67,12 @@ const menuGroups = [
             // icon: <AddBoxIcon />,
           },
           { label: "Fabric Register Index", route: "/super-admin/fabric-reg" },
+          {
+            label: "Request",
+            route: "/super-admin/fabric-reg/request",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Accept", route: "/super-admin/accept" },
         ],
       },
       

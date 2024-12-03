@@ -11,6 +11,9 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Link from "next/link";
+import AcceReqSendModal from "./AcceReqSendModal";
+import { Tooltip } from "@mui/material";
+import SendIcon from "@mui/icons-material/Send";
 
 const AccessoriesRequisition = () => {
   const rows = [
@@ -27,6 +30,7 @@ const AccessoriesRequisition = () => {
       date: "27-10-2024",
       time: "05.50",
       remark: "25",
+      send: "Not Send Yet",
     },
     {
       id: "2",
@@ -41,6 +45,7 @@ const AccessoriesRequisition = () => {
       date: "27-10-2024",
       time: "05.50",
       remark: "25",
+      send: "Send to Cutting",
     },
     {
       id: "3",
@@ -55,20 +60,27 @@ const AccessoriesRequisition = () => {
       date: "27-10-2024",
       time: "05.50",
       remark: "25",
+      send: "Decline From Fabric",
     },
   ];
+
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   return (
     <>
-      <>  
+      <>
         <Paper sx={{ width: "100%", overflow: "hidden" }}>
           <TableContainer>
             <Table>
-              <TableHead sx={{
-                "& th": {
-                  border: "1px solid rgba(224, 224, 224, 1)",
-                  color:"white"
-                },
-              }}>
+              <TableHead
+                sx={{
+                  "& th": {
+                    border: "1px solid rgba(224, 224, 224, 1)",
+                    color: "white",
+                  },
+                }}
+              >
                 <TableRow className="bg-[#5D87FF]">
                   <TableCell
                     align="center"
@@ -152,6 +164,13 @@ const AccessoriesRequisition = () => {
                     className="whitespace-nowrap text-white"
                     sx={{ color: "white" }}
                   >
+                    Send
+                  </TableCell>
+                  <TableCell
+                    align="center"
+                    className="whitespace-nowrap text-white"
+                    sx={{ color: "white" }}
+                  >
                     Action
                   </TableCell>
                 </TableRow>
@@ -200,11 +219,19 @@ const AccessoriesRequisition = () => {
                     <TableCell align="center" className="whitespace-nowrap">
                       {row.remark}
                     </TableCell>
+                    <TableCell align="center" className="whitespace-nowrap">
+                      {row.send}
+                    </TableCell>
 
                     <TableCell
                       align="center"
                       className="space-x-2 whitespace-nowrap"
                     >
+                      <Tooltip title="Send">
+                      <button className="text-blue-600" onClick={handleOpen}>
+                        <SendIcon fontSize="small" />
+                      </button>
+                    </Tooltip>
                       <Link
                         href={`/super-admin/accessories-requisition/preview/${row.id}`}
                       >
@@ -230,6 +257,7 @@ const AccessoriesRequisition = () => {
           </TableContainer>
         </Paper>
       </>
+      {open && <AcceReqSendModal open={open} setOpen={handleClose} />}
     </>
   );
 };

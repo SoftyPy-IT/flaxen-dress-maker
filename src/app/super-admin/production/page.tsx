@@ -11,7 +11,7 @@ const page = () => {
   return (
     <>
       <div className="mb-5 flex flex-wrap items-center justify-between gap-5 rounded bg-white p-5 shadow-md">
-        <h3 className="text-2xl font-bold">Fabric Requisition</h3>
+        <h3 className="text-2xl font-bold">Production</h3>
         <div className=" flex w-[500px] items-center gap-3">
           <TextField
             name="date"
