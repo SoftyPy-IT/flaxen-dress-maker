@@ -72,7 +72,7 @@ const menuGroups = [
             route: "/super-admin/fabric-reg/request",
             // icon: <AddBoxIcon />,
           },
-          { label: "Accept", route: "/super-admin/accept" },
+          { label: "Accept", route: "/super-admin/fabric-reg/accept" },
         ],
       },
       

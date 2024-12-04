@@ -19,11 +19,12 @@ const rows = [
   {
     id: "1",
     date: "27-10-2024",
-    name: "Abed",
+    name: "Fahim",
     order: "39695",
-    orderqty: "White",
-    color: "Fahim",
-    size: "11253",
+    color: "White",
+    orderqty: "100",
+    size: "L",
+    qty: "5",
     total: "74",
     fabreq: "58",
     fabrcv: "4797",
@@ -34,11 +35,12 @@ const rows = [
   {
     id: "2",
     date: "27-10-2024",
-    name: "Abed",
+    name: "Fahim",
     order: "39695",
-    orderqty: "White",
-    color: "Fahim",
-    size: "11253",
+    orderqty: "100",
+    color: "White",
+    size: "M",
+    qty: "5",
     total: "74",
     fabreq: "58",
     fabrcv: "4797",
@@ -49,17 +51,18 @@ const rows = [
   {
     id: "3",
     date: "27-10-2024",
-    name: "Abed",
+    name: "Fahim",
     order: "39695",
-    orderqty: "White",
-    color: "Fahim",
-    size: "11253",
+    orderqty: "100",
+    color: "White",
+    size: "S",
+    qty: "5",
     total: "74",
     fabreq: "58",
     fabrcv: "4797",
     gsm: "1242",
     consumption: "1162",
-    status: "Decline From Embroidery",
+    status: "Sent to Embroidery",
   },
 ];
 
@@ -94,6 +97,9 @@ const CuttingReg = () => {
                     Size
                   </TableCell>
                   <TableCell align="center" className="text-white">
+                    Quantity
+                  </TableCell>
+                  <TableCell align="center" className="text-white">
                     Total
                   </TableCell>
                   <TableCell align="center" className="text-white">
@@ -125,13 +131,23 @@ const CuttingReg = () => {
                     <TableCell align="center">{row.order}</TableCell>
                     <TableCell align="center">{row.orderqty}</TableCell>
                     <TableCell align="center">{row.color}</TableCell>
+                    <TableCell align="center">
                     <TableCell align="center">{row.size}</TableCell>
+                    <TableCell align="center">{row.size}</TableCell>
+                    <TableCell align="center">{row.size}</TableCell>
+                    </TableCell>
+                    <TableCell align="center">
+                    <TableCell align="center">{row.qty}</TableCell>
+                    <TableCell align="center">{row.qty}</TableCell>
+                    <TableCell align="center">{row.qty}</TableCell>
+                    </TableCell>
                     <TableCell align="center">{row.total}</TableCell>
                     <TableCell align="center">{row.fabreq}</TableCell>
                     <TableCell align="center">{row.fabrcv}</TableCell>
                     <TableCell align="center">{row.gsm}</TableCell>
                     <TableCell align="center">{row.consumption}</TableCell>
                     <TableCell align="center">{row.status}</TableCell>
+                    {/* Order Qty.	Color	Size	Quantity	Total	Fabric Req.	Fabric Rcv.	Fabric/Item GSM	Consumption */}
                     <TableCell align="center">
                       <IconButton onClick={handleOpen}>
                         <SendIcon fontSize="small" color="primary" />
@@ -161,3 +177,5 @@ const CuttingReg = () => {
 };
 
 export default CuttingReg;
+
+
