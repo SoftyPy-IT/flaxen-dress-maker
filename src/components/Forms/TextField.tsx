@@ -2,6 +2,7 @@ import * as React from 'react';
 import { SxProps } from '@mui/system';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
 import { Controller, useFormContext } from 'react-hook-form';
+
 type TTextareaProps = {
   name: string;
   placeholder?: string;
@@ -9,7 +10,7 @@ type TTextareaProps = {
   sx?: SxProps;
   required?: boolean;
 };
-const FlaxenTextArea = ({
+const FlaxenTextField = ({
   name,
   placeholder,
   minRows = 4, 
@@ -40,4 +41,4 @@ const FlaxenTextArea = ({
     />
   );
 };
-export default FlaxenTextArea;
+export default FlaxenTextField;
