@@ -11,8 +11,14 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Link from "next/link";
+import SendIcon from "@mui/icons-material/Send";
+import SampleSendModal from "./SampleSendModal";
 
 const Sample = () => {
+  const [Open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   const rows = [
     {
       id: "1",
@@ -82,12 +88,12 @@ const Sample = () => {
         <TableContainer>
           <Table>
             <TableHead
-            sx={{
+              sx={{
                 "& th": {
                   border: "1px solid rgba(224, 224, 224, 1)",
                   color: "white",
                   fontFamily: "'Quicksand-VariableFont_wght'",
-                  fontWeight: "bold", 
+                  fontWeight: "bold",
                 },
               }}
             >
@@ -145,6 +151,9 @@ const Sample = () => {
                   <TableCell align="center">{row.sewingStartTime}</TableCell>
                   <TableCell align="center">{row.remark}</TableCell>
                   <TableCell align="center" className="space-x-2">
+                    <button className="text-blue-600">
+                      <SendIcon fontSize="small" onClick={handleOpen} />
+                    </button>
                     <Link href="/super-admin/sample/sample-preview">
                       <button className="text-blue-600">
                         <VisibilityIcon fontSize="small" />
@@ -165,6 +174,7 @@ const Sample = () => {
           </Table>
         </TableContainer>
       </Paper>
+      {Open && <SampleSendModal open={Open} setOpen={handleClose} />}
     </>
   );
 };

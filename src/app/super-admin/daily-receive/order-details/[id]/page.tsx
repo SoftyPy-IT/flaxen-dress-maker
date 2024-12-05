@@ -38,14 +38,22 @@ const Page = () => {
             Daily Receive For{" "}
             <span className="font-bold">PRANATAL, France.</span>
           </h4>
-          <div className=" flex w-[500px] items-center gap-3">
-            <TextField
-              name="date"
-              type="date"
-              InputLabelProps={{ shrink: true }}
-              fullWidth
-              size="small"
-            />
+          <div className=" flex w-[800px] items-center gap-3">
+          <TextField
+            name="date"
+            type="date"
+            InputLabelProps={{ shrink: true }}
+            fullWidth
+            size="small"
+          />
+          <h5>to</h5>
+          <TextField
+            name="date"
+            type="date"
+            InputLabelProps={{ shrink: true }}
+            fullWidth
+            size="small"
+          />
 
             <TextField
               size="small"

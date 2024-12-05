@@ -11,9 +11,15 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Link from "next/link";
+import SendIcon from "@mui/icons-material/Send";
+import OrderSendModal from "./OrderSendModal";
 
 
 const Order = () => {
+  const [Open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   const rows = [
     {
       id: "1",
@@ -168,9 +174,14 @@ const Order = () => {
                     align="center"
                     className="space-x-2 whitespace-nowrap"
                   >
+
+                    <button className="text-blue-600" onClick={handleOpen}>
+                      <SendIcon fontSize="small" />
+                    </button>
                     <button className="text-blue-600">
                       <VisibilityIcon fontSize="small" />
                     </button>
+
                     <Link href="/super-admin/order/id">
                       <button className="text-green-600">
                         <EditIcon fontSize="small" />
@@ -186,6 +197,8 @@ const Order = () => {
           </Table>
         </TableContainer>
       </Paper>
+      {Open && <OrderSendModal open={Open} setOpen={handleClose} />}
+
     </>
   );
 };
