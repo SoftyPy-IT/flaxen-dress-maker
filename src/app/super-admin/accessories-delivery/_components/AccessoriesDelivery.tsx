@@ -16,8 +16,13 @@ import Link from "next/link";
 
 import { TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import SendIcon from "@mui/icons-material/Send";
+import AccessoriesSendModal from "./AccessoriesSendModal";
 
 const AccessoriesDelivery = () => {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const rows = [
     {
       id: "1",
@@ -77,18 +82,16 @@ const AccessoriesDelivery = () => {
   ];
   return (
     <>
-      
-
       <Paper sx={{ width: "100%", overflow: "hidden" }}>
         <TableContainer>
           <Table>
             <TableHead
-            sx={{
+              sx={{
                 "& th": {
                   border: "1px solid rgba(224, 224, 224, 1)",
                   color: "white",
                   fontFamily: "'Quicksand-VariableFont_wght'",
-                  fontWeight: "bold", 
+                  fontWeight: "bold",
                 },
               }}
             >
@@ -178,9 +181,16 @@ const AccessoriesDelivery = () => {
                   <TableCell align="center">{row.sign}</TableCell>
                   <TableCell align="center">{row.remark}</TableCell>
                   <TableCell align="center" className="space-x-2">
-                    <button className="text-blue-600">
-                      <VisibilityIcon fontSize="small" />
+                    <button className="text-blue-600" onClick={handleOpen}>
+                      <SendIcon fontSize="small" />
                     </button>
+                    <Link
+                      href={`/super-admin/accessories-delivery/preview/${row.id}`}
+                    >
+                      <button className="text-blue-600">
+                        <VisibilityIcon fontSize="small" />
+                      </button>
+                    </Link>
                     <Link href="/super-admin/accessories-delivery/id">
                       <button className="text-green-600">
                         <EditIcon fontSize="small" />
@@ -196,6 +206,7 @@ const AccessoriesDelivery = () => {
           </Table>
         </TableContainer>
       </Paper>
+      {open && <AccessoriesSendModal open={open} setOpen={handleClose} />}
     </>
   );
 };
