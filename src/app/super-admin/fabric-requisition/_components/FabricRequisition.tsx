@@ -10,11 +10,9 @@ import TableRow from "@mui/material/TableRow";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { Button } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
 import Link from "next/link";
-import { TextField } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
+import SendIcon from "@mui/icons-material/Send";
+import FabRequiSendModal from "./FabRequiSendModal";
 
 const rows = [
   {
@@ -110,6 +108,9 @@ const rows = [
 ];
 
 const FabricRequisition = () => {
+  const [Open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   return (
     <>
     
@@ -275,6 +276,10 @@ const FabricRequisition = () => {
                     align="center"
                     className="space-x-2 whitespace-nowrap"
                   >
+                      <button className="text-blue-600" onClick={handleOpen}>
+                        <SendIcon fontSize="small" />
+                      </button>
+                   
                     <Link href={`/super-admin/fabric-requisition/requisition-preview/${row.id}`}>
                       <button className="text-blue-600">
                         <VisibilityIcon fontSize="small" />
@@ -295,6 +300,7 @@ const FabricRequisition = () => {
           </Table>
         </TableContainer>
       </Paper>
+      {Open && <FabRequiSendModal open={Open} setOpen={handleClose} />}
     </>
   );
 };

@@ -15,38 +15,53 @@ import Link from "next/link";
 const WorkChallan = () => {
   const rows = [
     {
-      id: "1",
-      description: "Description of goods",
-      quantity: "Quantity",
+      id: "1",      
+      color:"white",
+      line:"5",
+      style:"S",
+      quantity: "100",
       noOfPack: "123",
+      description: "Description of goods",
       remarks: "Remarks",
     },
     {
-      id: "1",
-      description: "Description of goods",
-      quantity: "Quantity",
+      id: "2",
+      color:"white",
+      line:"5",
+      style:"S",
+      quantity: "100",
       noOfPack: "123",
+      description: "Description of goods",
       remarks: "Remarks",
     },
     {
-      id: "1",
-      description: "Description of goods",
-      quantity: "Quantity",
+      id: "3",
+      color:"white",
+      line:"5",
+      style:"S",
+      quantity: "100",
       noOfPack: "123",
+      description: "Description of goods",
       remarks: "Remarks",
     },
     {
-      id: "1",
-      description: "Description of goods",
-      quantity: "Quantity",
+      id: "4",
+      color:"white",
+      line:"5",
+      style:"S",
+      quantity: "100",
       noOfPack: "123",
+      description: "Description of goods",
       remarks: "Remarks",
     },
     {
-      id: "1",
-      description: "Description of goods",
-      quantity: "Quantity",
+      id: "5",
+      color:"white",
+      line:"5",
+      style:"S",
+      quantity: "100",
       noOfPack: "123",
+      description: "Description of goods",
       remarks: "Remarks",
     },
   ];
@@ -71,15 +86,23 @@ const WorkChallan = () => {
                 <TableCell align="center" className="whitespace-nowrap">
                   SL NO
                 </TableCell>
+
+               
                 <TableCell align="center" className="whitespace-nowrap">
-                  Description of goods
+                  Color
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
+                  Line
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
+                  Style
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
                   Quantity
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  No. of Pack&apos;s
-                </TableCell>
+                  Description
+                </TableCell>              
                 <TableCell align="center" className="whitespace-nowrap">
                   Remarks
                 </TableCell>
@@ -101,9 +124,11 @@ const WorkChallan = () => {
                   }}
                 >
                   <TableCell align="center">{index + 1}</TableCell>
+                  <TableCell align="center">{row.color}</TableCell>
+                  <TableCell align="center">{row.line}</TableCell>
+                  <TableCell align="center">{row.style}</TableCell>
+                  <TableCell align="center">{row.quantity}</TableCell>                  
                   <TableCell align="center">{row.description}</TableCell>
-                  <TableCell align="center">{row.quantity}</TableCell>
-                  <TableCell align="center">{row.noOfPack}</TableCell>
                   <TableCell align="center">{row.remarks}</TableCell>
                   <TableCell align="center" className="space-x-2">
                     <Link href="/super-admin/work-challan/challan-preview">

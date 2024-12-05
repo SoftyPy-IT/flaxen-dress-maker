@@ -10,13 +10,15 @@ import TableRow from "@mui/material/TableRow";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { Button } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
 import Link from "next/link";
-import { TextField } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
+import HourlySendModal from "./HourlySendModal";
+import SendIcon from "@mui/icons-material/Send";
 
 const HourlyReceive = () => {
+  const [Open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   const rows = [
     {
       id: "1",
@@ -111,6 +113,9 @@ const HourlyReceive = () => {
                   <TableCell align="center">{row.f_send}</TableCell>
                   <TableCell align="center">{row.f_sign}</TableCell>
                   <TableCell align="center" className="space-x-2">
+                  <button className="text-blue-600">
+                      <SendIcon fontSize="small" onClick={handleOpen}/>
+                    </button>
                     <Link href="/super-admin/hourly-receive/hourly-receive-preview">
                     <button className="text-blue-600">
                       <VisibilityIcon fontSize="small" />
@@ -131,6 +136,8 @@ const HourlyReceive = () => {
           </Table>
         </TableContainer>
       </Paper>
+
+{Open && <HourlySendModal open={Open} setOpen={handleClose} />}
     </>
   );
 };

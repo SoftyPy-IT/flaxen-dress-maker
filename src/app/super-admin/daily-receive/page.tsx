@@ -73,14 +73,22 @@ const Page = () => {
       <>
         <div className="mb-5 flex flex-wrap items-center justify-between gap-5 rounded bg-white p-5 shadow-md">
           <h3 className="text-2xl font-bold">Daily Receive from S/Others</h3>
-          <div className=" flex w-[500px] items-center gap-3">
-            <TextField
-              name="date"
-              type="date"
-              InputLabelProps={{ shrink: true }}
-              fullWidth
-              size="small"
-            />
+          <div className=" flex w-[800px] items-center gap-3">
+          <TextField
+            name="date"
+            type="date"
+            InputLabelProps={{ shrink: true }}
+            fullWidth
+            size="small"
+          />
+          <h5>to</h5>
+          <TextField
+            name="date"
+            type="date"
+            InputLabelProps={{ shrink: true }}
+            fullWidth
+            size="small"
+          />
 
             <TextField
               size="small"

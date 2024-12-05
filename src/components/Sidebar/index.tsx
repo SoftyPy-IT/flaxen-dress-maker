@@ -23,10 +23,13 @@ import ConstructionIcon from "@mui/icons-material/Construction";
 import ContentCutIcon from "@mui/icons-material/ContentCut";
 import OfflinePinIcon from "@mui/icons-material/OfflinePin";
 import CancelIcon from "@mui/icons-material/Cancel";
-import AddBoxIcon from '@mui/icons-material/AddBox';
-import BuildIcon from '@mui/icons-material/Build';
-import LocalMallIcon from '@mui/icons-material/LocalMall';
-import StraightenIcon from '@mui/icons-material/Straighten';
+import AddBoxIcon from "@mui/icons-material/AddBox";
+import BuildIcon from "@mui/icons-material/Build";
+import LocalMallIcon from "@mui/icons-material/LocalMall";
+import StraightenIcon from "@mui/icons-material/Straighten";
+import ArticleIcon from "@mui/icons-material/Article";
+import Image from "next/image";
+import logo from "../../assets/images/logo/flaxen.png";
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -41,7 +44,7 @@ const menuGroups = [
         route: "/",
         icon: <DashboardIcon />,
       },
-      
+
       {
         label: "Fabric Stock Register",
         route: "#",
@@ -75,7 +78,7 @@ const menuGroups = [
           { label: "Accept", route: "/super-admin/fabric-reg/accept" },
         ],
       },
-      
+
       {
         label: "Accessories Requisition",
         route: "#",
@@ -83,10 +86,14 @@ const menuGroups = [
         children: [
           {
             label: "+ Add Accessories Requisition",
-            route: "/super-admin/accessories-requisition/add-accessories-requisition",
+            route:
+              "/super-admin/accessories-requisition/add-accessories-requisition",
             // icon: <AddBoxIcon />,
           },
-          { label: "Accessories Requisition Index", route: "/super-admin/accessories-requisition" },
+          {
+            label: "Accessories Requisition Index",
+            route: "/super-admin/accessories-requisition",
+          },
         ],
       },
       {
@@ -94,7 +101,11 @@ const menuGroups = [
         route: "#",
         icon: <BuildIcon />,
         children: [
-          { label: "Unit", route: "/super-admin/unit", icon: <StraightenIcon />, },
+          {
+            label: "Unit",
+            route: "/super-admin/unit",
+            icon: <StraightenIcon />,
+          },
           {
             label: "+ Add Accessories",
             route: "/super-admin/accessories-stock/add-accessories",
@@ -113,14 +124,16 @@ const menuGroups = [
             route: "/super-admin/cutting-reg/add-cutting-reg",
             // icon: <AddBoxIcon />,
           },
-          { label: "Cutting Register Index", route: "/super-admin/cutting-reg" },
+          {
+            label: "Cutting Register Index",
+            route: "/super-admin/cutting-reg",
+          },
         ],
       },
       {
         label: "Daily Receive",
         route: "/super-admin/daily-receive",
         icon: <OfflinePinIcon />,
-        
       },
       {
         label: "Production",
@@ -134,7 +147,6 @@ const menuGroups = [
           },
           { label: "Production Index", route: "/super-admin/production" },
         ],
-       
       },
       // ------------------------------
       {
@@ -173,7 +185,10 @@ const menuGroups = [
             route: "/super-admin/fabric-requisition/add-requisition",
             // icon: <AddBoxIcon />,
           },
-          { label: "Fabric Requisition Index", route: "/super-admin/fabric-requisition" },
+          {
+            label: "Fabric Requisition Index",
+            route: "/super-admin/fabric-requisition",
+          },
         ],
       },
       {
@@ -186,7 +201,10 @@ const menuGroups = [
             route: "/super-admin/shipment-challan/add-challan",
             // icon: <AddBoxIcon />,
           },
-          { label: "Shipment Challan Index", route: "/super-admin/shipment-challan" },
+          {
+            label: "Shipment Challan Index",
+            route: "/super-admin/shipment-challan",
+          },
         ],
       },
       {
@@ -202,7 +220,7 @@ const menuGroups = [
           { label: "Work Challan Index", route: "/super-admin/work-challan" },
         ],
       },
-      
+
       {
         label: "Packing List",
         route: "#",
@@ -240,7 +258,10 @@ const menuGroups = [
             route: "/super-admin/accessories-delivery/add-accessories",
             // icon: <AddBoxIcon />,
           },
-          { label: "Accessories Delivery Index", route: "/super-admin/accessories-delivery" },
+          {
+            label: "Accessories Delivery Index",
+            route: "/super-admin/accessories-delivery",
+          },
         ],
       },
       {
@@ -253,10 +274,12 @@ const menuGroups = [
             route: "/super-admin/hourly-receive/add-hourly-receive",
             // icon: <AddBoxIcon />,
           },
-          { label: "Hourly Receive Index", route: "/super-admin/hourly-receive" },
+          {
+            label: "Hourly Receive Index",
+            route: "/super-admin/hourly-receive",
+          },
         ],
       },
-
 
       // {
       //   label: "Unit",
@@ -272,7 +295,6 @@ const menuGroups = [
       //   ],
       // },
 
-      
       {
         label: "Forms",
         route: "#",
@@ -288,9 +310,9 @@ const menuGroups = [
         icon: <SettingsIcon />,
       },
       {
-        label: "All Challan Design",
+        label: "Sample Challan Design",
         route: "#",
-        icon: <SettingsIcon />,
+        icon: <ArticleIcon />,
         children: [
           {
             label: "Printing Unit Challan",
@@ -311,9 +333,7 @@ const menuGroups = [
           { label: "Sign Up", route: "/auth/signup", icon: <SignUpIcon /> },
         ],
       },
-      
-    
-     
+
       // {
       //   label: "Register",
       //   route: "#",
@@ -353,7 +373,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
       >
         {/* <!-- SIDEBAR HEADER --> */}
         <div className="flex items-center justify-between gap-2 px-6 py-5.5 shadow lg:justify-center lg:py-6">
-          <Link href="/">
+          <Link  href="/" className="flex justify-center content-center items-center gap-2">
+            <Image src={logo} alt="logo" className="h-10 w-10" />
             <h2 className="lg:text-center">Flaxen</h2>
           </Link>
 

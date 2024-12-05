@@ -10,8 +10,13 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Link from "next/link";
+import SendIcon from "@mui/icons-material/Send";
+import AccStockSendModal from "./AccStockSendModal";
 
 const Accessories = () => {
+  const [Open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
     const rows = [
         {
           id: "1",
@@ -174,6 +179,13 @@ const Accessories = () => {
                     align="center"
                     className="space-x-2 whitespace-nowrap"
                   >
+                    
+                      <button className="text-blue-600" onClick={handleOpen}>
+                        <SendIcon fontSize="small" />
+                      </button>
+                    
+
+
                     <Link
                       href={`/super-admin/accessories-stock/preview/${row.id}`}
                     >
@@ -198,6 +210,8 @@ const Accessories = () => {
           </Table>
         </TableContainer>
       </Paper>
+
+      {Open && <AccStockSendModal open={Open} setOpen={handleClose} />}
     </>
   );
 };
