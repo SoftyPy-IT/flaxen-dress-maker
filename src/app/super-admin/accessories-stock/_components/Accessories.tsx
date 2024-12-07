@@ -28,6 +28,7 @@ const Accessories = () => {
           unit: "pcs",
           price: "100tk",
           supplier: "AB Treaders",
+          status: "Not Send Yet",
           
         },
         {
@@ -40,6 +41,7 @@ const Accessories = () => {
           unit: "pcs",
           price: "100tk",
           supplier: "AB Treaders",
+          status: "Send to Cutting",
         },
         {
           id: "3",
@@ -51,6 +53,7 @@ const Accessories = () => {
           unit: "KG",
           price: "100tk",
           supplier: "AB Treaders",
+          status: "Decline From Swing",
         },
       ];
   return (
@@ -126,6 +129,13 @@ const Accessories = () => {
                 >
                   Supplier
                 </TableCell>               
+                <TableCell
+                  align="center"
+                  className="whitespace-nowrap text-white"
+                  sx={{ color: "white" }}
+                >
+                  Status
+                </TableCell>               
                 
                 <TableCell
                   align="center"
@@ -171,6 +181,9 @@ const Accessories = () => {
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
                     {row.supplier}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.status}
                   </TableCell>
                   
                  

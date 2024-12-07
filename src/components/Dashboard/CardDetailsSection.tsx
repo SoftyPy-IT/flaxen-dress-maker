@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import { PolarArea } from "react-chartjs-2";
@@ -14,7 +14,7 @@ ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 
 const CardDetailsSection = () => {
   const data = {
-    labels: ["Red", "Green", "Yellow", "Grey", "Blue"],
+    labels: ["Cutting", "Stock", "Embroidery", "Swing", "Accessories"],
     datasets: [
       {
         label: "My First Dataset",
@@ -32,6 +32,7 @@ const CardDetailsSection = () => {
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false, 
     plugins: {
       legend: {
         position: "top" as const,
@@ -43,12 +44,13 @@ const CardDetailsSection = () => {
   };
 
   return (
-    <div className="bg-white p-2 rounded-lg shadow-md ">
-      <h3 className="text-lg font-semibold mb-4">Polar Area Chart</h3>
-      <PolarArea data={data} options={options} />
+    <div className="bg-white p-4 rounded-lg shadow-md">
+      <h3 className="text-lg font-semibold mb-4">Work Details Chart</h3>
+      <div style={{ height: "400px", margin: "auto" }}>
+        <PolarArea data={data} options={options} />
+      </div>
     </div>
   );
 };
 
 export default CardDetailsSection;
-

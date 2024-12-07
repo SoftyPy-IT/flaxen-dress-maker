@@ -33,7 +33,7 @@ const Header = (props: {
             <input
               type="text"
               placeholder="Search..."
-              className="w-64 rounded-full bg-white py-2 pl-10 pr-4 text-sm text-gray-700 placeholder-gray-400 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-300"
+              className="w-[280px] rounded-full bg-white py-3 pl-10 pr-4 text-sm text-gray-700 placeholder-gray-400 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-300"
             />
             <SearchIcon className="absolute left-3 top-2.5 text-gray-500" />
           </div>
@@ -42,23 +42,23 @@ const Header = (props: {
    
         <div className="flex items-center gap-4 lg:gap-6">
       
-          <button className="relative p-2 text-white hover:bg-blue-400 rounded-full">
+          <button className="relative p-2 text-white bg-blue-400 hover:bg-blue-300 rounded-md">
             <NotificationsIcon />
-            <span className="absolute -top-1 -right-1 flex h-3 w-3 items-center justify-center rounded-full bg-red-500 text-xs text-white">
+            <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-xs text-white">
               5
             </span>
           </button>
 
           
-          <button className="relative p-2 text-white hover:bg-blue-400 rounded-full">
+          <button className="relative p-2 text-white bg-blue-400 hover:bg-blue-300 rounded-md">
             <ChatBubbleIcon />
-            <span className="absolute -top-1 -right-1 flex h-3 w-3 items-center justify-center rounded-full bg-red-500 text-xs text-white">
+            <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-xs text-white">
               3
             </span>
           </button>
 
     
-          <button className="p-2 text-white hover:bg-blue-400 rounded-full">
+          <button className="p-2 text-white hover:bg-blue-400 rounded-md">
             <SettingsIcon />
           </button>
 

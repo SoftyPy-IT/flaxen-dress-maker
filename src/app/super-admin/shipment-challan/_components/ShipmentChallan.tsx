@@ -11,8 +11,14 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Link from "next/link";
+import SendIcon from "@mui/icons-material/Send";
+import ShipmentChlnSendModal from "./ShipmentChlnSendModal";
 
 const ShipmentChallan = () => {
+  const [Open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   const rows = [
     {
       id: "1",
@@ -21,6 +27,7 @@ const ShipmentChallan = () => {
       style: "01",
       quantity: "Quantity",
       remarks: "Remarks",
+      status: "Send to Cutting",
     },
     {
       id: "1",
@@ -29,6 +36,7 @@ const ShipmentChallan = () => {
       style: "01",
       quantity: "Quantity",
       remarks: "Remarks",
+      status: "Sending Processing",
     },
     {
       id: "1",
@@ -37,6 +45,7 @@ const ShipmentChallan = () => {
       style: "01",
       quantity: "Quantity",
       remarks: "Remarks",
+      status: "Not Send Yet",
     },
     {
       id: "1",
@@ -45,6 +54,7 @@ const ShipmentChallan = () => {
       style: "01",
       quantity: "Quantity",
       remarks: "Remarks",
+      status: "Decline From Cutting",
     },
     {
       id: "1",
@@ -53,6 +63,7 @@ const ShipmentChallan = () => {
       style: "01",
       quantity: "Quantity",
       remarks: "Remarks",
+      status: "Send to Cutting",
     },
   ];
   return (
@@ -61,12 +72,12 @@ const ShipmentChallan = () => {
         <TableContainer>
           <Table>
             <TableHead
-            sx={{
+              sx={{
                 "& th": {
                   border: "1px solid rgba(224, 224, 224, 1)",
                   color: "white",
                   fontFamily: "'Quicksand-VariableFont_wght'",
-                  fontWeight: "bold", 
+                  fontWeight: "bold",
                 },
               }}
             >
@@ -90,6 +101,9 @@ const ShipmentChallan = () => {
                   Remarks
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
+                  Status
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
                   Action
                 </TableCell>
               </TableRow>
@@ -110,7 +124,11 @@ const ShipmentChallan = () => {
                   <TableCell align="center">{row.style}</TableCell>
                   <TableCell align="center">{row.quantity}</TableCell>
                   <TableCell align="center">{row.remarks}</TableCell>
+                  <TableCell align="center">{row.status}</TableCell>
                   <TableCell align="center" className="space-x-2">
+                    <button className="text-blue-600" onClick={handleOpen}>
+                      <SendIcon fontSize="small" />
+                    </button>
                     <Link href="/super-admin/shipment-challan/challan-preview">
                       <button className="text-blue-600">
                         <VisibilityIcon fontSize="small" />
@@ -131,6 +149,7 @@ const ShipmentChallan = () => {
           </Table>
         </TableContainer>
       </Paper>
+      {Open && <ShipmentChlnSendModal open={Open} setOpen={handleClose} />}
     </>
   );
 };

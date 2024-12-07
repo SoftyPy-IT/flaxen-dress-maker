@@ -11,7 +11,7 @@ const page = () => {
     <>
       <TopSection />
       <div className="flex justify-center">
-        <h2 className="my-2 inline-block  bg-gray-400 p-1 uppercase text-white">
+        <h2 className="my-2 inline-block  rounded-md bg-blue-600 p-2 uppercase text-white">
           Add Order
         </h2>
       </div>

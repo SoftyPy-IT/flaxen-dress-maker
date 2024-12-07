@@ -32,6 +32,7 @@ const rows = [
     pl: "250",
     total: "234",
     remark: "25",
+    status: "Send to Embroidery",
   },
   {
     id: "1",
@@ -50,6 +51,7 @@ const rows = [
     pl: "250",
     total: "234",
     remark: "25",
+    status: "Not Send Yet",
   },
   {
     id: "1",
@@ -68,6 +70,7 @@ const rows = [
     pl: "250",
     total: "234",
     remark: "25",
+    status: "Sending Processing",
   },
   {
     id: "1",
@@ -86,6 +89,7 @@ const rows = [
     pl: "250",
     total: "234",
     remark: "25",
+    status: "Decline From Cutting",
   },
   {
     id: "1",
@@ -104,6 +108,7 @@ const rows = [
     pl: "250",
     total: "234",
     remark: "25",
+    status: "Send to Embroidery",
   },
 ];
 
@@ -153,7 +158,7 @@ const FabricRequisition = () => {
                 </TableCell>
                 <TableCell
                   align="center"
-                  colSpan={5}
+                  colSpan={6}
                   className="whitespace-nowrap"
                 ></TableCell>
               </TableRow>
@@ -211,6 +216,9 @@ const FabricRequisition = () => {
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
                   REMARKS
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
+                  Status
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
                   ACTION
@@ -271,6 +279,9 @@ const FabricRequisition = () => {
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
                     {row.remark}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.status}
                   </TableCell>
                   <TableCell
                     align="center"

@@ -1,28 +1,29 @@
 "use client";
+import Link from "next/link";
 import * as React from "react";
+import { Button } from "@mui/material";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
+import TableRow from "@mui/material/TableRow";
+import AddIcon from "@mui/icons-material/Add";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import VisibilityIcon from "@mui/icons-material/Visibility";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { Button } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
-import Link from "next/link";
+import TableContainer from "@mui/material/TableContainer";
+import VisibilityIcon from "@mui/icons-material/Visibility";
 
 import { TextField } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
 import SendIcon from "@mui/icons-material/Send";
+import SearchIcon from "@mui/icons-material/Search";
 import AccessoriesSendModal from "./AccessoriesSendModal";
 
 const AccessoriesDelivery = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
   const rows = [
     {
       id: "1",
@@ -34,6 +35,7 @@ const AccessoriesDelivery = () => {
       quantity: 50,
       sign: "John Doe",
       remark: "25",
+      status: "Decline From Cutting",
     },
     {
       id: "1",
@@ -45,6 +47,7 @@ const AccessoriesDelivery = () => {
       quantity: 50,
       sign: "John Doe",
       remark: "25",
+      status: "Not Send Yet",
     },
     {
       id: "1",
@@ -56,6 +59,7 @@ const AccessoriesDelivery = () => {
       quantity: 50,
       sign: "John Doe",
       remark: "25",
+      status: "Sending Processing",
     },
     {
       id: "1",
@@ -67,6 +71,7 @@ const AccessoriesDelivery = () => {
       quantity: 50,
       sign: "John Doe",
       remark: "25",
+      status: "Send to Cutting",
     },
     {
       id: "1",
@@ -78,6 +83,7 @@ const AccessoriesDelivery = () => {
       quantity: 50,
       sign: "John Doe",
       remark: "25",
+      status: "Send to Cutting",
     },
   ];
   return (
@@ -157,6 +163,13 @@ const AccessoriesDelivery = () => {
                   className="whitespace-nowrap"
                   sx={{ color: "white" }}
                 >
+                Status
+                </TableCell>
+                <TableCell
+                  align="center"
+                  className="whitespace-nowrap"
+                  sx={{ color: "white" }}
+                >
                   Action
                 </TableCell>
               </TableRow>
@@ -180,6 +193,7 @@ const AccessoriesDelivery = () => {
                   <TableCell align="center">{row.quantity}</TableCell>
                   <TableCell align="center">{row.sign}</TableCell>
                   <TableCell align="center">{row.remark}</TableCell>
+                  <TableCell align="center">{row.status}</TableCell>
                   <TableCell align="center" className="space-x-2">
                     <button className="text-blue-600" onClick={handleOpen}>
                       <SendIcon fontSize="small" />

@@ -31,6 +31,7 @@ const Sample = () => {
       sampleQuantity: 50,
       sewingStartTime: "08:00 AM",
       remark: "2134rf",
+      status: "Send To Cutting",
     },
     {
       id: "1",
@@ -43,6 +44,7 @@ const Sample = () => {
       sampleQuantity: 50,
       sewingStartTime: "08:00 AM",
       remark: "2134rf",
+      status: "Not Send Yet",
     },
     {
       id: "1",
@@ -55,6 +57,7 @@ const Sample = () => {
       sampleQuantity: 50,
       sewingStartTime: "08:00 AM",
       remark: "2134rf",
+      status: "Sending Processing",
     },
     {
       id: "1",
@@ -67,6 +70,7 @@ const Sample = () => {
       sampleQuantity: 50,
       sewingStartTime: "08:00 AM",
       remark: "2134rf",
+      status: "Decline From Embroidery",
     },
     {
       id: "1",
@@ -79,6 +83,7 @@ const Sample = () => {
       sampleQuantity: 50,
       sewingStartTime: "08:00 AM",
       remark: "2134rf",
+      status: "Send to Swing",
     },
   ];
 
@@ -127,6 +132,9 @@ const Sample = () => {
                   Remarks
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
+                  Status
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
                   Action
                 </TableCell>
               </TableRow>
@@ -150,6 +158,9 @@ const Sample = () => {
                   <TableCell align="center">{row.sampleQuantity}</TableCell>
                   <TableCell align="center">{row.sewingStartTime}</TableCell>
                   <TableCell align="center">{row.remark}</TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.status}
+                  </TableCell>
                   <TableCell align="center" className="space-x-2">
                     <button className="text-blue-600">
                       <SendIcon fontSize="small" onClick={handleOpen} />

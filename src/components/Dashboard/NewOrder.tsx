@@ -1,15 +1,13 @@
 import React from "react";
 
 const orders = [
-  { id: "000007", item: "Men's Shirt", time: "10:32 AM", date: "02 Oct, 2023", status: "Approved" },
   { id: "000006", item: "Men's T-shirt", time: "10:31 AM", date: "02 Oct, 2023", status: "Approved" },
   { id: "000005", item: "Long Dresses", time: "10:21 AM", date: "02 Oct, 2023", status: "Approved" },
   { id: "000004", item: "Hijabs", time: "10:20 AM", date: "02 Oct, 2023", status: "Approved" },
   { id: "000003", item: "Brooches", time: "10:20 AM", date: "02 Oct, 2023", status: "Approved" },
   { id: "000002", item: "Long Dresses", time: "10:21 AM", date: "02 Oct, 2023", status: "Approved" },
   { id: "000001", item: "Hijabs", time: "10:20 AM", date: "02 Oct, 2023", status: "Approved" },
-  { id: "000008", item: "Brooches", time: "10:20 AM", date: "02 Oct, 2023", status: "Approved" },
-  { id: "000009", item: "Brooches", time: "10:20 AM", date: "02 Oct, 2023", status: "Pending" },
+ 
   
 ];
 
