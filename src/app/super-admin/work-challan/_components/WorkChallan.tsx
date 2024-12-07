@@ -11,8 +11,14 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Link from "next/link";
+import WorkChlnSendModal from "./WorkChlnSendModal";
+import SendIcon from "@mui/icons-material/Send";
 
 const WorkChallan = () => {
+  const [Open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  
   const rows = [
     {
       id: "1",      
@@ -23,6 +29,7 @@ const WorkChallan = () => {
       noOfPack: "123",
       description: "Description of goods",
       remarks: "Remarks",
+      status: "Send to Cutting",
     },
     {
       id: "2",
@@ -33,6 +40,7 @@ const WorkChallan = () => {
       noOfPack: "123",
       description: "Description of goods",
       remarks: "Remarks",
+      status: "Sending Processing",
     },
     {
       id: "3",
@@ -43,6 +51,7 @@ const WorkChallan = () => {
       noOfPack: "123",
       description: "Description of goods",
       remarks: "Remarks",
+      status: "Not Send Yet",
     },
     {
       id: "4",
@@ -53,6 +62,7 @@ const WorkChallan = () => {
       noOfPack: "123",
       description: "Description of goods",
       remarks: "Remarks",
+      status: "Decline From Cutting",
     },
     {
       id: "5",
@@ -63,6 +73,7 @@ const WorkChallan = () => {
       noOfPack: "123",
       description: "Description of goods",
       remarks: "Remarks",
+      status: "Send to Cutting",
     },
   ];
 
@@ -107,6 +118,9 @@ const WorkChallan = () => {
                   Remarks
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
+                  Status
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
                   Action
                 </TableCell>
               </TableRow>
@@ -130,7 +144,11 @@ const WorkChallan = () => {
                   <TableCell align="center">{row.quantity}</TableCell>                  
                   <TableCell align="center">{row.description}</TableCell>
                   <TableCell align="center">{row.remarks}</TableCell>
+                  <TableCell align="center">{row.status}</TableCell>
                   <TableCell align="center" className="space-x-2">
+                  <button className="text-blue-600" onClick={handleOpen}>
+                      <SendIcon fontSize="small" />
+                    </button>
                     <Link href="/super-admin/work-challan/challan-preview">
                       <button className="text-blue-600">
                         <VisibilityIcon fontSize="small" />
@@ -151,6 +169,7 @@ const WorkChallan = () => {
           </Table>
         </TableContainer>
       </Paper>
+      {Open && <WorkChlnSendModal open={Open} setOpen={handleClose} />}
     </>
   );
 };

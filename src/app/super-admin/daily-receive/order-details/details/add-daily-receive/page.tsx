@@ -9,11 +9,9 @@ import { IconButton } from "@mui/material";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 
 const Page = () => {
-  // Initializing dailyReceive with objects that hold their own 'challanQTY' array.
   const [dailyReceive, setDailyReceive] = useState([{ challanQTY: [""] }]);
 
   const handleAddDailyReceive = () => {
-    // Add a new mother component (with its own challanQTY).
     setDailyReceive([...dailyReceive, { challanQTY: [""] }]);
   };
 
@@ -25,9 +23,8 @@ const Page = () => {
   };
 
   const handleAddChallanQTY = (index: number) => {
-    // Add a new child (challanQTY) to the specific mother component.
     const updatedDailyReceive = [...dailyReceive];
-    updatedDailyReceive[index].challanQTY.push(""); // Add a new empty string (representing a new challan)
+    updatedDailyReceive[index].challanQTY.push(""); 
     setDailyReceive(updatedDailyReceive);
   };
 
@@ -48,7 +45,6 @@ const Page = () => {
         {dailyReceive.map((mother, motherIndex) => (
           <div key={motherIndex} className="mb-4">
             <div className="mb-4 flex gap-4">
-              {/* 1st part: Mother component */}
               <div className="flex flex-1 gap-2 rounded border p-2">
                 <div className="flex w-full gap-2">
                   <TextField label="Line No" name="styleNo" fullWidth size="medium" />
@@ -63,7 +59,7 @@ const Page = () => {
                         <TextField label="QTY" name="description" size="medium" fullWidth sx={{ width: "250px" }} />
                       </div>
                       <div className="flex w-[100px] items-center space-x-2">
-                        {/* Add/Remove buttons for Challan */}
+                        
                         <IconButton
                           onClick={() => handleAddChallanQTY(motherIndex)}
                           sx={{
@@ -88,7 +84,6 @@ const Page = () => {
                 </div>
               </div>
 
-              {/* 2nd part: Add/Remove Mother Component */}
               <div className="mt-2 flex items-center justify-start gap-2">
                 <IconButton
                   onClick={handleAddDailyReceive}

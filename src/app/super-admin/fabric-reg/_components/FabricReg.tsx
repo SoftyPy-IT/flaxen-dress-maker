@@ -115,7 +115,7 @@ const FabricReg = () => {
                   Delivery (PCS)
                 </TableCell>               
                 <TableCell align="center" className="text-white">
-                  Send
+                  Status
                 </TableCell>               
                 <TableCell align="center" className="text-white">
                   Action

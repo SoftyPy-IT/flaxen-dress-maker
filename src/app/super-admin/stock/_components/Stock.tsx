@@ -151,13 +151,13 @@ const Stock = () => {
                   Color
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  Cost
+                  Cost (TK)
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
                   Factory
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  Challan No
+                  Chln. No
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
                   Dio
@@ -178,7 +178,7 @@ const Stock = () => {
                   F.W.E
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  Received
+                  Recv.
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
                   Remark
@@ -217,7 +217,7 @@ const Stock = () => {
                     {row.color}
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
-                    {row.cost} Tk
+                    {row.cost}
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
                     {row.factory}

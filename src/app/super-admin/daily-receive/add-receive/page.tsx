@@ -9,7 +9,7 @@ const page = () => {
       <>
         <TopSection />
         <div className="flex justify-center">
-          <h3 className="my-3 inline-block  bg-gray-400 p-2 uppercase text-white">
+          <h3 className="my-3 inline-block  rounded-md bg-blue-600 p-2 uppercase text-white">
             Add Daily Receive
           </h3>
         </div>

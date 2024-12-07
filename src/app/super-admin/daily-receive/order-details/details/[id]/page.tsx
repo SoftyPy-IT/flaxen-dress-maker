@@ -99,7 +99,6 @@ const Page = () => {
   const [dailyReceive, setDailyReceive] = useState([{ challanQTY: [""] }]);
 
   const handleAddDailyReceive = () => {
-    // Add a new mother component (with its own challanQTY).
     setDailyReceive([...dailyReceive, { challanQTY: [""] }]);
   };
 
@@ -111,9 +110,8 @@ const Page = () => {
   };
 
   const handleAddChallanQTY = (index: number) => {
-    // Add a new child (challanQTY) to the specific mother component.
     const updatedDailyReceive = [...dailyReceive];
-    updatedDailyReceive[index].challanQTY.push(""); // Add a new empty string (representing a new challan)
+    updatedDailyReceive[index].challanQTY.push(""); 
     setDailyReceive(updatedDailyReceive);
   };
 

@@ -28,8 +28,7 @@ const Dashboard = () => {
         </div>
 
         <div className="my-4 grid grid-cols-1 space-x-4 md:grid-cols-3 ">
-          <ActivitySection />
-          
+          <ActivitySection />          
           <PaymentsSection />
           <QuickTransfer />
         </div>

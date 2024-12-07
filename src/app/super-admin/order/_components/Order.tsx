@@ -32,6 +32,7 @@ const Order = () => {
       price: "20",
       total: "Total",
       swatch: "Swatch",
+      status: "Send to Cutting",
     },
     {
       id: "1",
@@ -44,6 +45,7 @@ const Order = () => {
       price: "20",
       total: "Total",
       swatch: "Swatch",
+      status: "Sending Processing",
     },
     {
       id: "1",
@@ -56,6 +58,7 @@ const Order = () => {
       price: "20",
       total: "Total",
       swatch: "Swatch",
+      status: "Not Send Yet",
     },
     {
       id: "1",
@@ -68,6 +71,7 @@ const Order = () => {
       price: "20",
       total: "Total",
       swatch: "Swatch",
+      status: "Decline From Cutting",
     },
     {
       id: "1",
@@ -80,6 +84,7 @@ const Order = () => {
       price: "20",
       total: "Total",
       swatch: "Swatch",
+      status: "Decline From Cutting",
     },
   ];
   return (
@@ -128,6 +133,9 @@ const Order = () => {
                   Swatch
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
+                  Status
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
                   Action
                 </TableCell>
               </TableRow>
@@ -169,6 +177,9 @@ const Order = () => {
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
                     {row.swatch}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.status}
                   </TableCell>
                   <TableCell
                     align="center"

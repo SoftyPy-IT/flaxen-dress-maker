@@ -11,8 +11,13 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Link from "next/link";
+import SendIcon from "@mui/icons-material/Send";
+import PackingSendModal from "./PackingSendModal";
 
 const Packing = () => {
+  const [Open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const rows = [
     {
       id: "1",
@@ -25,6 +30,7 @@ const Packing = () => {
       grossWeight: "Gross Weight",
       cartonMeasurement: "Carton Measurement",
       cbm: "Cbm",
+      status: "Send to Cutting",
     },
     {
       id: "2",
@@ -37,6 +43,7 @@ const Packing = () => {
       grossWeight: "Gross Weight",
       cartonMeasurement: "Carton Measurement",
       cbm: "Cbm",
+      status: "Sending Processing",
     },
     {
       id: "3",
@@ -49,6 +56,7 @@ const Packing = () => {
       grossWeight: "Gross Weight",
       cartonMeasurement: "Carton Measurement",
       cbm: "Cbm",
+      status: "Decline From Cutting",
     },
     {
       id: "4",
@@ -61,6 +69,7 @@ const Packing = () => {
       grossWeight: "Gross Weight",
       cartonMeasurement: "Carton Measurement",
       cbm: "Cbm",
+      status: "Not Send Yet",
     },
     {
       id: "5",
@@ -73,10 +82,11 @@ const Packing = () => {
       grossWeight: "Gross Weight",
       cartonMeasurement: "Carton Measurement",
       cbm: "Cbm",
+      status: "Not Send Yet",
     },
   ];
   return (
-    <>     
+    <>
       <Paper sx={{ width: "100%", overflow: "hidden" }}>
         <TableContainer>
           <Table>
@@ -84,69 +94,42 @@ const Packing = () => {
               sx={{
                 "& th": {
                   border: "1px solid rgba(224, 224, 224, 1)",
-                  color:"white"
+                  color: "white",
                 },
               }}
             >
               <TableRow className="bg-[#5D87FF]">
-                <TableCell
-                  align="center"
-                  className="whitespace-nowrap"
-                >
+                <TableCell align="center" className="whitespace-nowrap">
                   STYLE NO
                 </TableCell>
-                <TableCell
-                  align="center"
-                  className="whitespace-nowrap"
-                >
+                <TableCell align="center" className="whitespace-nowrap">
                   ORDER NO
                 </TableCell>
-                <TableCell
-                  align="center"
-                  className="whitespace-nowrap"
-                >
+                <TableCell align="center" className="whitespace-nowrap">
                   DESCRIPTION OF GOODS
                 </TableCell>
-                <TableCell
-                  align="center"
-                  className="whitespace-nowrap"
-                >
+                <TableCell align="center" className="whitespace-nowrap">
                   QTY
                 </TableCell>
-                <TableCell
-                  align="center"
-                  className="whitespace-nowrap"
-                >
+                <TableCell align="center" className="whitespace-nowrap">
                   CTN QTY
                 </TableCell>
-                <TableCell
-                  align="center"
-                  className="whitespace-nowrap"
-                >
+                <TableCell align="center" className="whitespace-nowrap">
                   NET WEIGHT
                 </TableCell>
-                <TableCell
-                  align="center"
-                  className="whitespace-nowrap"
-                >
+                <TableCell align="center" className="whitespace-nowrap">
                   GROSS WEIGHT
                 </TableCell>
-                <TableCell
-                  align="center"
-                  className="whitespace-nowrap"
-                >
+                <TableCell align="center" className="whitespace-nowrap">
                   CARTON MEASUREMENT
                 </TableCell>
-                <TableCell
-                  align="center"
-                  className="whitespace-nowrap"
-                >
+                <TableCell align="center" className="whitespace-nowrap">
                   CBM
                 </TableCell>
-                <TableCell
-                  align="center"
-                  className="whitespace-nowrap"
-                >
+                <TableCell align="center" className="whitespace-nowrap">
+                  Status
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
                   Action
                 </TableCell>
               </TableRow>
@@ -188,12 +171,18 @@ const Packing = () => {
                   <TableCell align="center" className="whitespace-nowrap">
                     {row.cbm}
                   </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.status}
+                  </TableCell>
                   <TableCell
                     align="center"
                     className="space-x-2 whitespace-nowrap"
                   >
+                    <button className="text-blue-600" onClick={handleOpen}>
+                      <SendIcon fontSize="small" />
+                    </button>
                     <Link href="/super-admin/packing/packing-preview">
-                      <button className="text-blue-600">
+                      <button className="text-blue-600" >
                         <VisibilityIcon fontSize="small" />
                       </button>
                     </Link>
@@ -212,6 +201,7 @@ const Packing = () => {
           </Table>
         </TableContainer>
       </Paper>
+      {Open && <PackingSendModal open={Open} setOpen={handleClose} />}
     </>
   );
 };

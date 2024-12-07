@@ -27,6 +27,7 @@ const HourlyReceive = () => {
       s_sing: "---",
       f_send: "150",
       f_sign: "sign",
+      status: "Send to Cutting",
     },
     {
       id: "1",
@@ -35,6 +36,7 @@ const HourlyReceive = () => {
       s_sing: "---",
       f_send: "150",
       f_sign: "sign",
+      status: "Decline From Cutting",
     },
     {
       id: "1",
@@ -43,6 +45,7 @@ const HourlyReceive = () => {
       s_sing: "---",
       f_send: "150",
       f_sign: "sign",
+      status: "Sending Processing",
     },
     {
       id: "1",
@@ -51,6 +54,7 @@ const HourlyReceive = () => {
       s_sing: "---",
       f_send: "150",
       f_sign: "sign",
+      status: "Not Send Yet",
     },
     {
       id: "1",
@@ -59,6 +63,7 @@ const HourlyReceive = () => {
       s_sing: "---",
       f_send: "150",
       f_sign: "sign",
+      status: "Decline From Cutting",
     },
   ];
   return (
@@ -93,6 +98,9 @@ const HourlyReceive = () => {
                   F/Sign
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
+                  Status
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
                   Action
                 </TableCell>
               </TableRow>
@@ -112,6 +120,7 @@ const HourlyReceive = () => {
                   <TableCell align="center">{row.s_sing}</TableCell>
                   <TableCell align="center">{row.f_send}</TableCell>
                   <TableCell align="center">{row.f_sign}</TableCell>
+                  <TableCell align="center">{row.status}</TableCell>
                   <TableCell align="center" className="space-x-2">
                   <button className="text-blue-600">
                       <SendIcon fontSize="small" onClick={handleOpen}/>
