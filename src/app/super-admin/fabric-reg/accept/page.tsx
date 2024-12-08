@@ -125,46 +125,46 @@ const Page = () => {
           <Table>
             <TableHead>
               <TableRow className="bg-[#5D87FF]">
-                <TableCell align="center" className="text-white">
+                <TableCell align="center" className="whitespace-nowrap">
                   Date
                 </TableCell>
-                <TableCell align="center" className="text-white">
+                <TableCell align="center" className="whitespace-nowrap">
                   Color
                 </TableCell>
-                <TableCell align="center" className="text-white">
+                <TableCell align="center" className="whitespace-nowrap">
                   Lot/B No
                 </TableCell>
-                <TableCell align="center" className="text-white">
+                <TableCell align="center" className="whitespace-nowrap">
                   Factory
                 </TableCell>
-                <TableCell align="center" className="text-white">
+                <TableCell align="center" className="whitespace-nowrap">
                   CH/No
                 </TableCell>
-                <TableCell align="center" className="text-white">
+                <TableCell align="center" className="whitespace-nowrap">
                   DIA
                 </TableCell>
-                <TableCell align="center" className="text-white">
+                <TableCell align="center" className="whitespace-nowrap">
                   Roll
                 </TableCell>
-                <TableCell align="center" className="text-white">
+                <TableCell align="center" className="whitespace-nowrap">
                   FAB REQ
                 </TableCell>
-                <TableCell align="center" className="text-white">
+                <TableCell align="center" className="whitespace-nowrap">
                   Fabric Gross Weight
                 </TableCell>
-                <TableCell align="center" className="text-white">
+                <TableCell align="center" className="whitespace-nowrap">
                   Fabric Finish Weight
                 </TableCell>
-                <TableCell align="center" className="text-white">
+                <TableCell align="center" className="whitespace-nowrap">
                   Name
                 </TableCell>
-                <TableCell align="center" className="text-white">
+                <TableCell align="center" className="whitespace-nowrap">
                   Delivery (PCS)
                 </TableCell>
-                <TableCell align="center" className="text-white">
+                <TableCell align="center" className="whitespace-nowrap">
                   Status
                 </TableCell>
-                <TableCell align="center" className="text-white">
+                <TableCell align="center" className="whitespace-nowrap">
                   Action
                 </TableCell>
               </TableRow>

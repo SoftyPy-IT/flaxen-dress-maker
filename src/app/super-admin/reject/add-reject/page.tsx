@@ -5,53 +5,7 @@ import TopSection from "@/components/shared/TopSection/TopSection";
 import Reject from "../_components/Reject";
 
 const page = () => {
-  const rows = [
-    {
-      id: "1",
-      no: "1",
-      order: "AB-0124",
-      item: "Bottom",
-      color: "Pink",
-      name: "John Doe",
-      style: "SIT",
-      line: 6,
-      floor: 5,
-      reject: "John Doe",
-      total: "05",
-      remark: "25",
-      details: "reject for wrong swing",
-    },
-    {
-      id: "2",
-      no: "2",
-      order: "AB-0124",
-      item: "Bottom",
-      color: "Pink",
-      name: "John Doe",
-      style: "SIT",
-      line: 6,
-      floor: 5,
-      reject: "John Doe",
-      total: "05",
-      remark: "25",
-      details: "reject for wrong swing",
-    },
-    {
-      id: "3",
-      no: "3",
-      order: "AB-0124",
-      item: "Bottom",
-      color: "Pink",
-      name: "John Doe",
-      style: "SIT",
-      line: 6,
-      floor: 5,
-      reject: "John Doe",
-      total: "05",
-      remark: "25",
-      details: "reject for wrong swing",
-    },
-  ];
+ 
   return (
     <>
       <TopSection />

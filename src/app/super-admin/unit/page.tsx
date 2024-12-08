@@ -85,17 +85,17 @@ const Page = () => {
             <Table sx={{ padding: "0px" }}>
               <TableHead>
                 <TableRow className="bg-[#5D87FF]">
-                  <TableCell align="center" className="text-white">
+                  <TableCell align="center" className="whitespace-nowrap">
                     Sl. No.
                   </TableCell>
-                  <TableCell align="center" className="text-white">
+                  <TableCell align="center" className="whitespace-nowrap">
                     Unit Name
                   </TableCell>                 
 
-                  <TableCell align="center" className="text-white">
+                  <TableCell align="center" className="whitespace-nowrap">
                    Status
                   </TableCell>
-                  <TableCell align="center" className="text-white">
+                  <TableCell align="center" className="whitespace-nowrap">
                     Action
                   </TableCell>
                 </TableRow>

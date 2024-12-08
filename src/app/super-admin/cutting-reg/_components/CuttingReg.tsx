@@ -75,49 +75,56 @@ const CuttingReg = () => {
       <>
         <Paper sx={{ overflow: "hidden", padding: "0px" }}>
           <TableContainer>
-            <Table sx={{ padding: "0px" }}>
-              <TableHead>
+            <Table >
+              <TableHead sx={{
+                "& th": {
+                  border: "1px solid rgba(224, 224, 224, 1)",
+                  color: "white",
+                  fontFamily: "'Quicksand-VariableFont_wght'",
+                  fontWeight: "bold", 
+                },
+              }}>
                 <TableRow className="bg-[#5D87FF]">
-                  <TableCell align="center" className="text-white">
+                  <TableCell align="center" className="whitespace-nowrap">
                     Date
                   </TableCell>
-                  <TableCell align="center" className="text-white">
+                  <TableCell align="center" className="whitespace-nowrap">
                     Buyer Name
                   </TableCell>
-                  <TableCell align="center" className="text-white">
+                  <TableCell align="center" className="whitespace-nowrap">
                     Order No
                   </TableCell>
-                  <TableCell align="center" className="text-white">
+                  <TableCell align="center" className="whitespace-nowrap">
                     Order Qty.
                   </TableCell>
-                  <TableCell align="center" className="text-white">
+                  {/* <TableCell align="center" className="whitespace-nowrap">
                     Color
                   </TableCell>
-                  <TableCell align="center" className="text-white">
+                  <TableCell align="center" className="whitespace-nowrap">
                     Size
                   </TableCell>
-                  <TableCell align="center" className="text-white">
+                  <TableCell align="center" className="whitespace-nowrap">
                     Quantity
-                  </TableCell>
-                  <TableCell align="center" className="text-white">
+                  </TableCell> */}
+                  <TableCell align="center" className="whitespace-nowrap">
                     Total
                   </TableCell>
-                  <TableCell align="center" className="text-white">
+                  <TableCell align="center" className="whitespace-nowrap">
                     Fabric Req.
                   </TableCell>
-                  <TableCell align="center" className="text-white">
+                  <TableCell align="center" className="whitespace-nowrap">
                     Fabric Rcv.
                   </TableCell>
-                  <TableCell align="center" className="text-white">
+                  <TableCell align="center" className="whitespace-nowrap">
                     Fabric/Item GSM
                   </TableCell>
-                  <TableCell align="center" className="text-white">
+                  <TableCell align="center" className="whitespace-nowrap">
                     Consumption
                   </TableCell>
-                  <TableCell align="center" className="text-white">
+                  <TableCell align="center" className="whitespace-nowrap">
                     Send
                   </TableCell>
-                  <TableCell align="center" className="text-white">
+                  <TableCell align="center" className="whitespace-nowrap">
                     Action
                   </TableCell>
                 </TableRow>
@@ -130,7 +137,7 @@ const CuttingReg = () => {
                     <TableCell align="center">{row.name}</TableCell>
                     <TableCell align="center">{row.order}</TableCell>
                     <TableCell align="center">{row.orderqty}</TableCell>
-                    <TableCell align="center">{row.color}</TableCell>
+                    {/* <TableCell align="center">{row.color}</TableCell>
                     <TableCell align="center">
                     <TableCell align="center">{row.size}</TableCell>
                     <TableCell align="center">{row.size}</TableCell>
@@ -140,7 +147,7 @@ const CuttingReg = () => {
                     <TableCell align="center">{row.qty}</TableCell>
                     <TableCell align="center">{row.qty}</TableCell>
                     <TableCell align="center">{row.qty}</TableCell>
-                    </TableCell>
+                    </TableCell> */}
                     <TableCell align="center">{row.total}</TableCell>
                     <TableCell align="center">{row.fabreq}</TableCell>
                     <TableCell align="center">{row.fabrcv}</TableCell>

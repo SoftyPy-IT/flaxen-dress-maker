@@ -190,6 +190,7 @@ const page = () => {
             </Grid>
           </div>
         </div>
+        <Button >Add Production</Button>
       </div>
     </>
   );
