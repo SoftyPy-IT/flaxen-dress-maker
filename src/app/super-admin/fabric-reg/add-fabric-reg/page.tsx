@@ -13,6 +13,7 @@ import TableContainer from "@mui/material/TableContainer";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { Button, TextField, Paper, Grid } from "@mui/material";
 import TopSection from "@/components/shared/TopSection/TopSection";
+import FabricReg from "../_components/FabricReg";
 
 const rows = [
   {
@@ -70,7 +71,7 @@ const Page = () => {
           Add Fabric Register
         </h4>
       </div>
-      <Paper sx={{ padding: 2, margin: "auto" }}>
+      <Paper sx={{ padding: 2, margin: "auto", marginBottom:"20px" }}>
         <div className="">
           <Grid container spacing={2}>
             <Grid item xs={12} sm={3}>
@@ -209,95 +210,7 @@ const Page = () => {
         </div>
       </Paper>
 
-      <Paper sx={{ overflow: "hidden", padding: "0px", marginTop:"20px" }}>
-        <TableContainer>
-          <Table>
-            <TableHead>
-              <TableRow className="bg-[#5D87FF]">
-                <TableCell align="center" className="text-white">
-                  Date
-                </TableCell>
-                <TableCell align="center" className="text-white">
-                  Color
-                </TableCell>
-                <TableCell align="center" className="text-white">
-                  Lot/B No
-                </TableCell>
-                <TableCell align="center" className="text-white">
-                  Factory
-                </TableCell>
-                <TableCell align="center" className="text-white">
-                  CH/No
-                </TableCell>
-                <TableCell align="center" className="text-white">
-                  DIA
-                </TableCell>
-                <TableCell align="center" className="text-white">
-                  Roll
-                </TableCell>
-                <TableCell align="center" className="text-white">
-                  FAB REQ
-                </TableCell>
-                <TableCell align="center" className="text-white">
-                  Fabric Gross Weight
-                </TableCell>
-                <TableCell align="center" className="text-white">
-                  Fabric Finish Weight
-                </TableCell>
-                <TableCell align="center" className="text-white">
-                  Delivery
-                </TableCell>
-                <TableCell align="center" className="text-white">
-                  Name
-                </TableCell>
-                <TableCell align="center" className="text-white">
-                  Action
-                </TableCell>
-              </TableRow>
-            </TableHead>
-
-            <TableBody>
-              {rows.map((row) => (
-                <TableRow
-                  key={row.id}
-                  sx={{
-                    "&:last-child td, &:last-child th": { border: 0 },
-                    "& td": {
-                      borderBottom: "1px solid rgba(224, 224, 224, 1)",
-                    },
-                  }}
-                >
-                  <TableCell align="center">{row.date}</TableCell>
-                  <TableCell align="center">{row.color}</TableCell>
-                  <TableCell align="center">{row.lot}</TableCell>
-                  <TableCell align="center">{row.factory}</TableCell>
-                  <TableCell align="center">{row.cn}</TableCell>
-                  <TableCell align="center">{row.dia}</TableCell>
-                  <TableCell align="center">{row.roll}</TableCell>
-                  <TableCell align="center">{row.fabreq}</TableCell>
-                  <TableCell align="center">{row.gross}</TableCell>
-                  <TableCell align="center">{row.finish}</TableCell>
-                  <TableCell align="center">{row.delivery}</TableCell>
-                  <TableCell align="center">{row.name}</TableCell>
-                  <TableCell align="center" className="">
-                    <IconButton
-                      href={`/super-admin/fabric-reg/preview/${row.id}`}
-                    >
-                      <VisibilityIcon fontSize="small" color="primary" />
-                    </IconButton>
-                    <IconButton href={`/super-admin/fabric-reg/${row.id}`}>
-                      <EditIcon fontSize="small" color="secondary" />
-                    </IconButton>
-                    <IconButton aria-label="delete" color="error">
-                      <DeleteIcon fontSize="small" color="error" />
-                    </IconButton>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      </Paper>
+     <FabricReg/>
     </>
   );
 };

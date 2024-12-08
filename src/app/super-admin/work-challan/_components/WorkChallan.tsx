@@ -98,22 +98,22 @@ const WorkChallan = () => {
                   SL NO
                 </TableCell>
 
-               
                 <TableCell align="center" className="whitespace-nowrap">
+                  Description
+                </TableCell>  
+                {/* <TableCell align="center" className="whitespace-nowrap">
                   Color
-                </TableCell>
+                </TableCell> */}
                 <TableCell align="center" className="whitespace-nowrap">
                   Line
                 </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
+                {/* <TableCell align="center" className="whitespace-nowrap">
                   Style
-                </TableCell>
+                </TableCell> */}
                 <TableCell align="center" className="whitespace-nowrap">
-                  Quantity
+                  Total Quantity
                 </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  Description
-                </TableCell>              
+                            
                 <TableCell align="center" className="whitespace-nowrap">
                   Remarks
                 </TableCell>
@@ -138,11 +138,12 @@ const WorkChallan = () => {
                   }}
                 >
                   <TableCell align="center">{index + 1}</TableCell>
-                  <TableCell align="center">{row.color}</TableCell>
-                  <TableCell align="center">{row.line}</TableCell>
-                  <TableCell align="center">{row.style}</TableCell>
-                  <TableCell align="center">{row.quantity}</TableCell>                  
                   <TableCell align="center">{row.description}</TableCell>
+                  {/* <TableCell align="center">{row.color}</TableCell> */}
+                  <TableCell align="center">{row.line}</TableCell>
+                  {/* <TableCell align="center">{row.style}</TableCell> */}
+                  <TableCell align="center">{row.quantity}</TableCell>                  
+                 
                   <TableCell align="center">{row.remarks}</TableCell>
                   <TableCell align="center">{row.status}</TableCell>
                   <TableCell align="center" className="space-x-2">

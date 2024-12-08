@@ -208,44 +208,44 @@ const Page = () => {
           <Table>
             <TableHead>
               <TableRow className="bg-[#5D87FF]">
-                <TableCell align="center" className="text-white">
+                <TableCell align="center" className="whitespace-nowrap">
                   Date
                 </TableCell>
-                <TableCell align="center" className="text-white">
+                <TableCell align="center" className="whitespace-nowrap">
                   To
                 </TableCell>
-                <TableCell align="center" className="text-white">
+                <TableCell align="center" className="whitespace-nowrap">
                   Pro. Name
                 </TableCell>
 
-                <TableCell align="center" className="text-white">
+                <TableCell align="center" className="whitespace-nowrap">
                   Color
                 </TableCell>
-                <TableCell align="center" className="text-white">
+                <TableCell align="center" className="whitespace-nowrap">
                   GSM
                 </TableCell>
-                <TableCell align="center" className="text-white">
+                <TableCell align="center" className="whitespace-nowrap">
                   Quantity
                 </TableCell>
-                <TableCell align="center" className="text-white">
+                <TableCell align="center" className="whitespace-nowrap">
                   Unit
                 </TableCell>
-                <TableCell align="center" className="text-white">
+                <TableCell align="center" className="whitespace-nowrap">
                   Size
                 </TableCell>
-                <TableCell align="center" className="text-white">
+                <TableCell align="center" className="whitespace-nowrap">
                   Factory
                 </TableCell>
-                <TableCell align="center" className="text-white">
+                <TableCell align="center" className="whitespace-nowrap">
                   Details
                 </TableCell>
-                <TableCell align="center" className="text-white">
+                <TableCell align="center" className="whitespace-nowrap">
                   Sent Status
                 </TableCell>
-                <TableCell align="center" className="text-white">
+                <TableCell align="center" className="whitespace-nowrap">
                   Accept Status
                 </TableCell>
-                <TableCell align="center" className="text-white">
+                <TableCell align="center" className="whitespace-nowrap">
                   Action
                 </TableCell>
               </TableRow>

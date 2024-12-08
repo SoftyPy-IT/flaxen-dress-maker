@@ -506,7 +506,7 @@ const Production = () => {
                         <VisibilityIcon fontSize="small" />
                       </button>
                     </Link>
-                    <Link href={`/super-admin/fabric-requisition/${row.id}`}>
+                    <Link href={`/super-admin/production/${row.id}`}>
                       <button className="text-green-600">
                         <EditIcon fontSize="small" />
                       </button>

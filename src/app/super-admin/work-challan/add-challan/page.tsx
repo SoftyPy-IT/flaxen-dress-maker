@@ -23,14 +23,13 @@ const page = () => {
           Add Challan
         </h4>
       </div>
-     
 
       <Paper sx={{ padding: 2, margin: "auto", marginBottom: "20px" }}>
         <div className="flex justify-between gap-10 p-4">
           <div>
             <FlaxenForm onSubmit={handleSubmit}>
               <div className="space-y-3">
-              <FlaxenSelect
+                <FlaxenSelect
                   label="Send To"
                   name="send"
                   fullWidth
@@ -68,11 +67,17 @@ const page = () => {
                   fullWidth
                   size="medium"
                 />
-                
+
                 <FlaxenInput label="GP No" name="gp" fullWidth size="medium" />
                 <FlaxenInput
                   label="Challan No"
                   name="challan"
+                  fullWidth
+                  size="medium"
+                />
+                <FlaxenInput
+                  label="Quantity"
+                  name="qty"
                   fullWidth
                   size="medium"
                 />
@@ -83,26 +88,52 @@ const page = () => {
         <hr />
         <div>
           <FlaxenForm onSubmit={handleSubmit}>
-            <div className="mb-2 flex gap-3 p-4">  
-              <FlaxenInput label="Description"
-                name="description" fullWidth size="medium" />
+            <div className="mb-2 grid grid-cols-4 gap-3 p-4">
               <FlaxenInput
-                label="Quantity"
+                label="Description"
+                name="description"
+                fullWidth
+                size="medium"
+              />
+              <FlaxenInput label="Color" name="color" fullWidth size="medium" />
+              <FlaxenInput
+                label="Style/Size"
+                name="style"
+                fullWidth
+                size="medium"
+              />
+              <FlaxenInput
+                label="Line"
+                name="line"
+                fullWidth
+                size="medium"
+              />
+              <FlaxenInput
+                label="New Reject"
+                name="rej"
+                fullWidth
+                size="medium"
+              />
+              <FlaxenInput
+                label="Marge Reject"
+                name="marge"
+                fullWidth
+                size="medium"
+              />
+              <FlaxenInput
+                label="Total Quantity"
                 name="qty"
                 fullWidth
                 size="medium"
               />
-        
-              <FlaxenInput label="No. of Pack's"
-                name="noOfPacks" fullWidth size="medium" />
+
               <FlaxenInput
                 label="Remarks"
                 name="remarks"
                 fullWidth
                 size="medium"
               />
-            </div>         
-
+            </div>
           </FlaxenForm>
         </div>
         <div className="flex justify-end">
@@ -117,7 +148,7 @@ const page = () => {
           </Button>
         </div>
       </Paper>
-      
+
       <WorkChallan />
     </>
   );
