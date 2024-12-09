@@ -4,7 +4,7 @@ import { Button, Paper, IconButton } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import TopSection from "@/components/shared/TopSection/TopSection";
-import CuttingReg from "../_components/CuttingReg";
+import EmbroideryUnit from "../_components/EmbroideryUnit";
 import FlaxenForm from "@/components/Forms/Form";
 import FlaxenInput from "@/components/Forms/Input";
 import FlaxenDatePicker from "@/components/Forms/DatePicker";
@@ -37,7 +37,7 @@ const Page = () => {
       <TopSection />
       <div className="flex justify-center">
         <h4 className="my-2 inline-block  rounded-md bg-blue-600 p-2 uppercase text-white ">
-          Add Cutting Register
+          Add Embroidery Unit
         </h4>
       </div>
       <Paper sx={{ padding: 2, margin: "auto", marginBottom: "20px" }}>
@@ -168,7 +168,7 @@ const Page = () => {
               </div>
       </Paper>
 
-      <CuttingReg />
+      <EmbroideryUnit />
     </>
   );
 };

@@ -4,7 +4,7 @@ import { Button, Paper, IconButton } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import TopSection from "@/components/shared/TopSection/TopSection";
-import CuttingReg from "../_components/CuttingReg";
+import SwingUnit from "../_components/SwingUnit";
 import FlaxenForm from "@/components/Forms/Form";
 import FlaxenInput from "@/components/Forms/Input";
 import FlaxenDatePicker from "@/components/Forms/DatePicker";
@@ -37,7 +37,7 @@ const Page = () => {
       <TopSection />
       <div className="flex justify-center">
         <h4 className="my-2 inline-block  rounded-md bg-blue-600 p-2 uppercase text-white ">
-          Add Cutting Register
+          Add Swing Unit
         </h4>
       </div>
       <Paper sx={{ padding: 2, margin: "auto", marginBottom: "20px" }}>
@@ -157,18 +157,18 @@ const Page = () => {
           </div> */}
         </div>
         <div className="flex justify-end">
-                <Button
-                  type="submit"
-                  variant="contained"
-                  size="medium"
-                  disableElevation
-                >
-                  + Add
-                </Button>
-              </div>
+          <Button
+            type="submit"
+            variant="contained"
+            size="medium"
+            disableElevation
+          >
+            + Add
+          </Button>
+        </div>
       </Paper>
 
-      <CuttingReg />
+      <SwingUnit />
     </>
   );
 };
