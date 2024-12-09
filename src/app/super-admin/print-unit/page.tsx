@@ -5,7 +5,8 @@ import AddIcon from "@mui/icons-material/Add";
 import { Button } from "@mui/material";
 import { TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import CuttingReg from "./_components/CuttingReg";
+import PrintUnit from "./_components/PrintUnit";
+
 
 
 const Page = () => {
@@ -13,7 +14,7 @@ const Page = () => {
     <>
       <>
       <div className="mb-5 flex flex-wrap items-center justify-between gap-5 rounded bg-white p-5 shadow-md">
-        <h3 className="text-2xl font-bold">Cutting Register</h3>
+        <h3 className="text-2xl font-bold">Print Unit</h3>
         <div className=" flex w-[800px] items-center gap-3">
           <TextField
             name="date"
@@ -41,7 +42,7 @@ const Page = () => {
             fullWidth
           />
 
-          <Link href="/super-admin/cutting-reg/add-cutting-reg">
+          <Link href="/super-admin/print-unit/add-print-unit">
             <Button
               variant="contained"
               disableElevation
@@ -53,7 +54,7 @@ const Page = () => {
         </div>
       </div>
        
-        <CuttingReg/>
+        <PrintUnit/>
       </>
     </>
   );

@@ -14,7 +14,6 @@ import Link from "next/link";
 import SendIcon from "@mui/icons-material/Send";
 import OrderSendModal from "./OrderSendModal";
 
-
 const Order = () => {
   const [Open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -23,97 +22,102 @@ const Order = () => {
   const rows = [
     {
       id: "1",
+      date: "01-02-2024",
+      orderNo: "123",
       buyer: "John Doe",
-      OrderNo: "123",
-      description: "Description",
-      size: "Size",
+      description: "need to be clear and good swing",
+      size: "S",
       color: "Blue",
-      orderQuantity: "Order Quantity",
+      orderQuantity: "500",
       price: "20",
-      total: "Total",
+      total: "10000",
       swatch: "Swatch",
       status: "Send to Cutting",
     },
     {
-      id: "1",
+      id: "2",
+      date: "01-02-2024",
+      orderNo: "123",
       buyer: "John Doe",
-      OrderNo: "123",
-      description: "Description",
-      size: "Size",
+      description: "need to be clear and good swing",
+      size: "M",
       color: "Blue",
-      orderQuantity: "Order Quantity",
+      orderQuantity: "500",
       price: "20",
-      total: "Total",
+      total: "10000",
       swatch: "Swatch",
       status: "Sending Processing",
     },
     {
-      id: "1",
+      id: "3",
+      date: "01-02-2024",
+      orderNo: "123",
       buyer: "John Doe",
-      OrderNo: "123",
-      description: "Description",
-      size: "Size",
+      description: "need to be clear and good swing",
+      size: "L",
       color: "Blue",
-      orderQuantity: "Order Quantity",
+      orderQuantity: "500",
       price: "20",
-      total: "Total",
+      total: "10000",
       swatch: "Swatch",
       status: "Not Send Yet",
     },
     {
-      id: "1",
+      id: "4",
+      date: "01-02-2024",
+      orderNo: "123",
       buyer: "John Doe",
-      OrderNo: "123",
-      description: "Description",
-      size: "Size",
+      description: "need to be clear and good swing",
+      size: "XL",
       color: "Blue",
-      orderQuantity: "Order Quantity",
+      orderQuantity: "500",
       price: "20",
-      total: "Total",
+      total: "10000",
       swatch: "Swatch",
       status: "Decline From Cutting",
     },
     {
-      id: "1",
+      id: "5",
+      date: "01-02-2024",
+      orderNo: "123",
       buyer: "John Doe",
-      OrderNo: "123",
-      description: "Description",
-      size: "Size",
+      description: "need to be clear and good swing",
+      size: "XXL",
       color: "Blue",
-      orderQuantity: "Order Quantity",
+      orderQuantity: "500",
       price: "20",
-      total: "Total",
+      total: "10000",
       swatch: "Swatch",
       status: "Decline From Cutting",
     },
   ];
   return (
     <>
-     
-
       <Paper sx={{ width: "100%", overflow: "hidden" }}>
         <TableContainer>
           <Table>
             <TableHead
-            sx={{
+              sx={{
                 "& th": {
                   border: "1px solid rgba(224, 224, 224, 1)",
                   color: "white",
                   fontFamily: "'Quicksand-VariableFont_wght'",
-                  fontWeight: "bold", 
+                  fontWeight: "bold",
                 },
               }}
             >
               <TableRow className="bg-[#5D87FF]">
                 <TableCell align="center" className="whitespace-nowrap">
-                  Buyer
+                  O. Date
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
                   Order No
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  Item Description
+                  Buyer
                 </TableCell>
+
+                
                 <TableCell align="center" className="whitespace-nowrap">
                   Size
                 </TableCell>
@@ -133,8 +137,12 @@ const Order = () => {
                   Swatch
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
+                  Item Description
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
                   Status
                 </TableCell>
+                
                 <TableCell align="center" className="whitespace-nowrap">
                   Action
                 </TableCell>
@@ -152,13 +160,13 @@ const Order = () => {
                   }}
                 >
                   <TableCell align="center" className="whitespace-nowrap">
+                    {row.date}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.orderNo}
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
                     {row.buyer}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.OrderNo}
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    {row.description}
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
                     {row.size}
@@ -178,14 +186,17 @@ const Order = () => {
                   <TableCell align="center" className="whitespace-nowrap">
                     {row.swatch}
                   </TableCell>
+                                   
+                  <TableCell align="center" className="whitespace-nowrap">
+                    {row.description}
+                  </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
                     {row.status}
-                  </TableCell>
+                  </TableCell> 
                   <TableCell
                     align="center"
                     className="space-x-2 whitespace-nowrap"
                   >
-
                     <button className="text-blue-600" onClick={handleOpen}>
                       <SendIcon fontSize="small" />
                     </button>
@@ -209,7 +220,6 @@ const Order = () => {
         </TableContainer>
       </Paper>
       {Open && <OrderSendModal open={Open} setOpen={handleClose} />}
-
     </>
   );
 };

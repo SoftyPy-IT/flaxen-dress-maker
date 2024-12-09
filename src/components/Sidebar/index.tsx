@@ -30,6 +30,11 @@ import StraightenIcon from "@mui/icons-material/Straighten";
 import ArticleIcon from "@mui/icons-material/Article";
 import Image from "next/image";
 import logo from "../../assets/images/logo/flaxen.png";
+import { FaBox } from "react-icons/fa";
+import LocalPrintshopIcon from '@mui/icons-material/LocalPrintshop';
+import FormatPaintIcon from '@mui/icons-material/FormatPaint';
+import DryCleaningIcon from '@mui/icons-material/DryCleaning';
+import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -44,25 +49,38 @@ const menuGroups = [
         route: "/",
         icon: <DashboardIcon />,
       },
-
+      
+      {
+        label: "Order",
+        route: "#",
+        icon: <AssignmentIcon />,
+        children: [
+          {
+            label: "+ Add Order",
+            route: "/super-admin/order/add-order",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "All Order", route: "/super-admin/order" },
+        ],
+      },
       {
         label: "Fabric Stock Register",
         route: "#",
-        icon: <InventoryIcon />,
+        icon: <FaBox />,
         children: [
           {
             label: "+ Add Stock Register",
-            route: "/super-admin/stock/add-stock",
+            route: "/super-admin/fab-stock-reg/add-stock",
             // icon: <AddBoxIcon />,
           },
-          { label: "Stock Register Index", route: "/super-admin/stock" },
+          { label: "Stock Register Index", route: "/super-admin/fab-stock-reg" },
         ],
       },
       // ----------------------------
       {
         label: "Fabric Register",
         route: "#",
-        icon: <LibraryAddIcon />,
+        icon: <DryCleaningIcon />,
         children: [
           {
             label: "+ Add Fabric Register",
@@ -222,6 +240,59 @@ const menuGroups = [
       },
 
       {
+        label: "Cutting Unit",
+        route: "#",
+        icon: <ContentCutIcon />,
+        children: [
+          {
+            label: "+ Add Cutting Unit",
+            route: "/super-admin/cutting-unit/add-cutting",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Cutting Unit Index", route: "/super-admin/cutting-unit" },
+        ],
+      },
+      {
+        label: "Swing Unit",
+        route: "#",
+        icon: <PrecisionManufacturingIcon />,
+        children: [
+          {
+            label: "+ Add Swing Unit",
+            route: "/super-admin/swing-unit/add-swing-unit",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Swing Unit Index", route: "/super-admin/swing-unit" },
+        ],
+      },
+      {
+        label: "Embroidery Unit",
+        route: "#",
+        icon: <FormatPaintIcon />,
+        children: [
+          {
+            label: "+ Add Embroidery Unit",
+            route: "/super-admin/embroidery-unit/add-embroidery-unit",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Embroidery Unit Index", route: "/super-admin/embroidery-unit" },
+        ],
+      },
+      {
+        label: "Print Unit",
+        route: "#",
+        icon: <LocalPrintshopIcon />,
+        children: [
+          {
+            label: "+ Add Print Unit",
+            route: "/super-admin/print-unit/add-print-unit",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Print Unit Index", route: "/super-admin/print-unit" },
+        ],
+      },
+
+      {
         label: "Packing List",
         route: "#",
         icon: <ListAltIcon />,
@@ -234,19 +305,7 @@ const menuGroups = [
           { label: "Packing List Index", route: "/super-admin/packing" },
         ],
       },
-      {
-        label: "Work Order",
-        route: "#",
-        icon: <AssignmentIcon />,
-        children: [
-          {
-            label: "+ Add Work Order",
-            route: "/super-admin/order/add-order",
-            // icon: <AddBoxIcon />,
-          },
-          { label: "Work Order Index", route: "/super-admin/order" },
-        ],
-      },
+      
 
       {
         label: "Accessories Delivery",
@@ -373,7 +432,10 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
       >
         {/* <!-- SIDEBAR HEADER --> */}
         <div className="flex items-center justify-between gap-2 px-6 py-5.5 shadow lg:justify-center lg:py-6">
-          <Link  href="/" className="flex justify-center content-center items-center gap-2">
+          <Link
+            href="/"
+            className="flex content-center items-center justify-center gap-2"
+          >
             <Image src={logo} alt="logo" className="h-10 w-10" />
             <h2 className="lg:text-center">Flaxen</h2>
           </Link>

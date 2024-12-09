@@ -1,30 +1,31 @@
 "use client";
 import * as React from "react";
 import { Button, TextField, Paper, Grid } from "@mui/material";
-import DefaultLayout from "@/components/Layouts/DefaultLayout";
+import FlaxenTextField from "@/components/Forms/TextField";
+import FlaxenForm from "@/components/Forms/Form";
+import FlaxenInput from "@/components/Forms/Input";
+import FlaxenDatePicker from "@/components/Forms/DatePicker";
 
 const page = () => {
+  const handleSubmit = () => {
+    console.log();
+  };
   return (
     <>
       <Paper sx={{ padding: 3 }}>
         <h3 className="mb-5 text-center text-2xl font-bold">Update Order</h3>
-        <form>
+        <FlaxenForm onSubmit={handleSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={3}>
-              <TextField
+              <FlaxenDatePicker
                 label="Date"
                 name="date"
-                type="date"
-                InputLabelProps={{ shrink: true }}
                 fullWidth
                 size="medium"
               />
             </Grid>
             <Grid item xs={12} sm={3}>
-              <TextField label="Buyer" name="buyer" fullWidth size="medium" />
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <TextField
+              <FlaxenInput
                 label="Order No"
                 name="orderNo"
                 fullWidth
@@ -32,13 +33,17 @@ const page = () => {
               />
             </Grid>
             <Grid item xs={12} sm={3}>
-              <TextField label="Size" name="size" fullWidth size="medium" />
+              <FlaxenInput label="Buyer Name" name="buyer" fullWidth size="medium" />
+            </Grid>
+
+            <Grid item xs={12} sm={3}>
+              <FlaxenInput label="Size" name="size" fullWidth size="medium" />
             </Grid>
             <Grid item xs={12} sm={3}>
-              <TextField label="Color" name="color" fullWidth size="medium" />
+              <FlaxenInput label="Color" name="color" fullWidth size="medium" />
             </Grid>
             <Grid item xs={12} sm={3}>
-              <TextField
+              <FlaxenInput
                 label="Order Quantity"
                 name="orderQuantity"
                 fullWidth
@@ -46,7 +51,7 @@ const page = () => {
               />
             </Grid>
             <Grid item xs={12} sm={3}>
-              <TextField
+              <FlaxenInput
                 label="Unit Price"
                 name="unitPrice"
                 fullWidth
@@ -54,17 +59,25 @@ const page = () => {
               />
             </Grid>
             <Grid item xs={12} sm={3}>
-              <TextField label="Total" name="total" fullWidth size="medium" />
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <TextField label="Swatch" name="swatch" fullWidth size="medium" />
-            </Grid>
-            <Grid item xs={12} sm={3}>
               <TextField
-                label="Item Description"
-                name="itemDescription"
+                label="Total Price"
+                name="total"
                 fullWidth
                 size="medium"
+              />
+            </Grid>
+            <Grid item xs={12} sm={3}>
+              <FlaxenInput
+                label="Swatch"
+                name="swatch"
+                fullWidth
+                size="medium"
+              />
+            </Grid>
+            <Grid item xs={12} sm={3}>
+              <FlaxenTextField
+                name="itemDescription"
+                placeholder="Description..."
               />
             </Grid>
             <Grid item xs={12}>
@@ -75,12 +88,12 @@ const page = () => {
                   size="medium"
                   disableElevation
                 >
-                  Update Order
+                  Update
                 </Button>
               </div>
             </Grid>
           </Grid>
-        </form>
+        </FlaxenForm>
       </Paper>
     </>
   );
