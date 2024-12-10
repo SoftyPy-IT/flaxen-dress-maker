@@ -6,29 +6,23 @@ import { Button } from "@mui/material";
 import { TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import CuttingUnit from "./_components/CuttingUnit";
+import FlaxenForm from "@/components/Forms/Form";
+import FlaxenDatePicker from "@/components/Forms/DatePicker";
 
 const Page = () => {
+  const handleSubmit = () => {
+    console.log();
+  };
+
   return (
     <>
-      <>
-        <div className="mb-5 flex flex-wrap items-center justify-between gap-5 rounded bg-white p-5 shadow-md">
-          <h3 className="text-2xl font-bold">Cutting Unit</h3>
+      <div className="mb-5 flex flex-wrap items-center justify-between gap-5 rounded bg-white p-5 shadow-md">
+        <h3 className="text-2xl font-bold">Cutting Unit</h3>
+        <FlaxenForm onSubmit={handleSubmit}>
           <div className=" flex w-[800px] items-center gap-3">
-            <TextField
-              name="date"
-              type="date"
-              InputLabelProps={{ shrink: true }}
-              fullWidth
-              size="small"
-            />
+            <FlaxenDatePicker name="date" fullWidth size="small" />
             <h5>to</h5>
-            <TextField
-              name="date"
-              type="date"
-              InputLabelProps={{ shrink: true }}
-              fullWidth
-              size="small"
-            />
+            <FlaxenDatePicker name="date" fullWidth size="small" />
 
             <TextField
               size="small"
@@ -40,7 +34,7 @@ const Page = () => {
               fullWidth
             />
 
-            <Link href="/super-admin/cutting-unit/add-cutting">
+            <Link href="/super-admin/cutting-reg/add-cutting-reg">
               <Button
                 variant="contained"
                 disableElevation
@@ -50,10 +44,10 @@ const Page = () => {
               </Button>
             </Link>
           </div>
-        </div>
+        </FlaxenForm>
+      </div>
 
-        <CuttingUnit />
-      </>
+      <CuttingUnit />
     </>
   );
 };

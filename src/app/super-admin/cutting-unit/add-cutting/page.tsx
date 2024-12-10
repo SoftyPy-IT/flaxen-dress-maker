@@ -41,34 +41,44 @@ const Page = () => {
         </h4>
       </div>
       <Paper sx={{ padding: 2, margin: "auto", marginBottom: "20px" }}>
-        <div className="flex justify-between gap-10 p-4">
+        <div className="flex justify-between gap-10 ">
           <div>
             <FlaxenForm onSubmit={handleSubmit}>
-              <div className="my-4 flex gap-4">
-                <FlaxenDatePicker
-                  label="Date"
-                  name="date"
-                  fullWidth
-                  size="medium"
-                />
-                <FlaxenInput
-                  name="name"
-                  label="Buyer Name"
-                  fullWidth
-                  size="medium"
-                />
-                <FlaxenInput
-                  name="order"
-                  label="Order No"
-                  fullWidth
-                  size="medium"
-                />
-                <FlaxenInput
-                  name="qty"
-                  label="Quantity"
-                  fullWidth
-                  size="medium"
-                />
+            <div className="my-4 flex justify-between gap-4">
+                <div className="space-y-4">
+                  <FlaxenInput
+                    name="name"
+                    label="Buyer Name"
+                    fullWidth
+                    size="medium"
+                  />
+                  <FlaxenInput
+                    name="order"
+                    label="Order No"
+                    fullWidth
+                    size="medium"
+                  />
+                  <FlaxenInput
+                    name="qty"
+                    label="Quantity"
+                    fullWidth
+                    size="medium"
+                  />
+                </div>
+                <div className="space-y-4">
+                  <FlaxenDatePicker
+                    label="Date"
+                    name="date"
+                    fullWidth
+                    size="medium"
+                  />
+                  <FlaxenInput
+                    name="order"
+                    label="Chln. No"
+                    fullWidth
+                    size="medium"
+                  />
+                </div>
               </div>
               {subCategories.map((subCategory, index) => (
                 <div key={index} className="flex items-center gap-2">
@@ -92,6 +102,24 @@ const Page = () => {
                       size="medium"
                     />
                     <FlaxenInput
+                      fullWidth
+                      name="reject"
+                      label="Reject"
+                      size="medium"
+                    />
+                    <FlaxenInput
+                      fullWidth
+                      name="marge"
+                      label="Mrg. Rej."
+                      size="medium"
+                    />
+                    <FlaxenInput
+                      fullWidth
+                      name="Total"
+                      label="total"
+                      size="medium"
+                    />
+                    <FlaxenInput
                       name="fabreq"
                       label="Fabric Req."
                       fullWidth
@@ -109,12 +137,7 @@ const Page = () => {
                       fullWidth
                       size="medium"
                     />
-                    <FlaxenInput
-                      name="consumption"
-                      label="Consumption"
-                      fullWidth
-                      size="medium"
-                    />
+                   
                   </div>
 
                   <div className="-mt-2 flex w-[100px] gap-1">
