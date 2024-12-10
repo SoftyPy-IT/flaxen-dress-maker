@@ -4,24 +4,28 @@ import React from "react";
 import { Box, Button, Grid } from "@mui/material";
 import FlaxenModal from "@/components/shared/Modal";
 import FlaxenForm from "@/components/Forms/Form";
+import FlaxenMultiSelect from "@/components/Forms/MultiSelect";
 import FlaxenSelect from "@/components/Forms/Select";
+import FlaxenInput from "@/components/Forms/Input";
+import FlaxenTextField from "@/components/Forms/TextField";
+import FlaxenTextArea from "@/components/Forms/TextArea";
 
 export type TProps = {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const PrintUnitSendModal = ({ open, setOpen }: TProps) => {
+const DeclineModal = ({ open, setOpen }: TProps) => {
   const handleSubmit = () => {
     console.log();
   };
 
   return (
     <FlaxenModal
-      sx={{ width: "400px", margin: " auto" }}
+      sx={{ width: "600px", margin: " auto" }}
       open={open}
       setOpen={setOpen}
-      title="Send"
+      title="Decline"
     >
       <Box padding="5px 10px 10px 10px">
         {/* all content */}
@@ -29,12 +33,10 @@ const PrintUnitSendModal = ({ open, setOpen }: TProps) => {
           <Grid item xs={12}>
             <Box className="bg-white">
               <FlaxenForm onSubmit={handleSubmit} >
-                <FlaxenSelect
-                  items={["Cutting", "Swing", "Embroidery"]}
-                  fullWidth
-                  name="send"
-                  label="Send To"
-                />
+               
+                <h4>Why Decline Please Write in Details - </h4>
+
+                <FlaxenTextField name="field"/>
               </FlaxenForm>
               <div className="flex justify-end mt-2">
                 <Button  variant="contained" sx={{}}>Send</Button>
@@ -47,4 +49,4 @@ const PrintUnitSendModal = ({ open, setOpen }: TProps) => {
   );
 };
 
-export default PrintUnitSendModal;
+export default DeclineModal;

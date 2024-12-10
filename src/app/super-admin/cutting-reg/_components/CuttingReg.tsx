@@ -86,6 +86,9 @@ const CuttingReg = () => {
               }}>
                 <TableRow className="bg-[#5D87FF]">
                   <TableCell align="center" className="whitespace-nowrap">
+                    Sl. No.
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
                     Date
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
@@ -133,6 +136,7 @@ const CuttingReg = () => {
               <TableBody>
                 {rows.map((row) => (
                   <TableRow key={row.id}>
+                    <TableCell align="center">{row.id}</TableCell>
                     <TableCell align="center">{row.date}</TableCell>
                     <TableCell align="center">{row.name}</TableCell>
                     <TableCell align="center">{row.order}</TableCell>

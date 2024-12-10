@@ -21,15 +21,14 @@ const rows = [
     date: "27-10-2024",
     name: "Fahim",
     order: "39695",
-    color: "White",
     orderqty: "100",
-    size: "L",
-    qty: "5",
-    total: "74",
     fabreq: "58",
-    fabrcv: "4797",
-    gsm: "1242",
-    consumption: "1162",
+    fabrcv: "58",
+    gsm: "5",
+    swing: "123",
+    rej: "10",
+    marge: "10",
+    total: "10",
     status: "not send yet",
   },
   {
@@ -38,14 +37,13 @@ const rows = [
     name: "Fahim",
     order: "39695",
     orderqty: "100",
-    color: "White",
-    size: "M",
-    qty: "5",
-    total: "74",
     fabreq: "58",
-    fabrcv: "4797",
-    gsm: "1242",
-    consumption: "1162",
+    fabrcv: "58",
+    gsm: "5",
+    swing: "123",
+    rej: "10",
+    marge: "10",
+    total: "10",
     status: "Sent to Embroidery",
   },
   {
@@ -54,14 +52,13 @@ const rows = [
     name: "Fahim",
     order: "39695",
     orderqty: "100",
-    color: "White",
-    size: "S",
-    qty: "5",
-    total: "74",
     fabreq: "58",
-    fabrcv: "4797",
-    gsm: "1242",
-    consumption: "1162",
+    fabrcv: "58",
+    gsm: "5",
+    swing: "123",
+    rej: "10",
+    marge: "10",
+    total: "10",
     status: "Sent to Embroidery",
   },
 ];
@@ -75,15 +72,17 @@ const SwingUnit = () => {
       <>
         <Paper sx={{ overflow: "hidden", padding: "0px" }}>
           <TableContainer>
-            <Table >
-              <TableHead sx={{
-                "& th": {
-                  border: "1px solid rgba(224, 224, 224, 1)",
-                  color: "white",
-                  fontFamily: "'Quicksand-VariableFont_wght'",
-                  fontWeight: "bold", 
-                },
-              }}>
+            <Table>
+              <TableHead
+                sx={{
+                  "& th": {
+                    border: "1px solid rgba(224, 224, 224, 1)",
+                    color: "white",
+                    fontFamily: "'Quicksand-VariableFont_wght'",
+                    fontWeight: "bold",
+                  },
+                }}
+              >
                 <TableRow className="bg-[#5D87FF]">
                   <TableCell align="center" className="whitespace-nowrap">
                     Date
@@ -97,32 +96,29 @@ const SwingUnit = () => {
                   <TableCell align="center" className="whitespace-nowrap">
                     Order Qty.
                   </TableCell>
-                  {/* <TableCell align="center" className="whitespace-nowrap">
-                    Color
+                  <TableCell align="center" className="whitespace-nowrap">
+                    Fab. Req.
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
-                    Size
+                    Fab. Rcv.
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
-                    Quantity
-                  </TableCell> */}
+                    Fab/Item GSM
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    Today Swing
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    Reject
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    Marge Rej.
+                  </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
                     Total
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
-                    Fabric Req.
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    Fabric Rcv.
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    Fabric/Item GSM
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    Consumption
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    Send
+                    Status
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
                     Action
@@ -137,24 +133,14 @@ const SwingUnit = () => {
                     <TableCell align="center">{row.name}</TableCell>
                     <TableCell align="center">{row.order}</TableCell>
                     <TableCell align="center">{row.orderqty}</TableCell>
-                    {/* <TableCell align="center">{row.color}</TableCell>
-                    <TableCell align="center">
-                    <TableCell align="center">{row.size}</TableCell>
-                    <TableCell align="center">{row.size}</TableCell>
-                    <TableCell align="center">{row.size}</TableCell>
-                    </TableCell>
-                    <TableCell align="center">
-                    <TableCell align="center">{row.qty}</TableCell>
-                    <TableCell align="center">{row.qty}</TableCell>
-                    <TableCell align="center">{row.qty}</TableCell>
-                    </TableCell> */}
-                    <TableCell align="center">{row.total}</TableCell>
                     <TableCell align="center">{row.fabreq}</TableCell>
                     <TableCell align="center">{row.fabrcv}</TableCell>
                     <TableCell align="center">{row.gsm}</TableCell>
-                    <TableCell align="center">{row.consumption}</TableCell>
+                    <TableCell align="center">{row.swing}</TableCell>
+                    <TableCell align="center">{row.rej}</TableCell>
+                    <TableCell align="center">{row.marge}</TableCell>
+                    <TableCell align="center">{row.total}</TableCell>
                     <TableCell align="center">{row.status}</TableCell>
-                    {/* Order Qty.	Color	Size	Quantity	Total	Fabric Req.	Fabric Rcv.	Fabric/Item GSM	Consumption */}
                     <TableCell align="center">
                       <IconButton onClick={handleOpen}>
                         <SendIcon fontSize="small" color="primary" />
@@ -184,5 +170,3 @@ const SwingUnit = () => {
 };
 
 export default SwingUnit;
-
-

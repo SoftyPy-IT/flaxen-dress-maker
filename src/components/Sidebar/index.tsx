@@ -250,6 +250,12 @@ const menuGroups = [
             // icon: <AddBoxIcon />,
           },
           { label: "Cutting Unit Index", route: "/super-admin/cutting-unit" },
+          {
+            label: "Request",
+            route: "/super-admin/cutting-unit/request",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Accept", route: "/super-admin/cutting-unit/accept" },
         ],
       },
       {
@@ -262,7 +268,12 @@ const menuGroups = [
             route: "/super-admin/swing-unit/add-swing-unit",
             // icon: <AddBoxIcon />,
           },
-          { label: "Swing Unit Index", route: "/super-admin/swing-unit" },
+          { label: "Swing Unit Index", route: "/super-admin/swing-unit" },{
+            label: "Request",
+            route: "/super-admin/swing-unit/request",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Accept", route: "/super-admin/swing-unit/accept" },
         ],
       },
       {
@@ -275,7 +286,12 @@ const menuGroups = [
             route: "/super-admin/embroidery-unit/add-embroidery-unit",
             // icon: <AddBoxIcon />,
           },
-          { label: "Embroidery Unit Index", route: "/super-admin/embroidery-unit" },
+          { label: "Embroidery Unit Index", route: "/super-admin/embroidery-unit" },{
+            label: "Request",
+            route: "/super-admin/embroidery-unit/request",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Accept", route: "/super-admin/embroidery-unit/accept" },
         ],
       },
       {
@@ -287,8 +303,13 @@ const menuGroups = [
             label: "+ Add Print Unit",
             route: "/super-admin/print-unit/add-print-unit",
             // icon: <AddBoxIcon />,
+          }, 
+          { label: "Print Unit Index", route: "/super-admin/print-unit" },{
+            label: "Request",
+            route: "/super-admin/print-unit/request",
+            // icon: <AddBoxIcon />,
           },
-          { label: "Print Unit Index", route: "/super-admin/print-unit" },
+          { label: "Accept", route: "/super-admin/print-unit/accept" },
         ],
       },
 
