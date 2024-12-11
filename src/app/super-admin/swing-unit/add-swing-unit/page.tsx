@@ -44,31 +44,41 @@ const Page = () => {
         <div className="flex justify-between gap-10 p-4">
           <div>
             <FlaxenForm onSubmit={handleSubmit}>
-              <div className="my-4 flex gap-4">
-                <FlaxenDatePicker
-                  label="Date"
-                  name="date"
-                  fullWidth
-                  size="medium"
-                />
-                <FlaxenInput
-                  name="name"
-                  label="Buyer Name"
-                  fullWidth
-                  size="medium"
-                />
-                <FlaxenInput
-                  name="order"
-                  label="Order No"
-                  fullWidth
-                  size="medium"
-                />
-                <FlaxenInput
-                  name="qty"
-                  label="Quantity"
-                  fullWidth
-                  size="medium"
-                />
+            <div className="my-4 flex justify-between gap-4">
+                <div className="space-y-4">
+                  <FlaxenInput
+                    name="name"
+                    label="Buyer Name"
+                    fullWidth
+                    size="medium"
+                  />
+                  <FlaxenInput
+                    name="order"
+                    label="Order No"
+                    fullWidth
+                    size="medium"
+                  />
+                  <FlaxenInput
+                    name="qty"
+                    label="Order Quantity"
+                    fullWidth
+                    size="medium"
+                  />
+                </div>
+                <div className="space-y-4">
+                  <FlaxenDatePicker
+                    label="Date"
+                    name="date"
+                    fullWidth
+                    size="medium"
+                  />
+                  <FlaxenInput
+                    name="order"
+                    label="Chln. No"
+                    fullWidth
+                    size="medium"
+                  />
+                </div>
               </div>
               {subCategories.map((subCategory, index) => (
                 <div key={index} className="flex items-center gap-2">
@@ -145,16 +155,7 @@ const Page = () => {
               ))}
             </FlaxenForm>
           </div>
-          {/* <div>
-            <FlaxenForm onSubmit={handleSubmit}>
-              <div className="mb-2 space-y-3">
-                <FlaxenInput name="name" label="Fabric Req." fullWidth size="medium"/>
-                <FlaxenInput name="order" label="Fabric Rcv." fullWidth size="medium"/>
-                <FlaxenInput name="order" label="Fabric/Item GSM" fullWidth size="medium"/>
-                <FlaxenInput name="order" label="Consumption" fullWidth size="medium"/>
-              </div>
-            </FlaxenForm>
-          </div> */}
+          
         </div>
         <div className="flex justify-end">
           <Button

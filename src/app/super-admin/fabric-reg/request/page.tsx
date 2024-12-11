@@ -78,7 +78,7 @@ const Page = () => {
   return (
     <>
       <div className="mb-5 flex flex-wrap items-center justify-between gap-5 rounded bg-white p-5 shadow-md">
-        <h3 className="text-2xl font-bold">Fabric Request</h3>
+        <h3 className="text-2xl font-bold">Accessories Request</h3>
         <div className=" flex w-[800px] items-center gap-3">
           <TextField
             name="date"
@@ -206,7 +206,14 @@ const Page = () => {
       <Paper sx={{ overflow: "hidden", padding: "0px" }}>
         <TableContainer>
           <Table>
-            <TableHead>
+            <TableHead sx={{
+                  "& th": {
+                    border: "1px solid rgba(224, 224, 224, 1)",
+                    color: "white",
+                    fontFamily: "'Quicksand-VariableFont_wght'",
+                    fontWeight: "bold",
+                  },
+                }}>
               <TableRow className="bg-[#5D87FF]">
                 <TableCell align="center" className="whitespace-nowrap">
                   Date

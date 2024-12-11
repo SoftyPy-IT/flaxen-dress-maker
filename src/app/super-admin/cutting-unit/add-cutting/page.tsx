@@ -60,7 +60,7 @@ const Page = () => {
                   />
                   <FlaxenInput
                     name="qty"
-                    label="Quantity"
+                    label="Order Quantity"
                     fullWidth
                     size="medium"
                   />
