@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import * as React from "react";
 import { Button, TextField, Paper } from "@mui/material";
@@ -68,13 +68,17 @@ const rows = [
 ];
 
 const Page = () => {
-    const [declineOpen, setDeclineOpen] = React.useState(false);
+  const [declineOpen, setDeclineOpen] = React.useState(false);
   const handleDeclineOpen = () => setDeclineOpen(true);
   const handleDeclineClose = () => setDeclineOpen(false);
 
   const [detailsOpen, setDetailsOpen] = React.useState(false);
   const handleDetailsOpen = () => setDetailsOpen(true);
   const handleDetailsClose = () => setDetailsOpen(false);
+
+  const handleSubmit = () => {
+    console.log();
+  };
   return (
     <>
       <div className="mb-5 flex flex-wrap items-center justify-between gap-5 rounded bg-white p-5 shadow-md">
@@ -121,14 +125,16 @@ const Page = () => {
       <Paper sx={{ overflow: "hidden", padding: "0px" }}>
         <TableContainer>
           <Table>
-            <TableHead sx={{
-                "th": {
+            <TableHead
+              sx={{
+                th: {
                   border: "1px solid rgba(224, 224, 224, 1)",
                   color: "white",
                   fontFamily: "'Quicksand-VariableFont_wght'",
                   fontWeight: "bold",
                 },
-              }}>
+              }}
+            >
               <TableRow className="bg-[#5D87FF]">
                 <TableCell align="center" className="whitespace-nowrap">
                   Date
@@ -199,8 +205,15 @@ const Page = () => {
                   <TableCell align="center">{row.name}</TableCell>
                   <TableCell align="center">{row.delivery}</TableCell>
                   <TableCell align="center" className="space-x-2">
-                    <Button sx={{backgroundColor:"#5D87FF", color:"white"}}>Accept</Button>
-                    <Button sx={{backgroundColor:"red", color:"white"}} onClick={handleDeclineOpen}>Decline</Button>
+                    <Button sx={{ backgroundColor: "#5D87FF", color: "white" }}>
+                      Accept
+                    </Button>
+                    <Button
+                      sx={{ backgroundColor: "red", color: "white" }}
+                      onClick={handleDeclineOpen}
+                    >
+                      Decline
+                    </Button>
                   </TableCell>
                   <TableCell align="center" className="">
                     {/* <Tooltip title="Send">
@@ -209,9 +222,7 @@ const Page = () => {
                       </button>
                     </Tooltip> */}
 
-                    <IconButton                      
-                      onClick={handleDetailsOpen}
-                    >
+                    <IconButton onClick={handleDetailsOpen}>
                       <VisibilityIcon fontSize="small" color="primary" />
                     </IconButton>
                     <IconButton href={`/super-admin/fabric-reg/${row.id}`}>
@@ -227,8 +238,12 @@ const Page = () => {
           </Table>
         </TableContainer>
       </Paper>
-      {declineOpen && <DeclineModal open={declineOpen} setOpen={handleDeclineClose} />}
-      {detailsOpen && <DetailsModal open={detailsOpen} setOpen={handleDetailsClose} />}
+      {declineOpen && (
+        <DeclineModal open={declineOpen} setOpen={handleDeclineClose} />
+      )}
+      {detailsOpen && (
+        <DetailsModal open={detailsOpen} setOpen={handleDetailsClose} />
+      )}
     </>
   );
 };

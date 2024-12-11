@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import * as React from "react";
 import { Button, TextField, Paper } from "@mui/material";
@@ -17,6 +17,8 @@ import TableContainer from "@mui/material/TableContainer";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import DeclineModal from "../_components/DeclineModal";
 import DetailsModal from "../_components/DetailsModal";
+import FlaxenForm from "@/components/Forms/Form";
+import FlaxenDatePicker from "@/components/Forms/DatePicker";
 
 const rows = [
   {
@@ -70,67 +72,53 @@ const rows = [
 ];
 
 const Page = () => {
-    const [declineOpen, setDeclineOpen] = React.useState(false);
+  const [declineOpen, setDeclineOpen] = React.useState(false);
   const handleDeclineOpen = () => setDeclineOpen(true);
   const handleDeclineClose = () => setDeclineOpen(false);
 
   const [detailsOpen, setDetailsOpen] = React.useState(false);
   const handleDetailsOpen = () => setDetailsOpen(true);
   const handleDetailsClose = () => setDetailsOpen(false);
+
+  const handleSubmit = () => {
+    console.log();
+  };
   return (
     <>
       <div className="mb-5 flex flex-wrap items-center justify-between gap-5 rounded bg-white p-5 shadow-md">
         <h3 className="text-2xl font-bold">Accept Request</h3>
-        <div className=" flex w-[800px] items-center gap-3">
-          <TextField
-            name="date"
-            type="date"
-            InputLabelProps={{ shrink: true }}
-            fullWidth
-            size="small"
-          />
-          <h5>to</h5>
-          <TextField
-            name="date"
-            type="date"
-            InputLabelProps={{ shrink: true }}
-            fullWidth
-            size="small"
-          />
+        <FlaxenForm onSubmit={handleSubmit}>
+          <div className=" flex w-[800px] items-center gap-3">
+            <FlaxenDatePicker name="date" fullWidth size="small" />
+            <h5>to</h5>
+            <FlaxenDatePicker name="date" fullWidth size="small" />
 
-          <TextField
-            size="small"
-            variant="outlined"
-            placeholder="Search by Order"
-            InputProps={{
-              endAdornment: <SearchIcon />,
-            }}
-            fullWidth
-          />
-
-          {/* <Link href="/super-admin/fabric-reg/add-fabric-reg">
-            <Button
-              variant="contained"
-              disableElevation
-              startIcon={<AddIcon />}
-            >
-              Add
-            </Button>
-          </Link> */}
-        </div>
+            <TextField
+              size="small"
+              variant="outlined"
+              placeholder="Search by Order"
+              InputProps={{
+                endAdornment: <SearchIcon />,
+              }}
+              fullWidth
+            />
+          </div>
+        </FlaxenForm>
       </div>
 
       <Paper sx={{ overflow: "hidden", padding: "0px" }}>
         <TableContainer>
           <Table>
-            <TableHead sx={{
-                "th": {
+            <TableHead
+              sx={{
+                th: {
                   border: "1px solid rgba(224, 224, 224, 1)",
                   color: "white",
                   fontFamily: "'Quicksand-VariableFont_wght'",
                   fontWeight: "bold",
                 },
-              }}>
+              }}
+            >
               <TableRow className="bg-[#5D87FF]">
                 <TableCell align="center" className="whitespace-nowrap">
                   Date
@@ -201,8 +189,15 @@ const Page = () => {
                   <TableCell align="center">{row.name}</TableCell>
                   <TableCell align="center">{row.delivery}</TableCell>
                   <TableCell align="center" className="space-x-2">
-                    <Button sx={{backgroundColor:"#5D87FF", color:"white"}}>Accept</Button>
-                    <Button sx={{backgroundColor:"red", color:"white"}} onClick={handleDeclineOpen}>Decline</Button>
+                    <Button sx={{ backgroundColor: "#5D87FF", color: "white" }}>
+                      Accept
+                    </Button>
+                    <Button
+                      sx={{ backgroundColor: "red", color: "white" }}
+                      onClick={handleDeclineOpen}
+                    >
+                      Decline
+                    </Button>
                   </TableCell>
                   <TableCell align="center" className="">
                     {/* <Tooltip title="Send">
@@ -211,9 +206,7 @@ const Page = () => {
                       </button>
                     </Tooltip> */}
 
-                    <IconButton                      
-                      onClick={handleDetailsOpen}
-                    >
+                    <IconButton onClick={handleDetailsOpen}>
                       <VisibilityIcon fontSize="small" color="primary" />
                     </IconButton>
                     <IconButton href={`/super-admin/fabric-reg/${row.id}`}>
@@ -229,8 +222,12 @@ const Page = () => {
           </Table>
         </TableContainer>
       </Paper>
-      {declineOpen && <DeclineModal open={declineOpen} setOpen={handleDeclineClose} />}
-      {detailsOpen && <DetailsModal open={detailsOpen} setOpen={handleDetailsClose} />}
+      {declineOpen && (
+        <DeclineModal open={declineOpen} setOpen={handleDeclineClose} />
+      )}
+      {detailsOpen && (
+        <DetailsModal open={detailsOpen} setOpen={handleDetailsClose} />
+      )}
     </>
   );
 };

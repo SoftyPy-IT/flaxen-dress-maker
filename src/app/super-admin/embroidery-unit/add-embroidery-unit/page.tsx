@@ -44,6 +44,129 @@ const Page = () => {
         <div className="flex justify-between gap-10 p-4">
           <div>
             <FlaxenForm onSubmit={handleSubmit}>
+              <div className="my-4 flex justify-between gap-4">
+                <div className="space-y-4">
+                  <FlaxenInput
+                    name="name"
+                    label="Buyer Name"
+                    fullWidth
+                    size="medium"
+                  />
+                  <FlaxenInput
+                    name="order"
+                    label="Order No"
+                    fullWidth
+                    size="medium"
+                  />
+                  <FlaxenInput
+                    name="qty"
+                    label="Order Quantity"
+                    fullWidth
+                    size="medium"
+                  />
+                </div>
+                <div className="space-y-4">
+                  <FlaxenDatePicker
+                    label="Date"
+                    name="date"
+                    fullWidth
+                    size="medium"
+                  />
+                  <FlaxenInput
+                    name="order"
+                    label="Chln. No"
+                    fullWidth
+                    size="medium"
+                  />
+                </div>
+              </div>
+              {subCategories.map((subCategory, index) => (
+                <div key={index} className="flex items-center gap-2">
+                  <div className="my-3 flex gap-4">
+                    <FlaxenInput
+                      fullWidth
+                      name="color"
+                      label="Color"
+                      size="medium"
+                    />
+                    <FlaxenInput
+                      fullWidth
+                      name="size"
+                      label="Size"
+                      size="medium"
+                    />
+                    <FlaxenInput
+                      fullWidth
+                      name="quantity"
+                      label="Quantity"
+                      size="medium"
+                    />
+                    <FlaxenInput
+                      fullWidth
+                      name="reject"
+                      label="Reject"
+                      size="medium"
+                    />
+                    <FlaxenInput
+                      fullWidth
+                      name="marge"
+                      label="Mrg. Rej."
+                      size="medium"
+                    />
+                    <FlaxenInput
+                      fullWidth
+                      name="Total"
+                      label="total"
+                      size="medium"
+                    />
+                    <FlaxenInput
+                      name="fabreq"
+                      label="Fabric Req."
+                      fullWidth
+                      size="medium"
+                    />
+                    <FlaxenInput
+                      name="fabrcv"
+                      label="Fabric Rcv."
+                      fullWidth
+                      size="medium"
+                    />
+                    <FlaxenInput
+                      name="gsm"
+                      label="Fabric/Item GSM"
+                      fullWidth
+                      size="medium"
+                    />
+                  </div>
+
+                  <div className="-mt-2 flex w-[100px] gap-1">
+                    <IconButton
+                      onClick={handleAddSubCategory}
+                      sx={{
+                        backgroundColor: "#e1e4f9",
+                        "&:hover": {
+                          backgroundColor: "#d0d3f0",
+                        },
+                      }}
+                    >
+                      <AddIcon className="" />
+                    </IconButton>
+                    <IconButton
+                      onClick={() => handleDeleteSubCategory(index)}
+                      sx={{
+                        backgroundColor: "#e1e4f9",
+                        "&:hover": {
+                          backgroundColor: "#d0d3f0",
+                        },
+                      }}
+                    >
+                      <RemoveCircleOutlineIcon className="text-red-600" />
+                    </IconButton>
+                  </div>
+                </div>
+              ))}
+            </FlaxenForm>
+            {/* <FlaxenForm onSubmit={handleSubmit}>
               <div className="my-4 flex gap-4">
                 <FlaxenDatePicker
                   label="Date"
@@ -65,7 +188,7 @@ const Page = () => {
                 />
                 <FlaxenInput
                   name="qty"
-                  label="Quantity"
+                  label="Order Quantity"
                   fullWidth
                   size="medium"
                 />
@@ -143,7 +266,7 @@ const Page = () => {
                   </div>
                 </div>
               ))}
-            </FlaxenForm>
+            </FlaxenForm> */}
           </div>
           {/* <div>
             <FlaxenForm onSubmit={handleSubmit}>
@@ -157,15 +280,15 @@ const Page = () => {
           </div> */}
         </div>
         <div className="flex justify-end">
-                <Button
-                  type="submit"
-                  variant="contained"
-                  size="medium"
-                  disableElevation
-                >
-                  + Add
-                </Button>
-              </div>
+          <Button
+            type="submit"
+            variant="contained"
+            size="medium"
+            disableElevation
+          >
+            + Add
+          </Button>
+        </div>
       </Paper>
 
       <EmbroideryUnit />

@@ -375,15 +375,15 @@ const menuGroups = [
       //   ],
       // },
 
-      {
-        label: "Forms",
-        route: "#",
-        icon: <FormIcon />,
-        children: [
-          { label: "Form Elements", route: "/forms/form-elements" },
-          { label: "Form Layout", route: "/forms/form-layout" },
-        ],
-      },
+      // {
+      //   label: "Forms",
+      //   route: "#",
+      //   icon: <FormIcon />,
+      //   children: [
+      //     { label: "Form Elements", route: "/forms/form-elements" },
+      //     { label: "Form Layout", route: "/forms/form-layout" },
+      //   ],
+      // },
       {
         label: "Settings",
         route: "/settings",
@@ -395,12 +395,16 @@ const menuGroups = [
         icon: <ArticleIcon />,
         children: [
           {
-            label: "Printing Unit Challan",
+            label: "Challan 1",
             route: "/super-admin/allchallandesign/printing",
           },
           {
-            label: "Delivery Challan",
+            label: "Challan 2",
             route: "/super-admin/allchallandesign/delivery",
+          },
+          {
+            label: "Challan 3",
+            route: "/super-admin/allchallandesign/challan3",
           },
         ],
       },

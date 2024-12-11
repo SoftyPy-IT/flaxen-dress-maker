@@ -17,7 +17,6 @@ const page = () => {
           <h3 className=" text-2xl font-bold">Order</h3>
           <div>
             <Grid container spacing={2}>
-
               <Grid item xs={12} sm={2}>
                 <TextField label="Buyer Name" name="buyer" fullWidth />
               </Grid>
@@ -25,8 +24,6 @@ const page = () => {
               <Grid item xs={12} sm={2}>
                 <TextField label="Order No" name="order" fullWidth />
               </Grid>
-
-              
 
               <Grid item xs={12} sm={2}>
                 <TextField
@@ -190,7 +187,11 @@ const page = () => {
             </Grid>
           </div>
         </div>
-        <Button >Add Production</Button>
+        <div className="mt-2 flex justify-end">
+          <Button variant="contained" sx={{}}>
+            Add Production
+          </Button>
+        </div>
       </div>
     </>
   );
