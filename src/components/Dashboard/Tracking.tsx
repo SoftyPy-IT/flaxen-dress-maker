@@ -8,9 +8,7 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import { styled } from "@mui/material/styles";
 import Stack from "@mui/material/Stack";
-import StepConnector, {
-  stepConnectorClasses,
-} from "@mui/material/StepConnector";
+import StepConnector, { stepConnectorClasses } from "@mui/material/StepConnector";
 import { StepIconProps } from "@mui/material/StepIcon";
 import PrecisionManufacturingIcon from "@mui/icons-material/PrecisionManufacturing";
 import LocalPrintshopIcon from "@mui/icons-material/LocalPrintshop";
@@ -55,8 +53,8 @@ const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
 }));
 
 const ColorlibStepIconRoot = styled("div")<{
-  ownerState: { completed?: boolean; active?: boolean };
-}>(({ theme, ownerState }) => ({
+  ownerState: { completed?: boolean; active?: boolean; step: number };
+}>(({ ownerState }) => ({
   zIndex: 1,
   width: 50,
   height: 50,
@@ -77,7 +75,7 @@ const ColorlibStepIconRoot = styled("div")<{
 function ColorlibStepIcon(props: StepIconProps) {
   const { active, completed, className, icon } = props;
 
-  const icons: { [index: string]: React.ReactElement<unknown> } = {
+  const icons: { [index: string]: React.ReactElement } = {
     1: <ContentCutIcon />,
     2: <PaletteIcon />,
     3: <LocalPrintshopIcon />,
@@ -115,9 +113,9 @@ const Tracking = () => {
   ];
 
   return (
-    <div className="mt-10 w-full rounded-md border bg-white p-4 ">
+    <div className="mt-10 w-full rounded-md border bg-white p-4">
       <div className="mb-4 flex content-center items-center justify-center bg-blue-300">
-        <div className="flex w-[800px] content-center items-center justify-center  p-5">
+        <div className="flex w-[800px] content-center items-center justify-center p-5">
           <input
             type="text"
             placeholder="Track Order by Enter order ID......"
@@ -140,8 +138,8 @@ const Tracking = () => {
             {steps.map((label, index) => (
               <Step key={index}>
                 <StepLabel StepIconComponent={ColorlibStepIcon}>
-                  {label.split("\n").map((line, index) => (
-                    <span key={index}>
+                  {label.split("\n").map((line, idx) => (
+                    <span key={idx}>
                       {line.includes(":") ? (
                         <>
                           <strong>{line.split(":")[0]}:</strong>{" "}
