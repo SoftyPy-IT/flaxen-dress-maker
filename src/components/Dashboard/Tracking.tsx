@@ -79,10 +79,10 @@ function ColorlibStepIcon(props: StepIconProps) {
 
   const icons: { [index: string]: React.ReactElement<unknown> } = {
     1: <ContentCutIcon />,
-    2: <ShoppingBagIcon />,
-    3: <PrecisionManufacturingIcon />,
-    4: <PaletteIcon />,
-    5: <LocalPrintshopIcon />,
+    2: <PaletteIcon />,
+    3: <LocalPrintshopIcon />,
+    4: <PrecisionManufacturingIcon />,
+    5: <ShoppingBagIcon />,
     6: <LocalMallIcon />,
     7: <LuggageIcon />,
     8: <RocketLaunchIcon />,
@@ -104,10 +104,10 @@ const Tracking = () => {
 
   const steps = [
     "Total Cutting: 100\nReject: 10",
-    "Total Production: 130\nReject: 30",
-    "Total Swing: 100\nReject: 10",
     "Total Embroidery: 100\nReject: 10",
     "Total Print: 100\nReject: 10",
+    "Total Swing: 100\nReject: 10",
+    "Total Production: 130\nReject: 30",
     "Production: 100",
     "Packaging: 100",
     "Shipment: 100",
