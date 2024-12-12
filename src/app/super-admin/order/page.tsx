@@ -8,11 +8,10 @@ import SearchIcon from "@mui/icons-material/Search";
 import Order from "./_components/Order";
 
 const page = () => {
-
   return (
     <>
-    <div className="mb-5 flex flex-wrap items-center justify-between gap-5 rounded bg-white p-5 shadow-md">
-        <h3 className="text-2xl font-bold">Work Order</h3>
+      <div className="mb-5 flex flex-wrap items-center justify-between gap-5 rounded bg-white p-5 shadow-md">
+        <h3 className="text-2xl font-bold">Order</h3>
         <div className=" flex w-[800px] items-center gap-3">
           <TextField
             name="date"
@@ -51,8 +50,8 @@ const page = () => {
           </Link>
         </div>
       </div>
-      
-     <Order/>
+
+      <Order />
     </>
   );
 };

@@ -115,7 +115,7 @@ const Page = () => {
 
         <div className="mb-4 flex justify-center p-2">
           <h5 className="mx-auto mt-2 inline-block rounded-md  bg-gray-400 p-2 text-center font-bold uppercase text-white">
-            Fabric Requisition
+            Order
           </h5>
         </div>
 

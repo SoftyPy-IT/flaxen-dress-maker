@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import * as React from "react";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
@@ -10,7 +9,7 @@ import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { Button, IconButton } from "@mui/material";
+import { IconButton } from "@mui/material";
 import TableContainer from "@mui/material/TableContainer";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import FabricSendModal from "./FabricSendModal";
@@ -110,10 +109,10 @@ const FabricReg = () => {
                   FAB REQ
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  Fabric Gross Weight
+                  Fab. Gross Weight
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  Fabric Finish Weight
+                  Fab. Finish Weight
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
                   Name
