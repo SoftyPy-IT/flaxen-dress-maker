@@ -97,15 +97,6 @@ const SwingUnit = () => {
                     Order Qty.
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
-                    Fab. Req.
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    Fab. Rcv.
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    Fab/Item GSM
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
                     Today Swing
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
@@ -117,6 +108,17 @@ const SwingUnit = () => {
                   <TableCell align="center" className="whitespace-nowrap">
                     Total
                   </TableCell>
+
+                  <TableCell align="center" className="whitespace-nowrap">
+                    Fab. Req.
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    Fab. Rcv.
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    Fab/Item GSM
+                  </TableCell>
+
                   <TableCell align="center" className="whitespace-nowrap">
                     Status
                   </TableCell>
@@ -133,13 +135,14 @@ const SwingUnit = () => {
                     <TableCell align="center">{row.name}</TableCell>
                     <TableCell align="center">{row.order}</TableCell>
                     <TableCell align="center">{row.orderqty}</TableCell>
-                    <TableCell align="center">{row.fabreq}</TableCell>
-                    <TableCell align="center">{row.fabrcv}</TableCell>
-                    <TableCell align="center">{row.gsm}</TableCell>
+
                     <TableCell align="center">{row.swing}</TableCell>
                     <TableCell align="center">{row.rej}</TableCell>
                     <TableCell align="center">{row.marge}</TableCell>
                     <TableCell align="center">{row.total}</TableCell>
+                    <TableCell align="center">{row.fabreq}</TableCell>
+                    <TableCell align="center">{row.fabrcv}</TableCell>
+                    <TableCell align="center">{row.gsm}</TableCell>
                     <TableCell align="center">{row.status}</TableCell>
                     <TableCell align="center">
                       <IconButton onClick={handleOpen}>

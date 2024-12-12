@@ -260,12 +260,11 @@ const Page = () => {
                   Date
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
-                  To
+                Send Dept.
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
                   Buyer Name
                 </TableCell>
-
                 <TableCell align="center" className="whitespace-nowrap">
                   Order No
                 </TableCell>
@@ -289,18 +288,14 @@ const Page = () => {
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
                   Unit
-                </TableCell>
-               
+                </TableCell>               
                 <TableCell align="center" className="whitespace-nowrap">
                   Factory
                 </TableCell>
-
                 
+               
                 <TableCell align="center" className="whitespace-nowrap">
-                  Sent Status
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  Accept Status
+                   Status
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
                   Action
@@ -332,23 +327,10 @@ const Page = () => {
                   <TableCell align="center">{row.qty}</TableCell>
                   <TableCell align="center">{row.unit}</TableCell>
                   <TableCell align="center">{row.factory}</TableCell>
-                  <TableCell align="center">
-                    <FlaxenForm onSubmit={handleSubmit}>
-                      <FlaxenSelect
-                        items={["Send", "Not Send"]}
-                        fullWidth
-                        name="send"
-                        size="small"
-                      />
-                    </FlaxenForm>
-                  </TableCell>
+                  
                   <TableCell align="center">{row.accept}</TableCell>
                   <TableCell align="center" className="">
-                    {/* <Tooltip title="Send">
-                      <button className="text-blue-600">
-                        <SendIcon fontSize="small" />
-                      </button>
-                    </Tooltip> */}
+                   
 
                     <IconButton
                       href={`/super-admin/fabric-reg/preview/${row.id}`}

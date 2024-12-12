@@ -20,6 +20,10 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import FaxIcon from "@mui/icons-material/Fax";
 import EmailIcon from "@mui/icons-material/Email";
 import LanguageIcon from "@mui/icons-material/Language";
+import TopSection from "@/components/shared/TopSection/TopSection";
+import FlaxenForm from "@/components/Forms/Form";
+import FlaxenDatePicker from "@/components/Forms/DatePicker";
+import FlaxenInput from "@/components/Forms/Input";
 
 const data = [
   {
@@ -101,7 +105,7 @@ const Page = () => {
   const handleAddDailyReceive = () => {
     setDailyReceive([...dailyReceive, { challanQTY: [""] }]);
   };
-
+  
   const handleDeleteDailyReceive = (index: number) => {
     if (dailyReceive.length > 1) {
       const updatedDailyReceive = dailyReceive.filter((_, i) => i !== index);
@@ -111,7 +115,7 @@ const Page = () => {
 
   const handleAddChallanQTY = (index: number) => {
     const updatedDailyReceive = [...dailyReceive];
-    updatedDailyReceive[index].challanQTY.push(""); 
+    updatedDailyReceive[index].challanQTY.push("");
     setDailyReceive(updatedDailyReceive);
   };
 
@@ -125,59 +129,41 @@ const Page = () => {
       setDailyReceive(updatedDailyReceive);
     }
   };
+  const handleSubmit = () => {
+    console.log()
+  };
 
   return (
     <>
       <>
-        <div className="flex items-center justify-between border-b pb-3">
-          <div className="flex items-center gap-4">
-            <Image src={flaxen} alt="Company Logo" width={40} height={40} />
-            <div>
-              <h1 className="text-lg font-bold">Flaxen Dress Maker Ltd</h1>
-              <p className="text-sm">
-                Factory: Meghdubi, Gazipur-1700, Bangladesh
-              </p>
-              <p className="text-sm">
-                Corporate Office: House# 35, Road# 9, Sector# 15, Uttara, Dhaka
-              </p>
-            </div>
-          </div>
-          <div className="text-right">
-            <p className="text-left text-sm">
-              <PhoneIcon fontSize="small" /> +880-2-8913263, 8916198
-            </p>
-            <p className="text-left text-sm">
-              <FaxIcon fontSize="small" /> +88-02-8913263
-            </p>
-            <p className="text-left text-sm">
-              <EmailIcon fontSize="small" /> flaxen@flaxengroup.com
-            </p>
-            <p className="text-left text-sm">
-              <LanguageIcon fontSize="small" /> www.flaxengroup.com
-            </p>
-          </div>
-        </div>        
+        <TopSection />
 
-        <div>
+        <div className="mt-2">
           <h4 className="text-center font-normal">
             Daily Receive For{" "}
             <span className="font-bold">PRANATAL, France.</span>
           </h4>
-          
+
           <h5 className="text-center font-bold">
             Color: <span className="text-center font-normal"> Almond </span>
           </h5>
           <h5 className="text-center font-bold">
             Style No: <span className="text-center font-normal"> 01</span>
           </h5>
+          <h5 className="text-center font-bold">
+            Order Quantity: <span className="text-center font-normal"> 1000</span>
+          </h5>
+          <h5 className="text-center font-bold">
+            Order Complete: <span className="text-center font-normal"> 1000</span>
+          </h5>
+          
 
           <div className="m-3 flex justify-between">
             <h5 className="text-center font-bold">
-              Order No:{" "}
-              <span className="text-center font-normal"> E508TS004</span>
+              Order Complete:{" "}
+              <span className="text-center font-normal"> 500</span>
             </h5>
-            <h5>Date: 05-12-2024</h5>
-           
+            <h5>Date: 06-12-2024</h5>
           </div>
 
           <Paper sx={{ width: "100%", overflow: "hidden" }}>
@@ -187,27 +173,54 @@ const Page = () => {
                   sx={{
                     "& th": {
                       border: "1px solid rgba(224, 224, 224, 1)",
+                      color: "white",
                     },
                   }}
                 >
-                  <TableRow className="bg-[#5D87FF]">
+                  <TableRow
+                    className="bg-[#5D87FF]"
+                    sx={{
+                      "& td": {
+                        border: "1px solid rgba(224, 224, 224, 1)",
+                      },
+                    }}
+                  >
                     <TableCell sx={{ color: "white" }}>Challan No</TableCell>
-                  
+
                     {data.map((row, index) => (
                       <TableCell
                         key={index}
-                        
                         sx={{ color: "white" }}
                         align="center"
                       >
                         Line No {row.lineNo}
                       </TableCell>
                     ))}
-                    
                   </TableRow>
                 </TableHead>
 
                 <TableBody>
+                  {challanNos.map((challanNo) => (
+                    <TableRow key={challanNo}  sx={{
+                      "& td": {
+                        border: "1px solid rgba(224, 224, 224, 1)",
+                      },
+                    }}>
+                      <TableCell>{`Cha. No ${challanNo}`}</TableCell>
+
+                      {data.map((row, index) => {
+                        const challan = row.challans.find(
+                          (challan) => challan.challanNo === challanNo,
+                        );
+                        return (
+                          <TableCell key={index} align="center">
+                            {challan ? challan.qty : "-"}
+                          </TableCell>
+                        );
+                      })}
+                    </TableRow>
+                  ))}
+
                   <TableCell className="bg-[#dde5f8]">Total Product</TableCell>
                   {data.map((row, index) => (
                     <TableCell
@@ -218,13 +231,53 @@ const Page = () => {
                       {row.product}
                     </TableCell>
                   ))}
-                 
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Paper>
+
+          <div className="m-3 flex justify-between">
+          <h5 className="text-center font-bold">
+              Order Complete:{" "}
+              <span className="text-center font-normal"> 500</span>
+            </h5>
+            <h5>Date: 05-12-2024</h5>
+          </div>
+          <Paper sx={{ width: "100%", overflow: "hidden" }}>
+            <TableContainer>
+              <Table>
+                <TableHead
+                  sx={{
+                    "& th": {
+                      border: "1px solid rgba(224, 224, 224, 1)",
+                      color: "white",
+                    },
+                  }}
+                >
+                  <TableRow className="bg-[#5D87FF]">
+                    <TableCell sx={{ color: "white" }}>Challan No</TableCell>
+
+                    {data.map((row, index) => (
+                      <TableCell
+                        key={index}
+                        sx={{ color: "white" }}
+                        align="center"
+                      >
+                        Line No {row.lineNo}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                </TableHead>
+
+                <TableBody>
                   {challanNos.map((challanNo) => (
-                    <TableRow key={challanNo}>
-                      
+                    <TableRow key={challanNo}  sx={{
+                      "& td": {
+                        border: "1px solid rgba(224, 224, 224, 1)",
+                      },
+                    }}>
                       <TableCell>{`Cha. No ${challanNo}`}</TableCell>
 
-                      
                       {data.map((row, index) => {
                         const challan = row.challans.find(
                           (challan) => challan.challanNo === challanNo,
@@ -236,28 +289,18 @@ const Page = () => {
                         );
                       })}
 
-                      {/* Action buttons */}
-                      {/* <TableCell
-                      align="center"
-                      className="space-x-2 whitespace-nowrap"
-                    >
-                      <Link
-                        href={`/super-admin/daily-receive/order-details/details/${challanNo}`}
-                      >
-                        <button className="text-blue-600">
-                          <VisibilityIcon fontSize="small" />
-                        </button>
-                      </Link>
-                      <Link href={`/super-admin/daily-receive/${challanNo}`}>
-                        <button className="text-green-600">
-                          <EditIcon fontSize="small" />
-                        </button>
-                      </Link>
-                      <button className="text-red-600">
-                        <DeleteIcon fontSize="small" />
-                      </button>
-                    </TableCell> */}
                     </TableRow>
+                  ))}
+
+                  <TableCell className="bg-[#dde5f8]">Total Product</TableCell>
+                  {data.map((row, index) => (
+                    <TableCell
+                      key={index}
+                      align="center"
+                      className="whitespace-nowrap bg-[#dde5f8]"
+                    >
+                      {row.product}
+                    </TableCell>
                   ))}
                 </TableBody>
               </Table>
@@ -274,16 +317,21 @@ const Page = () => {
             {dailyReceive.map((mother, motherIndex) => (
               <div key={motherIndex} className="mb-4">
                 <div className="mb-4 gap-4">
-                  
+                  <FlaxenForm onSubmit={handleSubmit}>
                   <div className="flex flex-1 gap-2 rounded border p-2">
                     <div className="flex w-full gap-2">
-                      <TextField
+                      {/* <FlaxenDatePicker
+                        name="Date"                        
+                        fullWidth
+                        size="medium"
+                      /> */}
+                      <FlaxenInput
                         label="Line No"
                         name="styleNo"
                         fullWidth
                         size="medium"
                       />
-                      <TextField
+                      <FlaxenInput
                         label="Total Product"
                         name="orderNo"
                         size="medium"
@@ -298,14 +346,14 @@ const Page = () => {
                           className="flex w-[650px] space-x-2 p-1"
                         >
                           <div className="flex w-[550px] space-x-2">
-                            <TextField
+                            <FlaxenInput
                               label="Challan No"
                               name="description"
                               size="medium"
                               fullWidth
                               sx={{ width: "250px" }}
                             />
-                            <TextField
+                            <FlaxenInput
                               label="QTY"
                               name="description"
                               size="medium"
@@ -341,7 +389,6 @@ const Page = () => {
                     </div>
                   </div>
 
-                  
                   <div className="mt-2 flex items-center justify-start gap-2">
                     <Button
                       onClick={handleAddDailyReceive}
@@ -358,8 +405,8 @@ const Page = () => {
                     >
                       Remove
                     </Button>
-                    
                   </div>
+                </FlaxenForm>
                 </div>
               </div>
             ))}
@@ -384,3 +431,7 @@ const Page = () => {
 };
 
 export default Page;
+
+
+// note : 
+// in this code the table added automatically by date. and new date table all data show 0
