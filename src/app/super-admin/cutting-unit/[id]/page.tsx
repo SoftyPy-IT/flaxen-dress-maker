@@ -27,7 +27,7 @@ const Page = () => {
   return (
     <>
       <Paper sx={{ padding: 2, margin: "auto" }}>
-        <h3 className="text-2xl text-center font-bold">Edit Cutting Unit</h3>
+        <h3 className="text-2xl text-center font-bold">Update Cutting Unit</h3>
         <hr className="my-3" />
         <div className="">
           <Grid container spacing={2}>
