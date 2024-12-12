@@ -25,7 +25,7 @@ const rows = [
     fabreq: "58",
     fabrcv: "58",
     gsm: "5",
-    swing: "123",
+    embro: "123",
     rej: "10",
     marge: "10",
     total: "10",
@@ -40,11 +40,11 @@ const rows = [
     fabreq: "58",
     fabrcv: "58",
     gsm: "5",
-    swing: "123",
+    embro: "123",
     rej: "10",
     marge: "10",
     total: "10",
-    status: "Sent to Cutting",
+    status: "Sent to Embroidery",
   },
   {
     id: "3",
@@ -55,15 +55,15 @@ const rows = [
     fabreq: "58",
     fabrcv: "58",
     gsm: "5",
-    swing: "123",
+    embro: "123",
     rej: "10",
     marge: "10",
     total: "10",
-    status: "Sent to Cutting",
+    status: "Sent to Embroidery",
   },
 ];
 
-const PrintUnit = () => {
+const EmbroideryUnit = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -97,16 +97,7 @@ const PrintUnit = () => {
                     Order Qty.
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
-                    Fab. Req.
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    Fab. Rcv.
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    Fab/Item GSM
-                  </TableCell>
-                  <TableCell align="center" className="whitespace-nowrap">
-                    Today EMB.
+                    Today Embro.
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
                     Reject
@@ -117,6 +108,17 @@ const PrintUnit = () => {
                   <TableCell align="center" className="whitespace-nowrap">
                     Total
                   </TableCell>
+
+                  <TableCell align="center" className="whitespace-nowrap">
+                    Fab. Req.
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    Fab. Rcv.
+                  </TableCell>
+                  <TableCell align="center" className="whitespace-nowrap">
+                    Fab/Item GSM
+                  </TableCell>
+
                   <TableCell align="center" className="whitespace-nowrap">
                     Status
                   </TableCell>
@@ -133,13 +135,13 @@ const PrintUnit = () => {
                     <TableCell align="center">{row.name}</TableCell>
                     <TableCell align="center">{row.order}</TableCell>
                     <TableCell align="center">{row.orderqty}</TableCell>
-                    <TableCell align="center">{row.fabreq}</TableCell>
-                    <TableCell align="center">{row.fabrcv}</TableCell>
-                    <TableCell align="center">{row.gsm}</TableCell>
-                    <TableCell align="center">{row.swing}</TableCell>
+                    <TableCell align="center">{row.embro}</TableCell>
                     <TableCell align="center">{row.rej}</TableCell>
                     <TableCell align="center">{row.marge}</TableCell>
                     <TableCell align="center">{row.total}</TableCell>
+                    <TableCell align="center">{row.fabreq}</TableCell>
+                    <TableCell align="center">{row.fabrcv}</TableCell>
+                    <TableCell align="center">{row.gsm}</TableCell>
                     <TableCell align="center">{row.status}</TableCell>
                     <TableCell align="center">
                       <IconButton onClick={handleOpen}>
@@ -169,4 +171,4 @@ const PrintUnit = () => {
   );
 };
 
-export default PrintUnit;
+export default EmbroideryUnit;

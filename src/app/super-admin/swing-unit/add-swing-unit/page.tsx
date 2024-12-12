@@ -44,7 +44,7 @@ const Page = () => {
         <div className="flex justify-between gap-10 p-4">
           <div>
             <FlaxenForm onSubmit={handleSubmit}>
-            <div className="my-4 flex justify-between gap-4">
+              <div className="my-4 flex justify-between gap-4">
                 <div className="space-y-4">
                   <FlaxenInput
                     name="name"
@@ -80,7 +80,7 @@ const Page = () => {
                   />
                 </div>
               </div>
-              {subCategories.map((subCategory, index) => (
+              {/* {subCategories.map((subCategory, index) => (
                 <div key={index} className="flex items-center gap-2">
                   <div className="my-3 flex gap-4">
                     <FlaxenInput
@@ -152,10 +152,100 @@ const Page = () => {
                     </IconButton>
                   </div>
                 </div>
+              ))} */}
+              {subCategories.map((_, index) => (
+                <div key={index} className="flex items-center gap-2">
+                  <div className="my-3 flex gap-4">
+                    <FlaxenInput
+                      fullWidth
+                      name="color"
+                      label="Color"
+                      size="medium"
+                    />
+                    <FlaxenInput
+                      fullWidth
+                      name="size"
+                      label="Size"
+                      size="medium"
+                    />
+                    <FlaxenInput
+                      fullWidth
+                      name="swing"
+                      label="Today Swing"
+                      size="medium"
+                    />
+                    <FlaxenInput
+                      fullWidth
+                      name="reject"
+                      label="Reject"
+                      size="medium"
+                    />
+                    <FlaxenInput
+                      fullWidth
+                      name="marge"
+                      label="Mrg. Rej."
+                      size="medium"
+                    />
+                    <FlaxenInput
+                      fullWidth
+                      name="total"
+                      label="Total"
+                      size="medium"
+                    />
+                    <FlaxenInput
+                      name="fabreq"
+                      label="Fabric Req."
+                      fullWidth
+                      size="medium"
+                    />
+                    <FlaxenInput
+                      name="fabrcv"
+                      label="Fabric Rcv."
+                      fullWidth
+                      size="medium"
+                    />
+                    <FlaxenInput
+                      name="gsm"
+                      label="Fabric/Item GSM"
+                      fullWidth
+                      size="medium"
+                    />
+                    <FlaxenInput
+                      name="consumption"
+                      label="Consumption"
+                      fullWidth
+                      size="medium"
+                    />
+                  </div>
+
+                  <div className="-mt-2 flex w-[100px] gap-1">
+                    <IconButton
+                      onClick={handleAddSubCategory}
+                      sx={{
+                        backgroundColor: "#e1e4f9",
+                        "&:hover": {
+                          backgroundColor: "#d0d3f0",
+                        },
+                      }}
+                    >
+                      <AddIcon className="" />
+                    </IconButton>
+                    <IconButton
+                      onClick={() => handleDeleteSubCategory(index)}
+                      sx={{
+                        backgroundColor: "#e1e4f9",
+                        "&:hover": {
+                          backgroundColor: "#d0d3f0",
+                        },
+                      }}
+                    >
+                      <RemoveCircleOutlineIcon className="text-red-600" />
+                    </IconButton>
+                  </div>
+                </div>
               ))}
             </FlaxenForm>
           </div>
-          
         </div>
         <div className="flex justify-end">
           <Button

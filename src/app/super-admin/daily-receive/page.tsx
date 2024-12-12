@@ -110,6 +110,10 @@ const Page = () => {
             </Button>
           </div>
         </div>
+        <div className="mb-5 gap-5 rounded bg-white p-2 shadow-md">
+          <h3 className="text-2xl font-bold text-center">Buyer Information</h3>
+          
+        </div>
        
         <Paper sx={{ width: "100%", overflow: "hidden" }}>
           <TableContainer>

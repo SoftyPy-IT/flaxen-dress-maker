@@ -22,21 +22,74 @@ const Page = () => {
       </div>
       <Paper sx={{ padding: 2, margin: "auto", marginBottom: "20px" }}>
         <FlaxenForm onSubmit={handleSubmit}>
+        <div className="my-8 flex justify-between gap-20 ">
+                <div className="space-y-4">
+                  <FlaxenInput
+                    name="name"
+                    label="Buyer Name"
+                    fullWidth
+                    size="medium"
+                  />
+                  <FlaxenInput
+                    name="order"
+                    label="Order No"
+                    fullWidth
+                    size="medium"
+                  />
+                  <FlaxenInput
+                    name="qty"
+                    label="Order Quantity"
+                    fullWidth
+                    size="medium"
+                  />
+                  <FlaxenInput
+                    name="construction"
+                    label="Fabric Construction"
+                    fullWidth
+                    size="medium"
+                  />
+                </div>
+                <div className="space-y-4">
+                  <FlaxenDatePicker
+                    label="Date"
+                    name="date"
+                    fullWidth
+                    size="medium"
+                  />
+                  <FlaxenInput
+                    name="chln"
+                    label="Chln. No"
+                    fullWidth
+                    size="medium"
+                  />
+                  
+                  <FlaxenInput
+                    name="gsm"
+                    label="Fabric GSM/RQD"
+                    fullWidth
+                    size="medium"
+                  />
+                  <FlaxenDatePicker
+                    label="Shipment Date"
+                    name="date"
+                    fullWidth
+                    size="medium"
+                  />
+                </div>
+              </div>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={3}>
-              <FlaxenDatePicker
-                label="Date"
-                name="date"
-                fullWidth
-                size="medium"
-              />
-            </Grid>
+           
             <Grid item xs={12} sm={3}>
               <FlaxenInput label="Color" name="color" fullWidth size="medium" />
             </Grid>
 
             <Grid item xs={12} sm={3}>
-              <FlaxenInput label="Lot/B No" name="lot" fullWidth size="medium" />
+              <FlaxenInput
+                label="Lot/B No"
+                name="lot"
+                fullWidth
+                size="medium"
+              />
             </Grid>
             <Grid item xs={12} sm={3}>
               <FlaxenInput
@@ -57,7 +110,6 @@ const Page = () => {
               <FlaxenInput
                 label="Roll"
                 name="roll"
-                type="number"
                 fullWidth
                 size="medium"
               />
@@ -139,7 +191,12 @@ const Page = () => {
               />
             </Grid>
             <Grid item xs={12} sm={3}>
-              <FlaxenInput label="Remark" name="remark" fullWidth size="medium" />
+              <FlaxenInput
+                label="Remark"
+                name="remark"
+                fullWidth
+                size="medium"
+              />
             </Grid>
             <Grid item xs={12}>
               <div className="flex justify-end">

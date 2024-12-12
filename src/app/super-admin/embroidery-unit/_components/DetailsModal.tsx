@@ -30,18 +30,13 @@ const DetailsModal = ({ open, setOpen }: TProps) => {
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <Box className="bg-white">
-              <FlaxenForm onSubmit={handleSubmit} >
-
-<FlaxenTextField name="details"/>
-                {/* <FlaxenSelect
-                  items={["Cutting", "Swing", "Embroidery"]}
-                  fullWidth
-                  name="send"
-                  label="Send To"
-                /> */}
+              <FlaxenForm onSubmit={handleSubmit}>
+                <FlaxenTextField name="details" />
               </FlaxenForm>
-              <div className="flex justify-end mt-2">
-                <Button  variant="contained" sx={{}}>OK</Button>
+              <div className="mt-2 flex justify-end">
+                <Button variant="contained" sx={{}}>
+                  OK
+                </Button>
               </div>
             </Box>
           </Grid>

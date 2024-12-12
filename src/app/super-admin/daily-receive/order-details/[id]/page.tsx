@@ -26,8 +26,11 @@ const Page = () => {
       id: "1",
       date: "05-05-2024",
       order_no: "E508TS004",
+      orderqty: "100",
       color: "Almond",
       style: "Style-1",
+      line: "6",
+      challan: "10",
     },
   ];
   return (
@@ -94,18 +97,34 @@ const Page = () => {
                   <TableCell align="center" className="whitespace-nowrap ">
                     Order No
                   </TableCell>
-                  <TableCell
-                    align="center"
-                    className="whitespace-nowrap text-white"
-                  >
-                    Colour
+                  <TableCell align="center" className="whitespace-nowrap ">
+                    Order Quantity
                   </TableCell>
                   <TableCell
                     align="center"
                     className="whitespace-nowrap text-white"
                   >
-                    Style No
+                    Color
                   </TableCell>
+                  <TableCell
+                    align="center"
+                    className="whitespace-nowrap text-white"
+                  >
+                    Size/Style No
+                  </TableCell>
+                  <TableCell
+                    align="center"
+                    className="whitespace-nowrap text-white"
+                  >
+                    Total Line
+                  </TableCell>
+                  <TableCell
+                    align="center"
+                    className="whitespace-nowrap text-white"
+                  >
+                    Total Challan
+                  </TableCell>
+                  
 
                   <TableCell
                     align="center"
@@ -133,10 +152,19 @@ const Page = () => {
                       {row.order_no}
                     </TableCell>
                     <TableCell align="center" className="whitespace-nowrap">
+                      {row.orderqty}
+                    </TableCell>
+                    <TableCell align="center" className="whitespace-nowrap">
                       {row.color}
                     </TableCell>
                     <TableCell align="center" className="whitespace-nowrap">
                       {row.style}
+                    </TableCell>
+                    <TableCell align="center" className="whitespace-nowrap">
+                      {row.line}
+                    </TableCell>
+                    <TableCell align="center" className="whitespace-nowrap">
+                      {row.challan}
                     </TableCell>
 
                     <TableCell

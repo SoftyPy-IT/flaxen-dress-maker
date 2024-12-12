@@ -19,48 +19,45 @@ const rows = [
   {
     id: "1",
     date: "27-10-2024",
+    buyer: "Fahim",
+    order: "12345",
+    qty: "1000",
     color: "White",
     lot: "39695",
     factory: "Fahim",
     cn: "11253",
     dia: "74",
-    roll: "58",
-    fabreq: "4797",
-    gross: "1242",
-    finish: "1162",
-    name: "abed",
+    name: "Abed",
     delivery: "626",
     send: "Send to Cutting",
   },
   {
     id: "2",
     date: "27-10-2024",
+    buyer: "Fahim",
+    order: "12345",
+    qty: "1000",
     color: "White",
     lot: "39695",
     factory: "Fahim",
     cn: "11253",
     dia: "74",
-    roll: "58",
-    fabreq: "4797",
-    gross: "1242",
-    finish: "1162",
-    name: "abed",
+    name: "Abed",
     delivery: "626",
     send: "Not Send Yet",
   },
   {
     id: "3",
     date: "27-10-2024",
+    buyer: "Fahim",
+    order: "12345",
+    qty: "1000",
     color: "White",
     lot: "39695",
     factory: "Fahim",
     cn: "11253",
     dia: "74",
-    roll: "58",
-    fabreq: "4797",
-    gross: "1242",
-    finish: "1162",
-    name: "abed",
+    name: "Abed",
     delivery: "626",
     send: "Decline From Cutting",
   },
@@ -75,17 +72,28 @@ const FabricReg = () => {
       <Paper sx={{ overflow: "hidden", padding: "0px" }}>
         <TableContainer>
           <Table>
-            <TableHead sx={{
+            <TableHead
+              sx={{
                 "& th": {
                   border: "1px solid rgba(224, 224, 224, 1)",
                   color: "white",
                   fontFamily: "'Quicksand-VariableFont_wght'",
-                  fontWeight: "bold", 
+                  fontWeight: "bold",
                 },
-              }}>
+              }}
+            >
               <TableRow className="bg-[#5D87FF]">
                 <TableCell align="center" className="whitespace-nowrap">
                   Date
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
+                  Buyer Name
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
+                  Order No
+                </TableCell>
+                <TableCell align="center" className="whitespace-nowrap">
+                  Order QTY.
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
                   Color
@@ -102,27 +110,16 @@ const FabricReg = () => {
                 <TableCell align="center" className="whitespace-nowrap">
                   DIA
                 </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  Roll
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  FAB REQ
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  Fab. Gross Weight
-                </TableCell>
-                <TableCell align="center" className="whitespace-nowrap">
-                  Fab. Finish Weight
-                </TableCell>
+
                 <TableCell align="center" className="whitespace-nowrap">
                   Name
                 </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
                   Delivery (PCS)
-                </TableCell>               
+                </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
                   Status
-                </TableCell>               
+                </TableCell>
                 <TableCell align="center" className="whitespace-nowrap">
                   Action
                 </TableCell>
@@ -134,27 +131,28 @@ const FabricReg = () => {
                 <TableRow
                   key={row.id}
                   sx={{
-                    "&:last-child td, &:last-child th": { border: 0 },
-                    "& td": {
-                      borderBottom: "1px solid rgba(224, 224, 224, 1)",
+                    "& th": {
+                      border: "1px solid rgba(224, 224, 224, 1)",
+                      color: "white",
+                     
                     },
                   }}
                 >
                   <TableCell align="center">{row.date}</TableCell>
+                  <TableCell align="center">{row.buyer}</TableCell>
+                  <TableCell align="center">{row.order}</TableCell>
+                  <TableCell align="center">{row.qty}</TableCell>
                   <TableCell align="center">{row.color}</TableCell>
                   <TableCell align="center">{row.lot}</TableCell>
                   <TableCell align="center">{row.factory}</TableCell>
                   <TableCell align="center">{row.cn}</TableCell>
                   <TableCell align="center">{row.dia}</TableCell>
-                  <TableCell align="center">{row.roll}</TableCell>
-                  <TableCell align="center">{row.fabreq}</TableCell>
-                  <TableCell align="center">{row.gross}</TableCell>
-                  <TableCell align="center">{row.finish}</TableCell>
+
                   <TableCell align="center">{row.name}</TableCell>
                   <TableCell align="center">{row.delivery}</TableCell>
                   <TableCell align="center">{row.send}</TableCell>
                   <TableCell align="center" className="">
-                  <Tooltip title="Send">
+                    <Tooltip title="Send">
                       <button className="text-blue-600" onClick={handleOpen}>
                         <SendIcon fontSize="small" />
                       </button>

@@ -13,121 +13,132 @@ import TableRow from "@mui/material/TableRow";
 import { Button } from "@mui/material";
 import DownloadIcon from "@mui/icons-material/Download";
 import PrintIcon from "@mui/icons-material/Print";
-import PhoneIcon from "@mui/icons-material/Phone";
-import FaxIcon from "@mui/icons-material/Fax";
-import EmailIcon from "@mui/icons-material/Email";
-import LanguageIcon from "@mui/icons-material/Language";
 import EditIcon from "@mui/icons-material/Edit";
-import TopSection from "@/components/shared/TopSection/TopSection";
+import PreviewTopSection from "@/components/shared/PreviewTopSection/PreviewTopSection";
 
 function createData(
   id: number,
-  buyer: string,
-  orderNo: string,
-  item: string,
   color: string,
   styleNo: string,
-  line: string,
-  floor: string,
-  date: string,
-  time: string,
-  remark: string,
+  qty: string,
+  reject: string,
+  marge: string,
+  total: string,
+  fabreq: string,
+  fabrcv: string,
+  gsm: string,
+  consum: string,
 ) {
   return {
     id,
-    buyer,
-    orderNo,
-    item,
     color,
     styleNo,
-    line,
-    floor,
-    date,
-    time,
-    remark,
+    qty,
+    reject,
+    marge,
+    total,
+    fabreq,
+    fabrcv,
+    gsm,
+    consum,
   };
 }
 
-const srows = [
+const rows = [
   createData(
     1,
-    "John Doe",
-    "ORD001",
-    "10",
     "Pink",
-    "STY001",
-    "1",
-    "1",
-    "2024-10-30",
+    "XL",
+    "15",
     "10",
+    "1",
+    "6",
+    "100",
+    "100",
+    "24",
     "No issues",
   ),
   createData(
     2,
-    "Jane Smith",
-    "ORD002",
-    "10",
     "Pink",
-    "STY002",
-    "2",
-    "2",
-    "2024-10-30",
-    "11",
+    "XL",
+    "15",
+    "10",
+    "1",
+    "6",
+    "100",
+    "100",
+    "24",
     "Pending",
   ),
   createData(
     3,
-    "Jane Smith",
-    "ORD003",
-    "10",
     "Pink",
-    "STY003",
-    "3",
-    "3",
-    "2024-10-30",
-    "11",
+    "XL",
+    "15",
+    "10",
+    "1",
+    "6",
+    "100",
+    "100",
+    "24",
     "Pending",
   ),
   createData(
     4,
-    "Jane Smith",
-    "ORD004",
-    "10",
     "Pink",
-    "STY004",
-    "4",
-    "4",
-    "2024-10-30",
-    "11",
+    "XL",
+    "15",
+    "10",
+    "1",
+    "6",
+    "100",
+    "100",
+    "24",
     "Pending",
   ),
+];
+
+const signatureRoles = [
+  "Receiver's Signature",
+  "Receiver's Name",
+  "Date",
+  "",
+  "Authorised Signature",
 ];
 
 const Page = () => {
   return (
     <>
       <div className="a4-paper mx-auto bg-white p-5">
-        <TopSection />
+        <PreviewTopSection />
 
         <div className="mb-4 flex justify-center p-2">
-          <h5 className="mx-auto mt-2 inline-block rounded-md  bg-blue-500 p-2 text-center font-bold uppercase text-white">
-          Embroidery Unit
+          <h5 className="mx-auto mt-2 inline-block rounded-md  bg-gray-400 p-2 text-center font-bold uppercase text-white">
+            Embroidery Unit
           </h5>
         </div>
 
         <div className="mb-4 flex content-center items-center justify-between pl-[20px] pr-[60px]">
-          <h5>
-            Date: <span className="font-bold underline">05.05.2024</span>
-          </h5>
-          <h5>
-            Buyer Name: <span className="font-bold underline">Taludker</span>
-          </h5>
-          <h5>
-            Order No: <span className="font-bold underline">24579641</span>
-          </h5>
-          <h5>
-            Quantity: <span className="font-bold underline">1245</span>
-          </h5>
+          <div className="space-y-2">
+            <h5>
+              Buyer Name: <span className="font-bold underline">Taludker</span>
+            </h5>
+            <h5>
+              Order No: <span className="font-bold underline">24579641</span>
+            </h5>
+            <h5>
+              Quantity: <span className="font-bold underline">1245</span>
+            </h5>
+          </div>
+          <div className="space-y-2">
+            <h5>
+              Date: <span className="font-bold underline">05.05.2024</span>
+            </h5>
+            <h5>
+              CHLN No: <span className="font-bold underline">12456</span>
+            </h5>
+          </div>
         </div>
 
         <Paper elevation={0}>
@@ -139,9 +150,13 @@ const Page = () => {
                   sx={{
                     "& th": {
                       border: "1px solid rgba(224, 224, 224, 1)",
+                      padding: "15px", 
                     },
                   }}
                 >
+                  <TableCell align="center" className="text-sm font-semibold">
+                    SL. No.
+                  </TableCell>
                   <TableCell align="center" className="text-sm font-semibold">
                     Color
                   </TableCell>
@@ -149,32 +164,54 @@ const Page = () => {
                     Size/Style
                   </TableCell>
                   <TableCell align="center" className="text-sm font-semibold">
+                    Quantity
+                  </TableCell>
+                  <TableCell align="center" className="text-sm font-semibold">
+                    Reject
+                  </TableCell>
+                  <TableCell align="center" className="text-sm font-semibold">
+                    Marge Rej.
+                  </TableCell>
+                  <TableCell align="center" className="text-sm font-semibold">
                     Total
                   </TableCell>
                   <TableCell align="center" className="text-sm font-semibold">
-                    Fabric Req.
+                    Fab. Req.
                   </TableCell>
                   <TableCell align="center" className="text-sm font-semibold">
-                    Fabric Rcv.
+                    Fab. Rcv.
                   </TableCell>
                   <TableCell align="center" className="text-sm font-semibold">
-                    Fabric/Item GSM
+                    Fab./Item GSM
                   </TableCell>
                   <TableCell align="center" className="text-sm font-semibold">
-                    Consumption
+                   Consumption
                   </TableCell>
+                  
                 </TableRow>
               </TableHead>
               <TableBody>
-                {srows.map((row, index) => (
+                {rows.map((row, index) => (
                   <TableRow
                     key={row.id}
                     sx={{
                       "& td": {
                         border: "1px solid rgba(224, 224, 224, 1)",
+                        padding: "5px",                       
+                        
                       },
                     }}
                   >
+                    <TableCell
+                      sx={{
+                        border: "1px solid black",
+                        
+                        
+                      }}
+                      align="center"
+                    >
+                      {row.id}
+                    </TableCell>
                     <TableCell
                       sx={{ border: "1px solid black" }}
                       align="center"
@@ -191,37 +228,56 @@ const Page = () => {
                       sx={{ border: "1px solid black" }}
                       align="center"
                     >
-                      {row.line}
+                      {row.qty}
                     </TableCell>
                     <TableCell
                       sx={{ border: "1px solid black" }}
                       align="center"
                     >
-                      {row.floor}
+                      {row.reject}
                     </TableCell>
                     <TableCell
                       sx={{ border: "1px solid black" }}
                       align="center"
                     >
-                      {row.date}
+                      {row.marge}
                     </TableCell>
                     <TableCell
                       sx={{ border: "1px solid black" }}
                       align="center"
                     >
-                      {row.time}
+                      {row.total}
                     </TableCell>
                     <TableCell
                       sx={{ border: "1px solid black" }}
                       align="center"
                     >
-                      {row.remark}
+                      {row.fabreq}
                     </TableCell>
+                    <TableCell
+                      sx={{ border: "1px solid black" }}
+                      align="center"
+                    >
+                      {row.fabrcv}
+                    </TableCell>
+                    <TableCell
+                      sx={{ border: "1px solid black" }}
+                      align="center"
+                    >
+                      {row.gsm}
+                    </TableCell>
+                    <TableCell
+                      sx={{ border: "1px solid black" }}
+                      align="center"
+                    >
+                      {row.consum}
+                    </TableCell>
+                   
                   </TableRow>
                 ))}
                 <TableRow>
                   <TableCell
-                    colSpan={1}
+                    colSpan={2}
                     align="center"
                     className="font-bold"
                   ></TableCell>
@@ -232,14 +288,38 @@ const Page = () => {
                     {/* {totalQuantity} */} 60
                   </TableCell>
                   <TableCell align="center" className="font-bold">
+                    {/* {totalQuantity} */} 60
+                  </TableCell>
+                  <TableCell align="center" className="font-bold">
+                    {/* {totalQuantity} */} 60
+                  </TableCell>
+                  <TableCell align="center" className="font-bold">
                     60
                   </TableCell>
-                  <TableCell colSpan={3}></TableCell>
+                  <TableCell colSpan={4}></TableCell>
                 </TableRow>
               </TableBody>
             </Table>
           </TableContainer>
         </Paper>
+        <div
+          style={{
+            marginTop: "20px",
+            display: "flex",
+            justifyContent: "space-around",
+          }}
+        >
+          {signatureRoles.map((role, index) => (
+            <div key={index}>
+              <div className="mb-[5px] mt-10 border-b border-black text-center" />
+              <span>
+                {role} <br />
+              </span>
+              {/* <span>Signature</span> */}
+              <div />
+            </div>
+          ))}
+        </div>
       </div>
 
       <style jsx>{`
