@@ -35,6 +35,7 @@ import LocalPrintshopIcon from '@mui/icons-material/LocalPrintshop';
 import FormatPaintIcon from '@mui/icons-material/FormatPaint';
 import DryCleaningIcon from '@mui/icons-material/DryCleaning';
 import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
+import CarpenterIcon from '@mui/icons-material/Carpenter';
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -96,21 +97,19 @@ const menuGroups = [
           { label: "Accept", route: "/super-admin/fabric-reg/accept" },
         ],
       },
-
       {
-        label: "Accessories Requisition",
+        label: "Fabric Requisition",
         route: "#",
-        icon: <ConstructionIcon />,
+        icon: <FormatListBulletedIcon />,
         children: [
           {
-            label: "+ Add Accessories Requisition",
-            route:
-              "/super-admin/accessories-requisition/add-accessories-requisition",
+            label: "+ Add Fabric Requisition",
+            route: "/super-admin/fabric-requisition/add-requisition",
             // icon: <AddBoxIcon />,
           },
           {
-            label: "Accessories Requisition Index",
-            route: "/super-admin/accessories-requisition",
+            label: "Fabric Requisition Index",
+            route: "/super-admin/fabric-requisition",
           },
         ],
       },
@@ -132,6 +131,41 @@ const menuGroups = [
           { label: "Accessories", route: "/super-admin/accessories-stock" },
         ],
       },
+
+      {
+        label: "Accessories Requisition",
+        route: "#",
+        icon: <ConstructionIcon />,
+        children: [
+          {
+            label: "+ Add Accessories Requisition",
+            route:
+              "/super-admin/accessories-requisition/add-accessories-requisition",
+            // icon: <AddBoxIcon />,
+          },
+          {
+            label: "Accessories Requisition Index",
+            route: "/super-admin/accessories-requisition",
+          },
+        ],
+      },
+      {
+        label: "Accessories Delivery",
+        route: "#",
+        icon: <LocalShippingIcon />,
+        children: [
+          {
+            label: "+ Add Accessories Delivery",
+            route: "/super-admin/accessories-delivery/add-accessories",
+            // icon: <AddBoxIcon />,
+          },
+          {
+            label: "Accessories Delivery Index",
+            route: "/super-admin/accessories-delivery",
+          },
+        ],
+      },
+     
       {
         label: "Cutting Register",
         route: "#",
@@ -148,101 +182,11 @@ const menuGroups = [
           },
         ],
       },
-      {
-        label: "Daily Receive",
-        route: "/super-admin/daily-receive",
-        icon: <OfflinePinIcon />,
-      },
-      {
-        label: "Production",
-        route: "#",
-        icon: <LocalMallIcon />,
-        children: [
-          {
-            label: "+ Add Production",
-            route: "/super-admin/production/add-production",
-            // icon: <AddBoxIcon />,
-          },
-          { label: "Production Index", route: "/super-admin/production" },
-        ],
-      },
-      // ------------------------------
-      {
-        label: "Reject",
-        route: "#",
-        icon: <CancelIcon />,
-        children: [
-          {
-            label: "+ Add Reject",
-            route: "/super-admin/reject/add-reject",
-            // icon: <AddBoxIcon />,
-          },
-          { label: "Reject Index", route: "/super-admin/reject" },
-        ],
-      },
-      {
-        label: "Sample Section",
-        route: "#",
-        icon: <CategoryIcon />,
-        children: [
-          {
-            label: "+ Add Sample Section",
-            route: "/super-admin/sample/add-sample",
-            // icon: <AddBoxIcon />,
-          },
-          { label: "Sample Section Index", route: "/super-admin/sample" },
-        ],
-      },
-      {
-        label: "Fabric Requisition",
-        route: "#",
-        icon: <FormatListBulletedIcon />,
-        children: [
-          {
-            label: "+ Add Fabric Requisition",
-            route: "/super-admin/fabric-requisition/add-requisition",
-            // icon: <AddBoxIcon />,
-          },
-          {
-            label: "Fabric Requisition Index",
-            route: "/super-admin/fabric-requisition",
-          },
-        ],
-      },
-      {
-        label: "Shipment Challan",
-        route: "#",
-        icon: <LocalOfferIcon />,
-        children: [
-          {
-            label: "+ Add Shipment Challan",
-            route: "/super-admin/shipment-challan/add-challan",
-            // icon: <AddBoxIcon />,
-          },
-          {
-            label: "Shipment Challan Index",
-            route: "/super-admin/shipment-challan",
-          },
-        ],
-      },
-      {
-        label: "Work Challan",
-        route: "#",
-        icon: <LocalOfferIcon />,
-        children: [
-          {
-            label: "+ Add Work Challan",
-            route: "/super-admin/work-challan/add-challan",
-            // icon: <AddBoxIcon />,
-          },
-          { label: "Work Challan Index", route: "/super-admin/work-challan" },
-        ],
-      },
 
       {
         label: "Cutting Unit",
         route: "#",
-        icon: <ContentCutIcon />,
+        icon: <CarpenterIcon />,
         children: [
           {
             label: "+ Add Cutting Unit",
@@ -314,6 +258,84 @@ const menuGroups = [
       },
 
       {
+        label: "Daily Receive",
+        route: "/super-admin/daily-receive",
+        icon: <OfflinePinIcon />,
+      },
+      {
+        label: "Production",
+        route: "#",
+        icon: <LocalMallIcon />,
+        children: [
+          {
+            label: "+ Add Production",
+            route: "/super-admin/production/add-production",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Production Index", route: "/super-admin/production" },
+        ],
+      },
+      // ------------------------------
+      {
+        label: "Reject",
+        route: "#",
+        icon: <CancelIcon />,
+        children: [
+          {
+            label: "+ Add Reject",
+            route: "/super-admin/reject/add-reject",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Reject Index", route: "/super-admin/reject" },
+        ],
+      },
+      {
+        label: "Sample Section",
+        route: "#",
+        icon: <CategoryIcon />,
+        children: [
+          {
+            label: "+ Add Sample Section",
+            route: "/super-admin/sample/add-sample",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Sample Section Index", route: "/super-admin/sample" },
+        ],
+      },
+     
+      {
+        label: "Shipment Challan",
+        route: "#",
+        icon: <LocalOfferIcon />,
+        children: [
+          {
+            label: "+ Add Shipment Challan",
+            route: "/super-admin/shipment-challan/add-challan",
+            // icon: <AddBoxIcon />,
+          },
+          {
+            label: "Shipment Challan Index",
+            route: "/super-admin/shipment-challan",
+          },
+        ],
+      },
+      {
+        label: "Work Challan",
+        route: "#",
+        icon: <LocalOfferIcon />,
+        children: [
+          {
+            label: "+ Add Work Challan",
+            route: "/super-admin/work-challan/add-challan",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Work Challan Index", route: "/super-admin/work-challan" },
+        ],
+      },
+
+      
+
+      {
         label: "Packing List",
         route: "#",
         icon: <ListAltIcon />,
@@ -328,22 +350,7 @@ const menuGroups = [
       },
       
 
-      {
-        label: "Accessories Delivery",
-        route: "#",
-        icon: <LocalShippingIcon />,
-        children: [
-          {
-            label: "+ Add Accessories Delivery",
-            route: "/super-admin/accessories-delivery/add-accessories",
-            // icon: <AddBoxIcon />,
-          },
-          {
-            label: "Accessories Delivery Index",
-            route: "/super-admin/accessories-delivery",
-          },
-        ],
-      },
+      
       {
         label: "Hourly Receive",
         route: "#",
