@@ -197,7 +197,6 @@ const Page = () => {
                 <Button
                   type="submit"
                   variant="contained"
-                  startIcon={<AddIcon />}
                   disableElevation
                 >
                   Update
