@@ -1,6 +1,9 @@
 "use client";
 import * as React from "react";
+import AddIcon from "@mui/icons-material/Add";
 import { Button, Paper, Grid } from "@mui/material";
+import TopSection from "@/components/shared/TopSection/TopSection";
+import FabricReg from "../_components/FabricReg";
 import FlaxenForm from "@/components/Forms/Form";
 import FlaxenDatePicker from "@/components/Forms/DatePicker";
 import FlaxenInput from "@/components/Forms/Input";
@@ -11,19 +14,70 @@ const Page = () => {
   };
   return (
     <>
-      <Paper sx={{ padding: 2, margin: "auto" }}>
-        <h3 className="text-center text-2xl font-bold">Update Fabric Register</h3>
-        <hr className="my-3" />
+      <TopSection />
+      <div className="flex justify-center">
+        <h4 className="my-2 inline-block  rounded-md bg-blue-600 p-2 uppercase text-white">
+          Update Fabric Register
+        </h4>
+      </div>
+      <Paper sx={{ padding: 2, margin: "auto", marginBottom: "20px" }}>
         <FlaxenForm onSubmit={handleSubmit}>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={3}>
+          <div className="my-8 flex justify-between gap-20 ">
+            <div className="space-y-4">
+              <FlaxenInput
+                name="name"
+                label="Buyer Name"
+                fullWidth
+                size="medium"
+              />
+              <FlaxenInput
+                name="order"
+                label="Order No"
+                fullWidth
+                size="medium"
+              />
+              <FlaxenInput
+                name="qty"
+                label="Order Quantity"
+                fullWidth
+                size="medium"
+              />
+              <FlaxenInput
+                name="construction"
+                label="Fabric Construction"
+                fullWidth
+                size="medium"
+              />
+            </div>
+            <div className="space-y-4">
               <FlaxenDatePicker
                 label="Date"
                 name="date"
                 fullWidth
                 size="medium"
               />
-            </Grid>
+              <FlaxenInput
+                name="chln"
+                label="Chln. No"
+                fullWidth
+                size="medium"
+              />
+
+              <FlaxenInput
+                name="gsm"
+                label="Fabric GSM/RQD"
+                fullWidth
+                size="medium"
+              />
+              <FlaxenDatePicker
+                label="Shipment Date"
+                name="date"
+                fullWidth
+                size="medium"
+              />
+            </div>
+          </div>
+          <Grid container spacing={2}>
             <Grid item xs={12} sm={3}>
               <FlaxenInput label="Color" name="color" fullWidth size="medium" />
             </Grid>
@@ -52,13 +106,7 @@ const Page = () => {
               <FlaxenInput label="DIA" name="dia" fullWidth size="medium" />
             </Grid>
             <Grid item xs={12} sm={3}>
-              <FlaxenInput
-                label="Roll"
-                name="roll"
-                type="number"
-                fullWidth
-                size="medium"
-              />
+              <FlaxenInput label="Roll" name="roll" fullWidth size="medium" />
             </Grid>
             <Grid item xs={12} sm={3}>
               <FlaxenInput
@@ -158,6 +206,8 @@ const Page = () => {
           </Grid>
         </FlaxenForm>
       </Paper>
+
+      <FabricReg />
     </>
   );
 };

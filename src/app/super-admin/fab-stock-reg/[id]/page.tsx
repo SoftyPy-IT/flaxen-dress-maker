@@ -6,7 +6,7 @@ const page = () => {
   return (
     <>
       <Paper sx={{ padding: 2, margin: "auto" }}>
-        <h3 className="mb-5 text-center text-2xl font-bold">Update Stock</h3>
+        <h3 className="mb-5 text-center text-2xl font-bold">Update Fabric Stock</h3>
         <form>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={3}>
