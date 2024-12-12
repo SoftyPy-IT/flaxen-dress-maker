@@ -147,11 +147,11 @@ const PrintUnit = () => {
                         <SendIcon fontSize="small" color="primary" />
                       </IconButton>
                       <IconButton
-                        href={`/super-admin/swing-unit/preview/${row.id}`}
+                        href={`/super-admin/print-unit/preview/${row.id}`}
                       >
                         <VisibilityIcon fontSize="small" color="primary" />
                       </IconButton>
-                      <IconButton href={`/super-admin/swing-unit/${row.id}`}>
+                      <IconButton href={`/super-admin/print-unit/${row.id}`}>
                         <EditIcon fontSize="small" color="secondary" />
                       </IconButton>
                       <IconButton aria-label="delete" color="error">
