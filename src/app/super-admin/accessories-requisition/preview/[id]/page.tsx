@@ -13,66 +13,92 @@ import DownloadIcon from "@mui/icons-material/Download";
 import PrintIcon from "@mui/icons-material/Print";
 import TopSection from "@/components/shared/TopSection/TopSection";
 import EditIcon from "@mui/icons-material/Edit";
+import PreviewTopSection from "@/components/shared/PreviewTopSection/PreviewTopSection";
 
 
+
+
+
+function createData(
+  id: number,
+  name:string,
+  color: string,
+  styleNo: string,
+  line: string,
+  floor: string,
+  time: string,
+  items:string,
+  remark: string,
+) {
+  return {
+    id,
+    name,
+    color,
+    styleNo,
+    line,
+    floor,
+    time,
+    items,
+    remark
+  };
+}
+
+
+   
 
 const rows = [
-  {
-    id: "1",
-    date: "30-10-2024",
-    buyer: "John Doe",
-    orderNo: "ORD001",
-    color: "Pink",
-    styleNo: "STY001",
-    line: "Line 1",
-    floor: "1",
-    time: "10:00 AM",
-    remark: "No issues",
-  },
-  {
-    id: "2",
-    date: "30-10-2024",
-    buyer: "Jane Smith",
-    orderNo: "ORD002",
-    color: "Pink",
-    styleNo: "STY002",
-    line: "Line 2",
-    floor: "2",
-    time: "11:00 AM",
-    remark: "Pending",
-  },
-  {
-    id: "3",
-    date: "30-10-2024",
-    buyer: "Jane Smith",
-    orderNo: "ORD002",
-    color: "Pink",
-    styleNo: "STY002",
-    line: "Line 2",
-    floor: "2",
-    time: "11:00 AM",
-    remark: "Pending",
-  },
-  {
-    id: "4",
-    date: "30-10-2024",
-    buyer: "Jane Smith",
-    orderNo: "ORD002",
-    color: "Pink",
-    styleNo: "STY002",
-    line: "Line 2",
-    floor: "2",
-    time: "11:00 AM",
-    remark: "Pending",
-  },
+  createData(
+    1,
+    "Niddle",
+    "Pink",
+    "XL",
+    "Line 1",
+    "1",
+    "10:00 AM",  
+    "10", 
+    "No issues",
+  ),
+  createData(
+    2,
+    "Niddle",
+    "Pink",
+    "XL",
+    "Line 1",
+    "1",
+    "10:00 AM",
+    "10", 
+    "Pending",
+  ),
+  createData(
+    3,
+    "Niddle",
+    "Pink",
+    "XL",
+    "Line 1",
+    "1",
+    "10:00 AM",
+    "10", 
+    "Pending",
+  ),
+  createData(
+    4,
+    "Niddle",
+   "Pink",
+    "XL",
+    "Line 1",
+    "1",
+    "10:00 AM",
+    "10", 
+    "Pending",
+  ),
 ];
 
 const signatureRoles = [
-  "Cutting Supervisor",
-  "Sewing/Finishing Supervisor",
-  "Floor Incharge",
-  "Production Manager",
-  "Store Officer",
+  "Receiver's Signature",
+  "Receiver's Name",
+  "Date",
+  "",
+  "Authorised Signature",
 ];
 
 const Preview = () => {
@@ -102,36 +128,58 @@ const Preview = () => {
       `}</style>
       <div className="a4-paper mx-auto mb-20">
         <div className="a4-paper mx-auto bg-white p-5">
-          <TopSection />
-          <div className="flex justify-center">
-            <h3 className="my-2 inline-block  bg-gray-400 px-1 uppercase text-white">
-              Accessories Requisition
-            </h3>
-          </div>
+         
+          <PreviewTopSection />
 
-          <Paper sx={{ width: "100%", overflow: "hidden" }}>
+        <div className="mb-4 flex justify-center p-2">
+          <h5 className="mx-auto mt-2 inline-block rounded-md  bg-gray-400 p-2 text-center font-bold uppercase text-white">
+          Accessories Requisition
+          </h5>
+        </div>
+          <div className="mb-4 flex content-center items-center justify-between pl-[20px] pr-[60px]">
+            <div className="space-y-2">
+              <h5>
+                Buyer Name:{" "}
+                <span className="font-bold underline">Taludker</span>
+              </h5>
+              <h5>
+                Order No: <span className="font-bold underline">24579641</span>
+              </h5>
+              <h5>
+                Quantity: <span className="font-bold underline">1245</span>
+              </h5>
+            </div>
+            <div className="space-y-2">
+              <h5>
+                Date: <span className="font-bold underline">05.05.2024</span>
+              </h5>
+              <h5>
+                CHLN No: <span className="font-bold underline">12456</span>
+              </h5>
+            </div>
+          </div>
+          <Paper elevation={0}>
             <TableContainer>
               <Table>
                 <TableHead>
                   <TableRow
+                    className="bg-[#f3f3f3]"
                     sx={{
                       "& th": {
                         border: "1px solid rgba(224, 224, 224, 1)",
-                        padding: "8px",
-                        background: "#5D87FF",
-                        color: "white",
+                        padding: "15px",
                       },
                     }}
                   >
                     {[
-                      "Date",
-                      "Buyer",
-                      "Order No",
+                      "SL. No",                      
+                      "Product",
                       "Color",
                       "Style No",
                       "Line",
                       "Floor",
                       "Time",
+                      "Items",
                       "Remark",
                     ].map((header) => (
                       <TableCell
@@ -145,24 +193,21 @@ const Preview = () => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {rows.map((row) => (
+                  {rows.map((row, index) => (
                     <TableRow
                       key={row.id}
                       sx={{
                         "& td": {
                           border: "1px solid rgba(224, 224, 224, 1)",
-                          padding: "8px",
+                          padding: "5px",
                         },
                       }}
                     >
                       <TableCell align="center" className="whitespace-nowrap">
-                        {row.date}
+                        {row.id}
                       </TableCell>
                       <TableCell align="center" className="whitespace-nowrap">
-                        {row.buyer}
-                      </TableCell>
-                      <TableCell align="center" className="whitespace-nowrap">
-                        {row.orderNo}
+                        {row.name}
                       </TableCell>
                       <TableCell align="center" className="whitespace-nowrap">
                         {row.color}
@@ -178,16 +223,34 @@ const Preview = () => {
                       </TableCell>
                       <TableCell align="center" className="whitespace-nowrap">
                         {row.time}
-                      </TableCell>
+                      </TableCell>                      
+                      <TableCell align="center" className="whitespace-nowrap">
+                        {row.items}
+                      </TableCell>                      
                       <TableCell align="center" className="whitespace-nowrap">
                         {row.remark}
                       </TableCell>
                     </TableRow>
                   ))}
+                  <TableRow>
+                  <TableCell
+                    colSpan={6}
+                    align="center"
+                    className="font-bold"
+                  ></TableCell>
+                  <TableCell colSpan={1} align="center" className="font-bold">
+                    Total
+                  </TableCell>
+                  
+                  <TableCell align="center" className="font-bold">
+                    60
+                  </TableCell>
+                  <TableCell colSpan={4}></TableCell>
+                </TableRow>
                 </TableBody>
               </Table>
             </TableContainer>
-          </Paper>
+          </Paper> 
           <div
             style={{
               marginTop: "20px",
@@ -204,6 +267,9 @@ const Preview = () => {
               </div>
             ))}
           </div>
+
+          
+        
         </div>
         <div className="mt-5 flex justify-end gap-5">
           <Button variant="contained" disableElevation startIcon={<EditIcon />}>

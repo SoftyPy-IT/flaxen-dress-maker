@@ -117,7 +117,6 @@ const Order = () => {
                   Buyer
                 </TableCell>
 
-                
                 <TableCell align="center" className="whitespace-nowrap">
                   Size
                 </TableCell>
@@ -142,7 +141,7 @@ const Order = () => {
                 <TableCell align="center" className="whitespace-nowrap">
                   Status
                 </TableCell>
-                
+
                 <TableCell align="center" className="whitespace-nowrap">
                   Action
                 </TableCell>
@@ -186,13 +185,13 @@ const Order = () => {
                   <TableCell align="center" className="whitespace-nowrap">
                     {row.swatch}
                   </TableCell>
-                                   
+
                   <TableCell align="center" className="whitespace-nowrap">
                     {row.description}
                   </TableCell>
                   <TableCell align="center" className="whitespace-nowrap">
                     {row.status}
-                  </TableCell> 
+                  </TableCell>
                   <TableCell
                     align="center"
                     className="space-x-2 whitespace-nowrap"
@@ -200,11 +199,13 @@ const Order = () => {
                     <button className="text-blue-600" onClick={handleOpen}>
                       <SendIcon fontSize="small" />
                     </button>
-                    <button className="text-blue-600">
-                      <VisibilityIcon fontSize="small" />
-                    </button>
+                    <Link href={`/super-admin/order/preview/${row.id}`}>
+                      <button className="text-blue-600">
+                        <VisibilityIcon fontSize="small" />
+                      </button>
+                    </Link>
 
-                    <Link href="/super-admin/order/id">
+                    <Link href={`/super-admin/order/${row.id}`}>
                       <button className="text-green-600">
                         <EditIcon fontSize="small" />
                       </button>

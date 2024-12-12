@@ -5,6 +5,8 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
 import SettingsIcon from "@mui/icons-material/Settings";
 import SearchIcon from "@mui/icons-material/Search";
+import CategoryIcon from "@mui/icons-material/Category";
+
 
 const Header = (props: {
   sidebarOpen: string | boolean | undefined;
@@ -17,27 +19,41 @@ const Header = (props: {
 
         <h3 className="text-white">Dashboard</h3>
         
-        <div className="flex items-center gap-4 lg:gap-6">
-          <button
-            aria-controls="sidebar"
-            onClick={(e) => {
-              e.stopPropagation();
-              props.setSidebarOpen(!props.sidebarOpen);
-            }}
-            className="z-50 block lg:hidden"
-          >
-            <MenuIcon className="text-white" />
-          </button>
-      
-          <div className="relative hidden lg:block">
+       
+
+        <div className="flex items-center gap-2 bg-white rounded-full shadow-md px-4 py-2  border">
+            {/* Category Dropdown */}
+            <div className="flex items-center gap-2">
+              <CategoryIcon sx={{ color: "blue" }} />
+              <select className="bg-white text-black rounded px-2 py-1 text-sm">
+                <option>Category</option>
+                <option>Cutting</option>
+                <option>Swing</option>
+                <option>Embroidery</option>
+                <option>Print</option>
+                <option>Stock</option>
+              </select>
+            </div>
+
+            {/* Divider */}
+            <span className="border-l border-gray-300 h-6"></span>
+
+            {/* Search Input */}
             <input
               type="text"
-              placeholder="Search..."
-              className="w-[280px] rounded-full bg-white py-3 pl-10 pr-4 text-sm text-gray-700 placeholder-gray-400 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-300"
+              placeholder="Search by Order No..."
+              className="flex-grow px-4 text-sm text-gray-700 focus:outline-none"
             />
-            <SearchIcon className="absolute left-3 top-2.5 text-gray-500" />
+
+            {/* Search Icon */}
+            <button
+              type="submit"
+              className="text-blue-500 hover:text-blue-700 transition"
+              onClick={() => console.log("Search")}
+            >
+              <SearchIcon />
+            </button>
           </div>
-        </div>
 
    
         <div className="flex items-center gap-4 lg:gap-6">

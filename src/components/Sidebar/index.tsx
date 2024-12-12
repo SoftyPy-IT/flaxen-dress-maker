@@ -165,7 +165,20 @@ const menuGroups = [
           },
         ],
       },
-     
+      {
+        label: "Work Challan",
+        route: "#",
+        icon: <LocalOfferIcon />,
+        children: [
+          {
+            label: "+ Add Work Challan",
+            route: "/super-admin/work-challan/add-challan",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Work Challan Index", route: "/super-admin/work-challan" },
+        ],
+      },
+
       {
         label: "Cutting Register",
         route: "#",
@@ -256,6 +269,23 @@ const menuGroups = [
           { label: "Accept", route: "/super-admin/print-unit/accept" },
         ],
       },
+      {
+        label: "Hourly Receive",
+        route: "#",
+        icon: <AccessTimeFilledIcon />,
+        children: [
+          {
+            label: "+ Add Hourly Receive",
+            route: "/super-admin/hourly-receive/add-hourly-receive",
+            // icon: <AddBoxIcon />,
+          },
+          {
+            label: "Hourly Receive Index",
+            route: "/super-admin/hourly-receive",
+          },
+        ],
+      },
+
 
       {
         label: "Daily Receive",
@@ -304,6 +334,19 @@ const menuGroups = [
       },
      
       {
+        label: "Packing List",
+        route: "#",
+        icon: <ListAltIcon />,
+        children: [
+          {
+            label: "+ Add Packing List",
+            route: "/super-admin/packing/add-packing",
+            // icon: <AddBoxIcon />,
+          },
+          { label: "Packing List Index", route: "/super-admin/packing" },
+        ],
+      },
+      {
         label: "Shipment Challan",
         route: "#",
         icon: <LocalOfferIcon />,
@@ -319,55 +362,14 @@ const menuGroups = [
           },
         ],
       },
-      {
-        label: "Work Challan",
-        route: "#",
-        icon: <LocalOfferIcon />,
-        children: [
-          {
-            label: "+ Add Work Challan",
-            route: "/super-admin/work-challan/add-challan",
-            // icon: <AddBoxIcon />,
-          },
-          { label: "Work Challan Index", route: "/super-admin/work-challan" },
-        ],
-      },
-
-      
-
-      {
-        label: "Packing List",
-        route: "#",
-        icon: <ListAltIcon />,
-        children: [
-          {
-            label: "+ Add Packing List",
-            route: "/super-admin/packing/add-packing",
-            // icon: <AddBoxIcon />,
-          },
-          { label: "Packing List Index", route: "/super-admin/packing" },
-        ],
-      },
       
 
       
-      {
-        label: "Hourly Receive",
-        route: "#",
-        icon: <AccessTimeFilledIcon />,
-        children: [
-          {
-            label: "+ Add Hourly Receive",
-            route: "/super-admin/hourly-receive/add-hourly-receive",
-            // icon: <AddBoxIcon />,
-          },
-          {
-            label: "Hourly Receive Index",
-            route: "/super-admin/hourly-receive",
-          },
-        ],
-      },
 
+      
+
+      
+     
       // {
       //   label: "Unit",
       //   route: "/super-admin/unit",

@@ -138,28 +138,7 @@ const Page = () => {
                 </div>
               ))}
             </Grid>
-            {/* <Grid item xs={12} sm={3}>
-              <FlaxenInput label="Size" name="size" fullWidth size="medium" />
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <FlaxenInput label="Color" name="color" fullWidth size="medium" />
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <FlaxenInput
-                label="Order Quantity"
-                name="orderQuantity"
-                fullWidth
-                size="medium"
-              />
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <FlaxenInput
-                label="Unit Price"
-                name="unitPrice"
-                fullWidth
-                size="medium"
-              />
-            </Grid> */}
+            
             <Grid item xs={12} sm={3}>
               <TextField
                 label="Total All Price"

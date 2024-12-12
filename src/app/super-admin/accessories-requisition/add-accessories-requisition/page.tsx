@@ -19,9 +19,7 @@ const Page = () => {
       <Paper sx={{ padding: 2, margin: "auto", marginBottom: "20px"  }}>
         <form>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={3}>
-              <TextField label="S. No" name="no" fullWidth size="medium" />
-            </Grid>
+            
             <Grid item xs={12} sm={3}>
               <TextField label="Buyer" name="buyer" fullWidth size="medium" />
             </Grid>
